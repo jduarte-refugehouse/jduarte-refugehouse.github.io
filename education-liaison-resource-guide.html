@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Liaison Resource Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #5E3989 0%, #4A2E6B 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #666;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover {
+            background: #f0f0f0;
+            color: #A90533;
+        }
+        
+        .nav-tab.active {
+            background: #5E3989;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .card h2 {
+            color: #5E3989;
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        .card h3 {
+            color: #4A2E6B;
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .resource-item {
+            background: #f8f9fa;
+            border-left: 4px solid #A90533;
+            padding: 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-item:hover {
+            background: #F3E9FA;
+            border-left-color: #F59E0B;
+        }
+        
+        .resource-item h4 {
+            margin: 0 0 10px 0;
+            color: #5E3989;
+        }
+        
+        .resource-item a {
+            color: #A90533;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .resource-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .checklist {
+            background: #F3E9FA;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #D4B5E4;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s ease;
+        }
+        
+        .checklist-item:hover {
+            background: #FEF3C7;
+        }
+        
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #A90533;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #F3E9FA;
+            border-radius: 5px;
+            border: 1px solid #D4B5E4;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #F59E0B;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #A90533;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alert-warning {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            color: #92400E;
+        }
+        
+        .alert-info {
+            background: #F3E9FA;
+            border-left: 4px solid #5E3989;
+            color: #3C2556;
+        }
+        
+        .alert-success {
+            background: #FCE4EC;
+            border-left: 4px solid #A90533;
+            color: #6B0322;
+        }
+        
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .quick-link {
+            background: #A90533;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-link:hover {
+            background: #871028;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #F3E9FA 0%, #FEF3C7 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #D4B5E4;
+        }
+        
+        .contact-card h4 {
+            margin: 0 0 10px 0;
+            color: #5E3989;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #5E3989;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #F3E9FA;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #D4B5E4;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #5E3989;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Education Liaison Resource Guide</h1>
+        <p>T3C Compliant Resources with TBRI Integration</p>
+    </div>
+    
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showSection('quick-start')">Quick Start</button>
+        <button class="nav-tab" onclick="showSection('compliance')">Compliance & Regulations</button>
+        <button class="nav-tab" onclick="showSection('tools')">Tools & Templates</button>
+        <button class="nav-tab" onclick="showSection('training')">Training Resources</button>
+        <button class="nav-tab" onclick="showSection('crisis')">Crisis Response</button>
+        <button class="nav-tab" onclick="showSection('contacts')">Key Contacts</button>
+    </div>
+    
+    <!-- Quick Start Section -->
+    <div id="quick-start" class="content-section active">
+        <div class="card">
+            <h2>🚀 Quick Start Guide</h2>
+            <div class="alert alert-info">
+                <strong>New Education Liaison?</strong> Follow this guide to get up and running quickly while maintaining compliance.
+            </div>
+            
+            <h3>First Week Checklist</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Review T3C Blueprint Education Liaison requirements (Pages 415-483)</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Complete TBRI Online Caregiver Training modules ($35)</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Access TAC Chapter 749 education provisions</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Shadow experienced Case Manager for school meeting</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Set up documentation templates in system</span>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <span>Review current education cases with supervisor</span>
+                </div>
+            </div>
+            
+            <h3>Essential Quick Links</h3>
+            <div class="quick-links">
+                <a href="https://child.tcu.edu" class="quick-link" target="_blank">TBRI Training</a>
+                <a href="https://tea.texas.gov/academics/special-student-populations/foster-care-student-success" class="quick-link" target="_blank">TEA Foster Care Resources</a>
+                <a href="https://www.dfps.state.tx.us/handbooks/CPS/Files/CPS_pg_2400.asp" class="quick-link" target="_blank">DFPS Education Handbook</a>
+                <a href="https://texreg.sos.state.tx.us/public/readtac$ext.ViewTAC?tac_view=4&ti=26&pt=1&ch=749" class="quick-link" target="_blank">TAC 749 Requirements</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📋 Daily Task Reference</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>New Placement</strong>
+                    <ul>
+                        <li>Ensure immediate enrollment (within 3 days)</li>
+                        <li>Request records from previous school</li>
+                        <li>Schedule meeting with teacher</li>
+                        <li>Document in case record</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Weekly Tasks</strong>
+                    <ul>
+                        <li>Check attendance for all students</li>
+                        <li>Follow up on pending assessments</li>
+                        <li>Communicate with foster parents about homework</li>
+                        <li>Update education section of Service Plans</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Monthly Tasks</strong>
+                    <ul>
+                        <li>Review grades and progress reports</li>
+                        <li>Attend IEP/ARD meetings</li>
+                        <li>Submit documentation to SSCC/DFPS</li>
+                        <li>Coordinate with therapists on school issues</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Compliance Section -->
+    <div id="compliance" class="content-section">
+        <div class="card">
+            <h2>📚 Regulatory Requirements</h2>
+            
+            <h3>T3C Blueprint Requirements</h3>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h4>Staff Requirements</h4>
+                    <p>Education Liaison function required for all Foster Family Home Support Service Packages</p>
+                    <p><strong>Key Points:</strong></p>
+                    <ul>
+                        <li>Can be existing staff with dual function</li>
+                        <li>Requires specific training curriculum</li>
+                        <li>Must submit training plan and proof of completion</li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>Documentation Standards</h4>
+                    <p>Required documentation includes:</p>
+                    <ul>
+                        <li>Educational assessments and plans</li>
+                        <li>School communication logs</li>
+                        <li>Service coordination notes</li>
+                        <li>Monthly reports to SSCC/DFPS</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>TAC Chapter 749 Requirements</h3>
+            <table>
+                <tr>
+                    <th>Requirement</th>
+                    <th>Timeline</th>
+                    <th>Documentation Needed</th>
+                </tr>
+                <tr>
+                    <td>School Enrollment</td>
+                    <td>Within 3 days of placement</td>
+                    <td>Enrollment forms, placement letter</td>
+                </tr>
+                <tr>
+                    <td>Records Transfer</td>
+                    <td>Immediate request</td>
+                    <td>Records request form, follow-up log</td>
+                </tr>
+                <tr>
+                    <td>Special Education Advocacy</td>
+                    <td>As needed</td>
+                    <td>IEP/ARD meeting notes, advocacy efforts</td>
+                </tr>
+                <tr>
+                    <td>Educational Testing</td>
+                    <td>Per evaluation schedule</td>
+                    <td>Assessment requests, results, follow-up</td>
+                </tr>
+            </table>
+            
+            <div class="alert alert-warning">
+                <strong>Important:</strong> Notify SSCC/DFPS within 3 business days of any challenges with services or denials.
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🔍 RCC Contract Requirements</h2>
+            <div class="resource-item">
+                <h4>Educational Service Coordination</h4>
+                <ul>
+                    <li>Coordinate with STAR Health for education-related services</li>
+                    <li>Document all services child is receiving</li>
+                    <li>Track service requests and denials</li>
+                    <li>Seek community resources when STAR Health doesn't cover</li>
+                    <li>Provider must cover costs if community resources unavailable</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tools Section -->
+    <div id="tools" class="content-section">
+        <div class="card">
+            <h2>🛠️ Templates & Tools</h2>
+            
+            <h3>Communication Templates</h3>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h4>School Introduction Email</h4>
+                    <p>Template for introducing new student to school staff</p>
+                    <button onclick="copyTemplate('intro-email')" class="quick-link">Copy Template</button>
+                </div>
+                <div class="resource-item">
+                    <h4>Meeting Request Template</h4>
+                    <p>Professional template for requesting IEP/ARD meetings</p>
+                    <button onclick="copyTemplate('meeting-request')" class="quick-link">Copy Template</button>
+                </div>
+                <div class="resource-item">
+                    <h4>Progress Update Template</h4>
+                    <p>Monthly update template for case records</p>
+                    <button onclick="copyTemplate('progress-update')" class="quick-link">Copy Template</button>
+                </div>
+            </div>
+            
+            <h3>Documentation Tools</h3>
+            <div class="checklist">
+                <h4>School Contact Log Fields</h4>
+                <ul>
+                    <li>Date/Time of contact</li>
+                    <li>Person contacted (name, role)</li>
+                    <li>Method of contact (phone, email, in-person)</li>
+                    <li>Purpose of contact</li>
+                    <li>Outcome/Next steps</li>
+                    <li>Follow-up needed (Y/N, date)</li>
+                    <li>TBRI strategies discussed</li>
+                </ul>
+            </div>
+            
+            <h3>Assessment Tools</h3>
+            <div class="resource-item">
+                <h4>Educational Needs Checklist</h4>
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" class="checkbox">
+                        <span>Current grade level performance</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="checkbox">
+                        <span>Special education needs assessed</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="checkbox">
+                        <span>Behavioral support needs identified</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="checkbox">
+                        <span>Sensory/environmental modifications needed</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="checkbox">
+                        <span>Tutoring or academic support required</span>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" class="checkbox">
+                        <span>Extracurricular interests explored</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Training Section -->
+    <div id="training" class="content-section">
+        <div class="card">
+            <h2>📖 Training Resources</h2>
+            
+            <h3>Free Online Training</h3>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h4>IRIS Center Modules</h4>
+                    <p>Free, self-paced modules from Vanderbilt University</p>
+                    <ul>
+                        <li><a href="https://iris.peabody.vanderbilt.edu/module/iep01/" target="_blank">IEP Process Overview</a></li>
+                        <li><a href="https://iris.peabody.vanderbilt.edu/module/beh1/" target="_blank">Behavior Management</a></li>
+                        <li><a href="https://iris.peabody.vanderbilt.edu/module/fam/" target="_blank">Family Collaboration</a></li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>TEA Resources</h4>
+                    <p>Texas Education Agency foster care materials</p>
+                    <ul>
+                        <li><a href="https://tea.texas.gov/academics/special-student-populations/foster-care-student-success/foster-care-liaison-toolkit" target="_blank">Foster Care Liaison Toolkit</a></li>
+                        <li><a href="https://www.region10.org/programs/foster-care/" target="_blank">Region 10 ESC Training Videos</a></li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>National Resources</h4>
+                    <p>Evidence-based educational advocacy training</p>
+                    <ul>
+                        <li><a href="https://youthlaw.org/resources/foster-care-education-toolkit/" target="_blank">National Center for Youth Law Toolkit</a></li>
+                        <li><a href="https://www.fostercareandeducation.org/" target="_blank">Legal Center Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Paid Training Options</h3>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h4>TBRI Online Training</h4>
+                    <p><strong>Cost:</strong> $35 per person</p>
+                    <p><strong>Duration:</strong> 8+ hours self-paced</p>
+                    <p><a href="https://child.tcu.edu/tbri-online-training/" target="_blank">Enroll in TBRI Training</a></p>
+                </div>
+                <div class="resource-item">
+                    <h4>Foster Parent College</h4>
+                    <p><strong>Cost:</strong> $8/month per user</p>
+                    <p><strong>Relevant Courses:</strong> Educational Advocacy, IEP Navigation</p>
+                    <p><a href="https://www.fosterparentcollege.com" target="_blank">View Course Catalog</a></p>
+                </div>
+            </div>
+            
+            <div class="alert alert-success">
+                <strong>Tip:</strong> Start with free IRIS modules while waiting for TBRI training approval. Each module provides a certificate of completion.
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🎯 TBRI Quick Reference for Schools</h2>
+            <div class="resource-item">
+                <h4>Connecting Principles</h4>
+                <ul>
+                    <li><strong>Be Present:</strong> Attend school events, meet teachers regularly</li>
+                    <li><strong>Eye Contact:</strong> Help teachers understand why some kids avoid it</li>
+                    <li><strong>Voice Quality:</strong> Model calm, playful engagement</li>
+                    <li><strong>Safe Touch:</strong> Advocate for appropriate physical boundaries</li>
+                </ul>
+            </div>
+            <div class="resource-item">
+                <h4>Empowering Principles</h4>
+                <ul>
+                    <li><strong>Transitions:</strong> Request visual schedules, warnings before changes</li>
+                    <li><strong>Sensory Needs:</strong> Advocate for movement breaks, fidgets, quiet spaces</li>
+                    <li><strong>Choices:</strong> Help teachers offer controlled choices</li>
+                    <li><strong>Predictability:</strong> Consistent routines and expectations</li>
+                </ul>
+            </div>
+            <div class="resource-item">
+                <h4>Correcting Principles</h4>
+                <ul>
+                    <li><strong>Proactive Strategies:</strong> Prevention over punishment</li>
+                    <li><strong>Re-dos:</strong> Practice correct behavior immediately</li>
+                    <li><strong>Natural Consequences:</strong> Logical, not punitive</li>
+                    <li><strong>Time-In:</strong> Connection before correction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Crisis Response Section -->
+    <div id="crisis" class="content-section">
+        <div class="card">
+            <h2>🚨 Crisis Response Protocols</h2>
+            
+            <div class="alert alert-warning">
+                <strong>Educational Crisis Definition:</strong> Any situation that threatens the child's school placement, safety, or academic progress requiring immediate intervention.
+            </div>
+            
+            <h3>Crisis Response Flowchart</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Step 1: Assess Severity</strong>
+                    <ul>
+                        <li>Immediate safety concern? → Call 911 first</li>
+                        <li>Suspension/Expulsion threat? → Immediate response needed</li>
+                        <li>Academic failure? → Urgent but not immediate</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Step 2: Notify Required Parties</strong>
+                    <ul>
+                        <li>Supervisor immediately</li>
+                        <li>SSCC/DFPS within 3 business days</li>
+                        <li>Foster parents ASAP</li>
+                        <li>Treatment team as appropriate</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Step 3: Intervene Using TBRI</strong>
+                    <ul>
+                        <li>De-escalate with calm presence</li>
+                        <li>Advocate for alternative to suspension</li>
+                        <li>Request immediate meeting</li>
+                        <li>Bring support team if needed</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Step 4: Document Everything</strong>
+                    <ul>
+                        <li>Timeline of events</li>
+                        <li>All communications</li>
+                        <li>Interventions attempted</li>
+                        <li>Outcomes and next steps</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Common Crisis Scenarios</h3>
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h4>Suspension/Expulsion Threat</h4>
+                    <p><strong>Immediate Actions:</strong></p>
+                    <ul>
+                        <li>Request manifestation determination</li>
+                        <li>Advocate for in-school alternatives</li>
+                        <li>Bring behavioral support plan</li>
+                        <li>Document all meetings</li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>School Refusal</h4>
+                    <p><strong>TBRI Response:</strong></p>
+                    <ul>
+                        <li>Identify fear/trigger</li>
+                        <li>Create felt safety plan</li>
+                        <li>Gradual re-entry if needed</li>
+                        <li>Coordinate with therapist</li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>Bullying Incident</h4>
+                    <p><strong>Advocacy Steps:</strong></p>
+                    <ul>
+                        <li>Document all incidents</li>
+                        <li>Request safety plan</li>
+                        <li>Involve administration</li>
+                        <li>Consider classroom change</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contacts Section -->
+    <div id="contacts" class="content-section">
+        <div class="card">
+            <h2>📞 Key Contacts Directory</h2>
+            
+            <div class="contact-card">
+                <h4>Internal Contacts</h4>
+                <p><strong>Education Liaison Supervisor:</strong> [Name] - [Phone] - [Email]</p>
+                <p><strong>Crisis Response Team:</strong> [24/7 Number]</p>
+                <p><strong>Documentation Questions:</strong> [Contact]</p>
+            </div>
+            
+            <div class="contact-card">
+                <h4>DFPS/SSCC Contacts</h4>
+                <p><strong>Education Specialist:</strong> [Regional Contact]</p>
+                <p><strong>SSCC Education Coordinator:</strong> [Contact Info]</p>
+                <p><strong>After-Hours Support:</strong> [Emergency Number]</p>
+            </div>
+            
+            <div class="contact-card">
+                <h4>Community Resources</h4>
+                <p><strong>Region [X] Education Service Center:</strong> [Contact]</p>
+                <p><strong>Disability Rights Texas:</strong> 1-800-252-9108</p>
+                <p><strong>Texas Parent Information Network:</strong> 1-800-866-4726</p>
+                <p><strong>Legal Aid Education Advocates:</strong> [Local Contact]</p>
+            </div>
+            
+            <h3>School District Contacts</h3>
+            <div class="alert alert-info">
+                <strong>Tip:</strong> Build relationships with these key positions in each district
+            </div>
+            <table>
+                <tr>
+                    <th>District</th>
+                    <th>Foster Care Liaison</th>
+                    <th>Special Ed Director</th>
+                    <th>Enrollment Office</th>
+                </tr>
+                <tr>
+                    <td>[District Name]</td>
+                    <td>[Name & Contact]</td>
+                    <td>[Name & Contact]</td>
+                    <td>[Phone Number]</td>
+                </tr>
+                <tr>
+                    <td>[Add more districts as needed]</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>🔗 Quick Reference Links</h2>
+            <div class="quick-links">
+                <a href="https://www.dfps.state.tx.us/Child_Protection/Foster_Care/Education/" class="quick-link" target="_blank">DFPS Education Portal</a>
+                <a href="https://tea.texas.gov/academics/special-student-populations/special-education" class="quick-link" target="_blank">TEA Special Education</a>
+                <a href="https://www.navigatelifetexas.org/en" class="quick-link" target="_blank">Navigate Life Texas</a>
+                <a href="https://www.texasprojectfirst.org/" class="quick-link" target="_blank">Texas Project FIRST</a>
+                <a href="https://prntexas.org/" class="quick-link" target="_blank">Partners Resource Network</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function copyTemplate(templateType) {
+            let template = '';
+            
+            switch(templateType) {
+                case 'intro-email':
+                    template = `Subject: New Student Introduction - [Child's First Name]
+
+Dear [Teacher/Principal Name],
+
+I hope this email finds you well. I am writing to introduce [Child's First Name], who will be joining your [grade/class] starting [date]. I serve as the Education Liaison for [Child's First Name] through [Agency Name].
+
+[Child's First Name] is a [age]-year-old who enjoys [interests/strengths]. They learn best when [learning style/preferences]. 
+
+To support their success in your classroom, I wanted to share a few strategies that have worked well:
+• [Specific TBRI-informed strategy]
+• [Another helpful approach]
+• [Environmental modification if needed]
+
+I would welcome the opportunity to meet with you briefly to discuss how we can work together to ensure [Child's First Name]'s educational success. I am available [provide 2-3 time options].
+
+Please feel free to contact me at [phone] or [email] with any questions or concerns. I look forward to partnering with you.
+
+Warm regards,
+[Your Name]
+[Title]
+[Contact Information]`;
+                    break;
+                    
+                case 'meeting-request':
+                    template = `Subject: Meeting Request - Educational Planning for [Child's Name]
+
+Dear [Recipient],
+
+I am requesting a meeting to discuss educational planning for [Child's Full Name], DOB: [Date]. As their Education Liaison, I would like to address [specific purpose - e.g., IEP review, behavioral concerns, academic support needs].
+
+Proposed agenda items:
+• Current academic progress
+• [Specific concern/need]
+• Support strategies and accommodations
+• Next steps and follow-up
+
+Available participants from our team:
+• [Your name], Education Liaison
+• [Foster parent name], if available
+• [Other relevant team members]
+
+Could we schedule this meeting within the next [timeframe]? I am available:
+• [Date/time option 1]
+• [Date/time option 2]
+• [Date/time option 3]
+
+Please let me know what works best for your schedule. If none of these times work, I'm happy to find alternatives.
+
+Thank you for your partnership in supporting [Child's First Name]'s education.
+
+Best regards,
+[Your Name]
+[Contact Information]`;
+                    break;
+                    
+                case 'progress-update':
+                    template = `EDUCATION PROGRESS UPDATE
+
+Student: [Name]
+Date: [Date]
+Reporting Period: [Month/Year]
+
+ACADEMIC PROGRESS
+Current Grades: [List subjects and grades]
+Attendance Rate: [X]%
+Missing Assignments: [Number and specifics]
+
+BEHAVIORAL OBSERVATIONS
+Positive Behaviors: [List specific examples]
+Areas of Concern: [If any, with context]
+TBRI Strategies Implemented: [List specific strategies]
+
+SPECIAL EDUCATION/SUPPORTS
+IEP/504 Status: [Current status]
+Services Received: [List all services]
+Progress on Goals: [Summary]
+
+COORDINATION ACTIVITIES
+School Contacts This Month: [List with dates]
+Meetings Attended: [List with outcomes]
+Foster Parent Communication: [Summary]
+
+NEXT STEPS
+1. [Specific action with timeline]
+2. [Another action item]
+3. [Follow-up needed]
+
+Submitted by: [Your Name]
+Date: [Date]`;
+                    break;
+            }
+            
+            navigator.clipboard.writeText(template).then(function() {
+                alert('Template copied to clipboard!');
+            });
+        }
+        
+        // Save checkbox states to localStorage
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            // Load saved state
+            const savedState = localStorage.getItem(checkbox.id);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+            
+            // Save state on change
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+            });
+        });
+    </script>
+</body>
+</html>
