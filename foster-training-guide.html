@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refuge House T3C Training Requirements - Presentation Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #5E3989 0%, #4A2E6B 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+            color: white !important;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+            color: white !important;
+        }
+        
+        .header img {
+            height: 80px;
+            margin-left: 20px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow-x: auto;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px;
+        }
+        
+        .nav-tab {
+            flex: 0 0 auto;
+            min-width: 100px;
+            padding: 12px 16px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            background: #f0f0f0;
+            font-size: 14px;
+            color: #666;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border-radius: 5px;
+        }
+        
+        .nav-tab:hover {
+            background: #e0e0e0;
+            color: #A90533;
+        }
+        
+        .nav-tab.active {
+            background: #5E3989;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .card h2 {
+            color: #5E3989;
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        .card h3 {
+            color: #4A2E6B;
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+        
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .training-item {
+            background: #f8f9fa;
+            border-left: 4px solid #A90533;
+            padding: 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .training-item:hover {
+            background: #F3E9FA;
+            border-left-color: #F59E0B;
+        }
+        
+        .training-item h4 {
+            margin: 0 0 10px 0;
+            color: #5E3989;
+        }
+        
+        .training-item .hours {
+            font-weight: bold;
+            color: #A90533;
+        }
+        
+        .checklist {
+            background: #F3E9FA;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #D4B5E4;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s ease;
+        }
+        
+        .checklist-item:hover {
+            background: #FEF3C7;
+        }
+        
+        .check-icon {
+            color: #A90533;
+            margin-right: 12px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #A90533;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #F3E9FA;
+            border-radius: 5px;
+            border: 1px solid #D4B5E4;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #F59E0B;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #A90533;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alert-warning {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            color: #92400E;
+        }
+        
+        .alert-info {
+            background: #F3E9FA;
+            border-left: 4px solid #5E3989;
+            color: #3C2556;
+        }
+        
+        .alert-success {
+            background: #FCE4EC;
+            border-left: 4px solid #A90533;
+            color: #6B0322;
+        }
+        
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .quick-link {
+            background: #A90533;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-link:hover {
+            background: #871028;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #5E3989;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #F3E9FA;
+        }
+        
+        .nav-separator {
+            width: 2px;
+            height: 30px;
+            background: #d0d0d0;
+            margin: 0 10px;
+            align-self: center;
+        }
+        
+        .phase-badge {
+            display: inline-block;
+            background: #10B981;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 5px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .badge-required {
+            background: #A90533;
+            color: white;
+        }
+        
+        .badge-optional {
+            background: #F59E0B;
+            color: white;
+        }
+        
+        .badge-t3c {
+            background: #5E3989;
+            color: white;
+        }
+        
+        .badge-new {
+            background: #10B981;
+            color: white;
+        }
+        
+        .service-package-header {
+            background: linear-gradient(135deg, #F59E0B 0%, #DC7A00 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .service-package-header h3 {
+            color: white;
+            margin: 0;
+        }
+        
+        .disclaimer {
+            background: #FEF3C7;
+            border: 1px solid #F59E0B;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>T3C Training Requirements Guide</h1>
+            <p>Presentation Guide for Foster Parent Training</p>
+        </div>
+        <img src="https://jduarte-refugehouse.github.io/web-logo-with-name-dark-background.png" alt="Refuge House Logo">
+    </div>
+    
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+        <button class="nav-tab" onclick="showSection('pre-service')">Pre-Service</button>
+        <button class="nav-tab" onclick="showSection('annual')">Annual Training</button>
+        <button class="nav-tab" onclick="showSection('t3c-basic')">T3C Basic Requirements <span class="phase-badge">Phase I</span></button>
+        <div class="nav-separator"></div>
+        <button class="nav-tab" onclick="showSection('substance-use')">Substance Use</button>
+        <button class="nav-tab" onclick="showSection('mental-behavioral')">Mental & Behavioral <span class="phase-badge">Phase I</span></button>
+        <button class="nav-tab" onclick="showSection('sexual-aggression')">Sexual Aggression</button>
+        <button class="nav-tab" onclick="showSection('complex-medical')">Complex Medical</button>
+        <button class="nav-tab" onclick="showSection('idd-autism')">IDD/Autism <span class="phase-badge">Phase I</span></button>
+        <button class="nav-tab" onclick="showSection('treatment-foster')">Treatment Foster Care</button>
+        <div class="nav-separator"></div>
+        <button class="nav-tab" onclick="showSection('kinship')">Kinship Support <span class="phase-badge">Phase I</span></button>
+        <button class="nav-tab" onclick="showSection('transition')">Transition Support <span class="phase-badge">Phase I</span></button>
+        <button class="nav-tab" onclick="showSection('pregnant-parenting')">Pregnant & Parenting <span class="phase-badge">Phase I</span></button>
+    </div>
+    
+    <div class="disclaimer">
+        <strong>Note:</strong> Training requirements are based on current T3C Blueprint guidelines and may be adjusted as further updates are provided. All hour requirements shown represent minimum training hours.
+    </div>
+    
+    <!-- Overview Section -->
+    <div id="overview" class="content-section active">
+        <div class="card">
+            <h2>🎯 Training Overview</h2>
+            <div class="alert alert-success">
+                <strong>Key Point:</strong> Refuge House has comprehensive training programs that meet or exceed all T3C requirements.
+            </div>
+            
+            <h3>Training Categories</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Pre-Service Training</h4>
+                    <p><span class="hours">35 hours minimum</span></p>
+                    <p>Required before first placement, includes orientation, core competencies, and safety training</p>
+                </div>
+                <div class="training-item">
+                    <h4>Annual Requirements</h4>
+                    <p><span class="hours">30 hours minimum</span></p>
+                    <p>Ongoing education including TBRI, cultural diversity, and specialized topics</p>
+                </div>
+                <div class="training-item">
+                    <h4>T3C Transition</h4>
+                    <p><span class="hours">16 hours</span></p>
+                    <p>Required for current foster parents transitioning to T3C system</p>
+                </div>
+                <div class="training-item">
+                    <h4>Service Package Training</h4>
+                    <p><span class="hours">4-20 hours per package</span></p>
+                    <p>Specialized training based on the types of children you serve</p>
+                </div>
+            </div>
+            
+            <h3>T3C Evidence-Informed Model</h3>
+            <div class="alert alert-info">
+                <strong>TBRI® (Trust-Based Relational Intervention)</strong> is the required evidence-informed model for all T3C providers. All service delivery must integrate TBRI principles.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pre-Service Section -->
+    <div id="pre-service" class="content-section">
+        <div class="card">
+            <h2>📚 Pre-Service Training Requirements</h2>
+            <div class="alert alert-info">
+                <strong>Total Required:</strong> 35 hours minimum before accepting first placement
+            </div>
+            
+            <h3>Core Components</h3>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>RH 101 - Orientation (2 hours)</strong> - Agency policies and procedures <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Mini-PRIDE (12 hours)</strong> - Core foster parent competencies <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>SAMA (16 hours)</strong> - Safe physical management techniques <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>CPR/First Aid (2 hours minimum)</strong> - Current certification <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Psychotropic Medications (2 hours)</strong> - Understanding psychiatric medications <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Transportation Safety (2 hours)</strong> - Vehicle and car seat safety <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Developmental Milestones (2 hours)</strong> - Age-appropriate expectations <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Medical Consent Training (2 hours total)</strong> - Both DFPS and RH versions <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Normalcy (2 hours)</strong> - Prudent parenting standards <span class="badge badge-required">REQUIRED</span></span>
+                </div>
+            </div>
+            
+            <h3>Additional Requirements</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>40 Hours Supervision</h4>
+                    <p>Required for new foster parents without prior experience</p>
+                    <p>Direct care supervision with experienced foster parent</p>
+                </div>
+                <div class="training-item">
+                    <h4>Water Safety (1 hour)</h4>
+                    <p>Required for homes with pools or water access</p>
+                    <p>Annual refresher required</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Annual Training Section -->
+    <div id="annual" class="content-section">
+        <div class="card">
+            <h2>📅 Annual Training Requirements</h2>
+            <div class="alert alert-warning">
+                <strong>Requirement:</strong> 30 hours minimum each year, relevant to foster care
+            </div>
+            
+            <h3>Required Annual Topics</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>TBRI Refresher</h4>
+                    <p class="hours">4-6 hours annually</p>
+                    <p>Trust-Based Relational Intervention principles and practice</p>
+                    <span class="badge badge-t3c">T3C REQUIRED</span>
+                </div>
+                <div class="training-item">
+                    <h4>Human Trafficking Prevention</h4>
+                    <p class="hours">2-3 hours (every 2 years)</p>
+                    <p>Recognition, prevention, and reporting</p>
+                    <span class="badge badge-t3c">T3C REQUIRED</span>
+                </div>
+                <div class="training-item">
+                    <h4>SAMA Refresher</h4>
+                    <p class="hours">8 hours annually</p>
+                    <p>Safe physical management update</p>
+                    <span class="badge badge-required">REQUIRED</span>
+                </div>
+                <div class="training-item">
+                    <h4>Reporting Abuse/Neglect</h4>
+                    <p class="hours">2 hours annually</p>
+                    <p>Legal requirements and procedures</p>
+                    <span class="badge badge-required">REQUIRED</span>
+                </div>
+                <div class="training-item">
+                    <h4>Cultural Diversity</h4>
+                    <p class="hours">2 hours</p>
+                    <p>Supporting diverse populations</p>
+                    <span class="badge badge-required">REQUIRED</span>
+                </div>
+                <div class="training-item">
+                    <h4>Additional Topics</h4>
+                    <p>• Sexual Abuse Prevention (1.5 hours)</p>
+                    <p>• Psychotropic Meds Update (2 hours)</p>
+                    <p>• Normalcy (1-2 hours)</p>
+                    <p>• Developmental Updates (1 hour)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- T3C Basic Requirements Section -->
+    <div id="t3c-basic" class="content-section">
+        <div class="card">
+            <h2>🏆 T3C Basic Foster Family Home Enhancements</h2>
+            <div class="alert alert-success">
+                <strong>These enhancements apply to ALL foster homes under T3C, regardless of service package</strong>
+            </div>
+            
+            <h3>16-Hour T3C Transition Training</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Module 1: T3C Orientation & Vision (2 hours)</strong>
+                    <ul>
+                        <li>Understanding the T3C transformation</li>
+                        <li>Benefits for children and families</li>
+                        <li>What changes and what stays the same</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Module 2: TBRI as Evidence-Informed Model (4 hours)</strong>
+                    <ul>
+                        <li>TBRI principles in T3C context</li>
+                        <li>Connecting, Empowering, and Correcting principles</li>
+                        <li>Documentation using TBRI framework</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Module 3: Human Trafficking Prevention (2 hours)</strong>
+                    <ul>
+                        <li>Universal requirement for all caregivers</li>
+                        <li>Recognition and prevention strategies</li>
+                        <li>Reporting procedures</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Module 4: Service Planning & Documentation (4 hours)</strong>
+                    <ul>
+                        <li>Foster parent role in service planning</li>
+                        <li>Within 30 days requirement</li>
+                        <li>Outcome tracking and documentation</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Module 5: Enhanced Family Connections (2 hours)</strong>
+                    <ul>
+                        <li>Family engagement expectations</li>
+                        <li>Supporting birth family relationships</li>
+                        <li>Co-parenting strategies</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <strong>Module 6: Add-On Services Overview (2 hours)</strong>
+                    <ul>
+                        <li>Kinship Support Services</li>
+                        <li>Transition Services (14+)</li>
+                        <li>Pregnant & Parenting Youth Support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Key T3C Enhancements</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Evidence-Informed Model</h4>
+                    <p>All care must integrate TBRI principles</p>
+                    <p>Documentation reflects trauma-informed approach</p>
+                </div>
+                <div class="training-item">
+                    <h4>Service Planning</h4>
+                    <p>Active participation in planning process</p>
+                    <p>30-day timeline for initial plans</p>
+                </div>
+                <div class="training-item">
+                    <h4>Family Engagement</h4>
+                    <p>Enhanced focus on birth family connections</p>
+                    <p>Co-parenting when appropriate</p>
+                </div>
+                <div class="training-item">
+                    <h4>Outcome Tracking</h4>
+                    <p>Regular CANS assessments</p>
+                    <p>Data-driven service adjustments</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements for ALL T3C Foster Parents</h3>
+            <div class="alert alert-success">
+                <strong>Universal Requirements:</strong> These apply to all foster parents regardless of service package
+            </div>
+            <div class="training-item">
+                <h4>Annual Training Requirements</h4>
+                <p class="hours">30 hours minimum annually</p>
+                <ul>
+                    <li><strong>TBRI Refresher:</strong> 4-6 hours annually (required)</li>
+                    <li><strong>Human Trafficking Prevention:</strong> 2-3 hours every 2 years (required)</li>
+                    <li><strong>SAMA Refresher:</strong> 8 hours annually</li>
+                    <li><strong>Abuse/Neglect Reporting:</strong> 2 hours annually</li>
+                    <li><strong>Cultural Diversity:</strong> 2 hours annually</li>
+                    <li><strong>Additional required topics</strong> to reach 30 hours</li>
+                </ul>
+                <p><strong>Note:</strong> Service package-specific topics are integrated into the 30-hour requirement, not additional</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Kinship Support Section -->
+    <div id="kinship" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Kinship Caregiver Support Services (Add-On)</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-info">
+                <strong>Add-On Service:</strong> Additional support for kinship families caring for related children
+            </div>
+            
+            <h3>Training Requirements</h3>
+            <div class="training-item">
+                <h4>Kinship Care Dynamics</h4>
+                <p class="hours">2 hours (integrated into existing training)</p>
+                <ul>
+                    <li>Understanding family dynamics in kinship care</li>
+                    <li>Navigating dual relationships (relative and caregiver)</li>
+                    <li>Managing family boundaries</li>
+                    <li>Supporting child's identity and family connections</li>
+                    <li>Legal considerations for kinship families</li>
+                </ul>
+            </div>
+            
+            <h3>Key Support Components</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Family Dynamics</h4>
+                    <p>Managing complex family relationships</p>
+                    <p>Boundary setting strategies</p>
+                </div>
+                <div class="training-item">
+                    <h4>Support Services</h4>
+                    <p>Kinship navigator assistance</p>
+                    <p>Peer support groups</p>
+                </div>
+                <div class="training-item">
+                    <h4>Legal Support</h4>
+                    <p>Understanding kinship rights</p>
+                    <p>Permanency options education</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements</h3>
+            <div class="alert alert-info">
+                <strong>Annual Training:</strong> Kinship topics integrated into standard 30-hour requirement
+            </div>
+            <div class="training-item">
+                <h4>Ongoing Support</h4>
+                <p>No additional training hours required</p>
+                <p>Topics covered through case management and peer support</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Transition Support Section -->
+    <div id="transition" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Transition Support Services (Add-On)</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-info">
+                <strong>Add-On Service:</strong> Enhanced support for youth ages 14+ preparing for adulthood
+            </div>
+            
+            <h3>Training Requirements</h3>
+            <div class="training-item">
+                <h4>Youth Transition Skills</h4>
+                <p class="hours">2 hours (integrated into existing training)</p>
+                <ul>
+                    <li>Supporting independence development</li>
+                    <li>Life skills coaching strategies</li>
+                    <li>Education and career planning</li>
+                    <li>Financial literacy basics</li>
+                    <li>Housing and community resources</li>
+                    <li>Healthy relationship development</li>
+                </ul>
+            </div>
+            
+            <h3>Key Program Components</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Life Skills Development</h4>
+                    <p>Cooking, budgeting, transportation</p>
+                    <p>Self-care and health management</p>
+                </div>
+                <div class="training-item">
+                    <h4>Education & Career</h4>
+                    <p>College preparation support</p>
+                    <p>Job readiness training</p>
+                </div>
+                <div class="training-item">
+                    <h4>Permanency Planning</h4>
+                    <p>Extended foster care options</p>
+                    <p>Adult support networks</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements</h3>
+            <div class="alert alert-info">
+                <strong>Annual Training:</strong> Transition topics integrated into standard 30-hour requirement
+            </div>
+            <div class="training-item">
+                <h4>Ongoing Development</h4>
+                <p>Updates on youth resources and programs</p>
+                <p>Collaboration with Preparation for Adult Living (PAL)</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pregnant & Parenting Section -->
+    <div id="pregnant-parenting" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Pregnant & Parenting Youth Support (Add-On)</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-info">
+                <strong>Add-On Service:</strong> Support for pregnant youth and young parents in care
+            </div>
+            
+            <h3>Training Requirements</h3>
+            <div class="training-item">
+                <h4>Parenting Youth Support</h4>
+                <p class="hours">2 hours (integrated into existing training)</p>
+                <ul>
+                    <li>Supporting dual role as youth and parent</li>
+                    <li>Infant care basics and safety</li>
+                    <li>Attachment and bonding support</li>
+                    <li>Co-parenting with young parents</li>
+                    <li>Educational continuity for young parents</li>
+                    <li>Accessing community resources</li>
+                </ul>
+            </div>
+            
+            <h3>Support Components</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Parenting Education</h4>
+                    <p>Age-appropriate parenting skills</p>
+                    <p>Child development knowledge</p>
+                </div>
+                <div class="training-item">
+                    <h4>Dual Support</h4>
+                    <p>Meeting needs of parent and baby</p>
+                    <p>Educational support continuation</p>
+                </div>
+                <div class="training-item">
+                    <h4>Resource Connection</h4>
+                    <p>WIC, childcare, healthcare</p>
+                    <p>Parenting support groups</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements</h3>
+            <div class="alert alert-info">
+                <strong>Annual Training:</strong> Topics integrated into standard 30-hour requirement
+            </div>
+            <div class="training-item">
+                <h4>Ongoing Support</h4>
+                <p>Updates on resources for young parents</p>
+                <p>Collaboration with community programs</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Substance Use Section -->
+    <div id="substance-use" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Substance Use Support Services</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-info">
+                For youth with substance use disorders requiring routine clinical intervention and skilled caregiver support
+            </div>
+            
+            <h3>Additional Training Requirements</h3>
+            <div class="training-item">
+                <h4>Substance Abuse Awareness</h4>
+                <p class="hours">4 hours minimum</p>
+                <ul>
+                    <li>Understanding addiction as a disease</li>
+                    <li>Stages of change and recovery</li>
+                    <li>Supporting youth in recovery</li>
+                    <li>Relapse prevention strategies</li>
+                    <li>Working with treatment teams</li>
+                </ul>
+            </div>
+            
+            <h3>Key Service Components</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Treatment Coordination</h4>
+                    <p>Working with substance abuse counselors</p>
+                    <p>Supporting treatment compliance</p>
+                </div>
+                <div class="training-item">
+                    <h4>Environmental Safety</h4>
+                    <p>Medication security</p>
+                    <p>Trigger identification and management</p>
+                </div>
+                <div class="training-item">
+                    <h4>Crisis Response</h4>
+                    <p>24/7 case manager availability</p>
+                    <p>Relapse response protocols</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements to Maintain Credentialing</h3>
+            <div class="alert alert-info">
+                <strong>Annual Training:</strong> Substance use topics must be integrated into the standard 30-hour annual training requirement
+            </div>
+            <div class="training-item">
+                <h4>Annual Maintenance Requirements</h4>
+                <p class="hours">No additional hours beyond standard 30-hour annual requirement</p>
+                <ul>
+                    <li>Substance abuse trends and updates</li>
+                    <li>New treatment approaches</li>
+                    <li>Relapse prevention refresher</li>
+                    <li>TBRI application for substance use</li>
+                    <li>Documentation of continued competency</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mental & Behavioral Section -->
+    <div id="mental-behavioral" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Mental & Behavioral Health Support Services</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-info">
+                For children with DSM-5 diagnoses requiring routine clinical intervention for emotional, conduct, or behavioral disorders
+            </div>
+            
+            <h3>Additional Training Requirements</h3>
+            <div class="training-item">
+                <h4>Mental Health Support</h4>
+                <p class="hours">4 hours minimum</p>
+                <ul>
+                    <li>Understanding mental health conditions</li>
+                    <li>De-escalation techniques</li>
+                    <li>Crisis intervention strategies</li>
+                    <li>Medication management support</li>
+                    <li>Therapeutic parenting approaches</li>
+                </ul>
+            </div>
+            
+            <h3>Key Service Components</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Clinical Support</h4>
+                    <p>Regular therapy coordination</p>
+                    <p>Psychiatric appointment support</p>
+                </div>
+                <div class="training-item">
+                    <h4>Behavioral Management</h4>
+                    <p>TBRI implementation for behaviors</p>
+                    <p>Positive behavior support plans</p>
+                </div>
+                <div class="training-item">
+                    <h4>Assessment Schedule</h4>
+                    <p>CANS 3.0 every 90 days</p>
+                    <p>Data-driven service adjustments</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements to Maintain Credentialing</h3>
+            <div class="alert alert-info">
+                <strong>Annual Training:</strong> Mental health topics must be integrated into the standard 30-hour annual training requirement
+            </div>
+            <div class="training-item">
+                <h4>Annual Maintenance Requirements</h4>
+                <p class="hours">No additional hours beyond standard 30-hour annual requirement</p>
+                <ul>
+                    <li>Mental health best practices updates</li>
+                    <li>Crisis intervention refresher</li>
+                    <li>Psychotropic medication updates (2 hours required annually)</li>
+                    <li>TBRI application for mental health</li>
+                    <li>De-escalation technique practice</li>
+                    <li>Documentation of continued competency</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sexual Aggression Section -->
+    <div id="sexual-aggression" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Sexual Aggression/Sex Offender Support Services</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-warning">
+                For youth with sexually aggressive behaviors or adjudication requiring specialized supervision and treatment
+            </div>
+            
+            <h3>Additional Training Requirements</h3>
+            <div class="training-item">
+                <h4>Sexual Behavior Management</h4>
+                <p class="hours">6 hours minimum</p>
+                <ul>
+                    <li>Understanding sexual behavior problems</li>
+                    <li>Safety planning and supervision</li>
+                    <li>Environmental modifications</li>
+                    <li>Working with specialized therapists</li>
+                    <li>Managing disclosures and incidents</li>
+                    <li>Supporting healthy development</li>
+                </ul>
+            </div>
+            
+            <h3>Critical Safety Requirements</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Supervision Protocols</h4>
+                    <p>Line-of-sight supervision requirements</p>
+                    <p>Bedroom and bathroom policies</p>
+                </div>
+                <div class="training-item">
+                    <h4>Environmental Safety</h4>
+                    <p>Technology restrictions</p>
+                    <p>Visitor protocols</p>
+                </div>
+                <div class="training-item">
+                    <h4>Treatment Team</h4>
+                    <p>Licensed Sex Offender Treatment Provider</p>
+                    <p>On-call consultation available</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements to Maintain Credentialing</h3>
+            <div class="alert alert-warning">
+                <strong>Annual Training:</strong> Sexual behavior management requires specific annual updates due to safety risks
+            </div>
+            <div class="training-item">
+                <h4>Annual Maintenance Requirements</h4>
+                <p class="hours">2-3 hours annually recommended (within 30-hour requirement)</p>
+                <ul>
+                    <li>Safety protocol review and updates</li>
+                    <li>Supervision strategy refresher</li>
+                    <li>Managing disclosures training</li>
+                    <li>Legal update on reporting requirements</li>
+                    <li>TBRI application for sexual behaviors</li>
+                    <li>Annual safety plan review</li>
+                    <li>Documentation of continued competency</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Complex Medical Section -->
+    <div id="complex-medical" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Complex Medical Needs/Medically Fragile Support Services</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-info">
+                For children requiring constant monitoring, skilled nursing, or medical technology support
+            </div>
+            
+            <h3>Additional Training Requirements</h3>
+            <div class="training-item">
+                <h4>Medical Procedures Training</h4>
+                <p class="hours">8 hours minimum</p>
+                <ul>
+                    <li>Specific medical procedures for the child</li>
+                    <li>Medical equipment operation</li>
+                    <li>Emergency medical protocols</li>
+                    <li>Medication administration (complex)</li>
+                    <li>Infection control procedures</li>
+                    <li>Documentation requirements</li>
+                </ul>
+            </div>
+            
+            <h3>Support Requirements</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Nursing Support</h4>
+                    <p>RN available 24/7</p>
+                    <p>Training and consultation</p>
+                </div>
+                <div class="training-item">
+                    <h4>Medical Coordination</h4>
+                    <p>Multiple specialist appointments</p>
+                    <p>Therapy services coordination</p>
+                </div>
+                <div class="training-item">
+                    <h4>Equipment Management</h4>
+                    <p>Medical device maintenance</p>
+                    <p>Supply ordering and storage</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements to Maintain Credentialing</h3>
+            <div class="alert alert-warning">
+                <strong>Annual Training:</strong> Medical procedures require annual competency verification
+            </div>
+            <div class="training-item">
+                <h4>Annual Maintenance Requirements</h4>
+                <p class="hours">4-6 hours annually recommended (within 30-hour requirement)</p>
+                <ul>
+                    <li>CPR/First Aid recertification (required)</li>
+                    <li>Medical procedure competency checks</li>
+                    <li>Equipment operation refresher</li>
+                    <li>Infection control updates</li>
+                    <li>Emergency protocol review</li>
+                    <li>Documentation requirements update</li>
+                    <li>Child-specific medical training as needed</li>
+                </ul>
+                <p><strong>Note:</strong> RN must verify competency annually for specific procedures</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- IDD/Autism Section -->
+    <div id="idd-autism" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>IDD/Autism Spectrum Support Services</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-info">
+                For children with intellectual/developmental disabilities or autism spectrum disorders
+            </div>
+            
+            <h3>Additional Training Requirements</h3>
+            <div class="training-item">
+                <h4>IDD/Autism Support Training</h4>
+                <p class="hours">6 hours minimum</p>
+                <ul>
+                    <li>Understanding IDD and autism</li>
+                    <li>Communication strategies</li>
+                    <li>Sensory needs and modifications</li>
+                    <li>Behavioral support techniques</li>
+                    <li>Daily living skills support</li>
+                    <li>Educational advocacy</li>
+                </ul>
+            </div>
+            
+            <h3>Support Strategies</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Communication Support</h4>
+                    <p>Alternative communication methods</p>
+                    <p>Visual supports and schedules</p>
+                </div>
+                <div class="training-item">
+                    <h4>Sensory Accommodations</h4>
+                    <p>Environmental modifications</p>
+                    <p>Sensory diet implementation</p>
+                </div>
+                <div class="training-item">
+                    <h4>Skill Development</h4>
+                    <p>Life skills training</p>
+                    <p>Social skills support</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements to Maintain Credentialing</h3>
+            <div class="alert alert-info">
+                <strong>Annual Training:</strong> Service package topics must be integrated into the standard 30-hour annual training requirement
+            </div>
+            <div class="training-item">
+                <h4>Annual Maintenance Requirements</h4>
+                <p class="hours">No additional hours beyond standard 30-hour annual requirement</p>
+                <ul>
+                    <li>IDD/Autism topics integrated into annual training</li>
+                    <li>Updates on communication strategies</li>
+                    <li>Sensory processing refreshers</li>
+                    <li>TBRI application for IDD/Autism</li>
+                    <li>Documentation of continued competency</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Treatment Foster Care Section -->
+    <div id="treatment-foster" class="content-section">
+        <div class="card">
+            <div class="service-package-header">
+                <h3>Treatment Foster Care</h3>
+            </div>
+            
+            <h3>Service Package Overview</h3>
+            <div class="alert alert-warning">
+                Highest level of foster care requiring intensive therapeutic parenting
+            </div>
+            
+            <h3>Additional Training Requirements</h3>
+            <div class="training-item">
+                <h4>Treatment Foster Care Training</h4>
+                <p class="hours">20 hours additional</p>
+                <ul>
+                    <li>Advanced therapeutic parenting</li>
+                    <li>Treatment planning participation</li>
+                    <li>Clinical team collaboration</li>
+                    <li>Advanced behavior management</li>
+                    <li>Documentation for treatment</li>
+                    <li>Crisis intervention skills</li>
+                </ul>
+            </div>
+            
+            <h3>Enhanced Requirements</h3>
+            <div class="training-grid">
+                <div class="training-item">
+                    <h4>Clinical Integration</h4>
+                    <p>Weekly team meetings</p>
+                    <p>Treatment plan implementation</p>
+                </div>
+                <div class="training-item">
+                    <h4>Documentation</h4>
+                    <p>Daily behavioral logs</p>
+                    <p>Incident reporting</p>
+                </div>
+                <div class="training-item">
+                    <h4>Support Level</h4>
+                    <p>24/7 clinical backup</p>
+                    <p>Enhanced respite services</p>
+                </div>
+            </div>
+            
+            <h3>Annual Requirements to Maintain Credentialing</h3>
+            <div class="alert alert-warning">
+                <strong>Annual Training:</strong> Treatment Foster Care requires the most intensive annual training
+            </div>
+            <div class="training-item">
+                <h4>Annual Maintenance Requirements</h4>
+                <p class="hours">8-10 hours annually recommended (within 30-hour requirement)</p>
+                <ul>
+                    <li>Advanced therapeutic parenting refresher</li>
+                    <li>Treatment model updates and practice</li>
+                    <li>Clinical documentation training</li>
+                    <li>Crisis intervention recertification</li>
+                    <li>TBRI advanced application</li>
+                    <li>Team collaboration strategies</li>
+                    <li>Self-care and secondary trauma</li>
+                    <li>Evidence-based practice updates</li>
+                </ul>
+                <p><strong>Note:</strong> May require additional specialized training based on population served</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
