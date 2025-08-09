@@ -1,0 +1,186 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="500" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    The Continuum: How Everything Connects
+  </text>
+  
+  <!-- Section 1: Timeline Comparison -->
+  <g id="comparison">
+    <!-- Old Way -->
+    <text x="100" y="80" font-family="Arial" font-size="14" font-weight="bold" fill="#e74c3c">Old Way: Separate Dots</text>
+    <circle cx="120" cy="110" r="8" fill="#95a5a6"/>
+    <circle cx="180" cy="110" r="8" fill="#95a5a6"/>
+    <circle cx="240" cy="110" r="8" fill="#95a5a6"/>
+    <circle cx="300" cy="110" r="8" fill="#95a5a6"/>
+    <circle cx="360" cy="110" r="8" fill="#95a5a6"/>
+    <text x="120" y="130" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Appointment</text>
+    <text x="240" y="130" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Document</text>
+    <text x="360" y="130" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Task</text>
+    
+    <!-- New Way -->
+    <text x="550" y="80" font-family="Arial" font-size="14" font-weight="bold" fill="#27ae60">Continuum Way: Connected Flow</text>
+    <path d="M 570 110 L 850 110" stroke="#27ae60" stroke-width="3"/>
+    <circle cx="600" cy="110" r="8" fill="#27ae60"/>
+    <circle cx="660" cy="110" r="8" fill="#27ae60"/>
+    <circle cx="720" cy="110" r="8" fill="#27ae60"/>
+    <circle cx="780" cy="110" r="8" fill="#27ae60"/>
+    <circle cx="840" cy="110" r="8" fill="#27ae60"/>
+    <path d="M 600 110 Q 630 90, 660 110" stroke="#27ae60" stroke-width="1" fill="none"/>
+    <path d="M 660 110 Q 690 90, 720 110" stroke="#27ae60" stroke-width="1" fill="none"/>
+    <path d="M 720 110 Q 750 90, 780 110" stroke="#27ae60" stroke-width="1" fill="none"/>
+    <path d="M 780 110 Q 810 90, 840 110" stroke="#27ae60" stroke-width="1" fill="none"/>
+    <text x="700" y="130" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Everything Connected</text>
+  </g>
+  
+  <!-- Section 2: Person's Journey -->
+  <g id="journey">
+    <text x="500" y="190" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+      A Child's Continuum (Their Complete Story)
+    </text>
+    
+    <!-- Main timeline -->
+    <rect x="100" y="220" width="800" height="4" fill="#3498db"/>
+    
+    <!-- Past -->
+    <rect x="100" y="200" width="200" height="60" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    <text x="200" y="220" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">PAST</text>
+    <text x="200" y="235" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Previous homes</text>
+    <text x="200" y="248" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Past experiences</text>
+    
+    <!-- Present -->
+    <rect x="400" y="200" width="200" height="60" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="500" y="220" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">RIGHT NOW</text>
+    <text x="500" y="235" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Today's needs</text>
+    <text x="500" y="248" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Current placement</text>
+    
+    <!-- Future -->
+    <rect x="700" y="200" width="200" height="60" fill="#fef5e7" stroke="#f39c12" stroke-width="1" rx="5"/>
+    <text x="800" y="220" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">FUTURE</text>
+    <text x="800" y="235" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Upcoming needs</text>
+    <text x="800" y="248" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Goals & plans</text>
+    
+    <!-- Arrows showing influence -->
+    <path d="M 300 230 L 395 230" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="350" y="225" font-family="Arial" font-size="9" text-anchor="middle" fill="#5d6d7e">affects</text>
+    
+    <path d="M 605 230 L 695 230" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="650" y="225" font-family="Arial" font-size="9" text-anchor="middle" fill="#5d6d7e">shapes</text>
+  </g>
+  
+  <!-- Section 3: Overlapping Stories -->
+  <g id="overlapping">
+    <text x="500" y="310" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+      How Different People's Stories Connect
+    </text>
+    
+    <!-- Child's continuum -->
+    <path d="M 100 350 L 900 350" stroke="#3498db" stroke-width="3"/>
+    <text x="50" y="355" font-family="Arial" font-size="11" fill="#3498db">Child</text>
+    
+    <!-- Foster Parent's continuum -->
+    <path d="M 100 400 L 900 400" stroke="#e74c3c" stroke-width="3"/>
+    <text x="50" y="405" font-family="Arial" font-size="11" fill="#e74c3c">Foster Parent</text>
+    
+    <!-- Caseworker's continuum -->
+    <path d="M 100 450 L 900 450" stroke="#9b59b6" stroke-width="3"/>
+    <text x="50" y="455" font-family="Arial" font-size="11" fill="#9b59b6">Caseworker</text>
+    
+    <!-- Connection points -->
+    <circle cx="250" cy="350" r="10" fill="#f39c12"/>
+    <circle cx="250" cy="400" r="10" fill="#f39c12"/>
+    <line x1="250" y1="350" x2="250" y2="400" stroke="#f39c12" stroke-width="2"/>
+    <text x="250" y="330" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Daily Care</text>
+    
+    <circle cx="450" cy="350" r="10" fill="#f39c12"/>
+    <circle cx="450" cy="400" r="10" fill="#f39c12"/>
+    <circle cx="450" cy="450" r="10" fill="#f39c12"/>
+    <line x1="450" y1="350" x2="450" y2="450" stroke="#f39c12" stroke-width="2"/>
+    <text x="450" y="330" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Doctor Visit</text>
+    
+    <circle cx="650" cy="350" r="10" fill="#f39c12"/>
+    <circle cx="650" cy="450" r="10" fill="#f39c12"/>
+    <line x1="650" y1="350" x2="650" y2="450" stroke="#f39c12" stroke-width="2"/>
+    <text x="650" y="330" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">School Meeting</text>
+    
+    <circle cx="850" cy="350" r="10" fill="#f39c12"/>
+    <circle cx="850" cy="400" r="10" fill="#f39c12"/>
+    <circle cx="850" cy="450" r="10" fill="#f39c12"/>
+    <line x1="850" y1="350" x2="850" y2="450" stroke="#f39c12" stroke-width="2"/>
+    <text x="850" y="330" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Court Hearing</text>
+  </g>
+  
+  <!-- Section 4: Ripple Effect -->
+  <g id="ripple">
+    <text x="250" y="520" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+      The Ripple Effect
+    </text>
+    <text x="250" y="540" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">
+      One thing leads to another...
+    </text>
+    
+    <!-- Center event -->
+    <circle cx="250" cy="580" r="15" fill="#e74c3c"/>
+    <text x="250" y="585" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Event</text>
+    
+    <!-- Ripples -->
+    <circle cx="250" cy="580" r="30" fill="none" stroke="#e74c3c" stroke-width="1" opacity="0.6"/>
+    <circle cx="250" cy="580" r="50" fill="none" stroke="#e74c3c" stroke-width="1" opacity="0.4"/>
+    <circle cx="250" cy="580" r="70" fill="none" stroke="#e74c3c" stroke-width="1" opacity="0.2"/>
+    
+    <!-- Effects -->
+    <text x="320" y="570" font-family="Arial" font-size="9" fill="#5d6d7e">Creates task</text>
+    <text x="320" y="590" font-family="Arial" font-size="9" fill="#5d6d7e">Needs document</text>
+    <text x="320" y="610" font-family="Arial" font-size="9" fill="#5d6d7e">Affects others</text>
+  </g>
+  
+  <!-- Section 5: Real Example -->
+  <g id="example">
+    <text x="650" y="520" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+      Real Example: Medical Check-up
+    </text>
+    
+    <!-- Flow chart -->
+    <rect x="520" y="550" width="100" height="30" fill="#3498db" rx="5"/>
+    <text x="570" y="570" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Check-up Due</text>
+    
+    <path d="M 620 565 L 650 565" stroke="#34495e" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <rect x="650" y="550" width="100" height="30" fill="#3498db" rx="5"/>
+    <text x="700" y="570" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Schedule Appt</text>
+    
+    <path d="M 750 565 L 780 565" stroke="#34495e" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <rect x="780" y="550" width="100" height="30" fill="#3498db" rx="5"/>
+    <text x="830" y="570" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Doctor Visit</text>
+    
+    <path d="M 830 580 L 830 600" stroke="#34495e" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <rect x="780" y="600" width="100" height="30" fill="#3498db" rx="5"/>
+    <text x="830" y="620" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Get Report</text>
+    
+    <path d="M 780 615 L 750 615" stroke="#34495e" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <rect x="650" y="600" width="100" height="30" fill="#3498db" rx="5"/>
+    <text x="700" y="620" font-family="Arial" font-size="10" text-anchor="middle" fill="white">File Document</text>
+    
+    <path d="M 650 615 L 620 615" stroke="#34495e" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <rect x="520" y="600" width="100" height="30" fill="#27ae60" rx="5"/>
+    <text x="570" y="620" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Update Plan</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+  
+  <!-- Bottom message -->
+  <text x="500" y="670" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#27ae60">
+    Everything is connected. Every action matters. Every person's story affects others.
+  </text>
+</svg>

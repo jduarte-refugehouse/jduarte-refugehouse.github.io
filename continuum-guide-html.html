@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Continuum - Refuge House Interactive Guide</title>
+    <style>
+        :root {
+            /* Refuge House Brand Colors */
+            --rh-primary-purple: #5E3989;
+            --rh-dark-purple: #4A2C6B;
+            --rh-light-purple: #7549A0;
+            --rh-lighter-purple: #8D66B5;
+            
+            --rh-primary-magenta: #A90533;
+            --rh-dark-magenta: #870428;
+            --rh-light-magenta: #C41845;
+            --rh-lighter-magenta: #D63560;
+            
+            --rh-accent-yellow: #F5C842;
+            --rh-accent-yellow-light: #F7D570;
+            --rh-accent-yellow-dark: #E6B32A;
+            
+            --rh-white: #FFFFFF;
+            --rh-off-white: #FAFAFA;
+            --rh-light-gray: #F3F4F6;
+            --rh-medium-gray: #E5E7EB;
+            --rh-gray: #9CA3AF;
+            --rh-dark-gray: #6B7280;
+            --rh-darker-gray: #4B5563;
+            --rh-black: #1F2937;
+            
+            --rh-success: #059669;
+            --rh-success-light: #10B981;
+            --rh-warning: #F59E0B;
+            --rh-info: #3B82F6;
+            --rh-error: #DC2626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--rh-black);
+            background: linear-gradient(135deg, var(--rh-off-white) 0%, var(--rh-light-gray) 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--rh-primary-purple) 0%, var(--rh-primary-magenta) 100%);
+            color: var(--rh-white);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-style: italic;
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--rh-white);
+            border-bottom: 2px solid var(--rh-medium-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+        }
+
+        .nav-item {
+            padding: 1rem 0;
+            cursor: pointer;
+            color: var(--rh-dark-gray);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            color: var(--rh-primary-purple);
+        }
+
+        .nav-item.active {
+            color: var(--rh-primary-purple);
+            border-bottom-color: var(--rh-primary-purple);
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--rh-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h2 {
+            color: var(--rh-primary-purple);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .card h3 {
+            color: var(--rh-dark-purple);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        /* Timeline - Fixed spacing */
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--rh-primary-purple) 0%, var(--rh-primary-magenta) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-content {
+            background: var(--rh-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--rh-primary-purple);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            border: 4px solid var(--rh-white);
+            box-shadow: 0 0 0 3px rgba(94, 57, 137, 0.2);
+        }
+
+        /* Dimension Cards */
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .dimension-card {
+            background: var(--rh-white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .dimension-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .dimension-card.when { border-color: var(--rh-info); }
+        .dimension-card.who { border-color: var(--rh-primary-magenta); }
+        .dimension-card.what { border-color: var(--rh-success); }
+        .dimension-card.where { border-color: var(--rh-primary-purple); }
+        .dimension-card.why { border-color: var(--rh-warning); }
+
+        .dimension-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .dimension-card.when .dimension-icon { background: rgba(59, 130, 246, 0.1); color: var(--rh-info); }
+        .dimension-card.who .dimension-icon { background: rgba(169, 5, 51, 0.1); color: var(--rh-primary-magenta); }
+        .dimension-card.what .dimension-icon { background: rgba(5, 150, 105, 0.1); color: var(--rh-success); }
+        .dimension-card.where .dimension-icon { background: rgba(94, 57, 137, 0.1); color: var(--rh-primary-purple); }
+        .dimension-card.why .dimension-icon { background: rgba(245, 158, 11, 0.1); color: var(--rh-warning); }
+
+        /* Dimension Detail - Appears inline */
+        #dimension-detail {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(94, 57, 137, 0.05) 0%, rgba(169, 5, 51, 0.05) 100%);
+            border-radius: 12px;
+            border-left: 4px solid var(--rh-primary-purple);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { 
+                opacity: 0; 
+                max-height: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1; 
+                max-height: 500px;
+                transform: translateY(0);
+            }
+        }
+
+        /* Document Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .document-frame {
+            border-radius: 8px;
+            padding: 2rem 1rem;
+            text-align: center;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frame-empty {
+            border: 3px dashed #ccc;
+            background: #f9f9f9;
+        }
+
+        .frame-filled {
+            border: 3px solid #10B981;
+            background: #D5F5E3;
+        }
+
+        .frame-urgent {
+            border: 3px dashed #F59E0B;
+            background: #FEF5E7;
+        }
+
+        .frame-overdue {
+            border: 3px dashed #DC2626;
+            background: #FEE2E2;
+        }
+
+        /* Interactive Demo */
+        .demo-container {
+            background: var(--rh-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-stages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-step {
+            padding: 1.5rem 1rem;
+            background: var(--rh-light-gray);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .demo-step:hover {
+            background: var(--rh-light-purple);
+            color: var(--rh-white);
+            transform: scale(1.02);
+        }
+
+        .demo-step.active {
+            background: var(--rh-primary-purple);
+            color: var(--rh-white);
+            border-color: var(--rh-primary-purple);
+            box-shadow: 0 4px 12px rgba(94, 57, 137, 0.3);
+        }
+
+        /* Flow arrows */
+        .demo-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 1rem;
+            background: var(--rh-light-gray);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .arrow {
+            color: var(--rh-primary-purple);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* SVG Container */
+        .svg-container {
+            background: var(--rh-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        /* Example Box */
+        .example-box {
+            background: linear-gradient(135deg, rgba(94, 57, 137, 0.05) 0%, rgba(169, 5, 51, 0.05) 100%);
+            border-left: 4px solid var(--rh-primary-purple);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .example-box h4 {
+            color: var(--rh-primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            background: var(--rh-light-gray);
+            border-radius: 20px;
+            height: 30px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, var(--rh-primary-purple) 0%, var(--rh-primary-magenta) 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            color: var(--rh-white);
+            font-weight: 600;
+            transition: width 0.5s ease;
+        }
+
+        /* Buttons */
+        .button {
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0.5rem;
+        }
+
+        .button-primary {
+            background: linear-gradient(135deg, var(--rh-primary-purple) 0%, var(--rh-primary-magenta) 100%);
+            color: var(--rh-white);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(94, 57, 137, 0.3);
+        }
+
+        .button-secondary {
+            background: var(--rh-white);
+            color: var(--rh-primary-purple);
+            border: 2px solid var(--rh-primary-purple);
+        }
+
+        .button-secondary:hover {
+            background: var(--rh-primary-purple);
+            color: var(--rh-white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-content {
+                overflow-x: scroll;
+                scrollbar-width: thin;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 50px;
+            }
+
+            .timeline-dot {
+                left: 10px;
+            }
+
+            .demo-stages {
+                grid-template-columns: 1fr;
+            }
+
+            .dimensions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Highlight Animation */
+        @keyframes highlight {
+            0% { background-color: var(--rh-accent-yellow-light); }
+            100% { background-color: transparent; }
+        }
+
+        .highlight {
+            animation: highlight 2s ease;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--rh-light-gray);
+            border-radius: 50%;
+            border-top-color: var(--rh-primary-purple);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                <div>
+                    <h1>The Continuum</h1>
+                    <p class="tagline">Understanding Complete Journeys in Foster Care</p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+                    <img src="https://jduarte-refugehouse.github.io/web-logo-with-name-dark-background.png" 
+                         alt="Refuge House Logo" 
+                         style="height: 50px; width: auto;">
+                    <div style="text-align: right; color: rgba(255,255,255,0.9); font-size: 0.85rem; line-height: 1.3;">
+                        <div>Version 1.0</div>
+                        <div>Revised: August 8, 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-item active" data-section="overview">Overview</div>
+            <div class="nav-item" data-section="concept">Core Concept</div>
+            <div class="nav-item" data-section="dimensions">Five Dimensions</div>
+            <div class="nav-item" data-section="connections">How It Connects</div>
+            <div class="nav-item" data-section="examples">Real Examples</div>
+            <div class="nav-item" data-section="demo">Interactive Demo</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Overview Section -->
+        <section id="overview" class="section active">
+            <div class="card">
+                <h2>Welcome to The Continuum</h2>
+                <p>The Continuum represents a revolutionary way of understanding and supporting individual experiences within our agency. Instead of seeing separate events, documents, and tasks, we see the complete, connected story of each person's journey.</p>
+                
+                <div class="example-box">
+                    <h4>Think of it this way:</h4>
+                    <p><strong>Old Way:</strong> Like looking at separate photos in a box - disconnected snapshots</p>
+                    <p><strong>Continuum Way:</strong> Like watching a movie - everything flows together into one story</p>
+                </div>
+
+                <h3>Why This Matters</h3>
+                <p>Every child, foster parent, and staff member has their own continuum - their complete journey through our system. These individual stories don't exist in isolation; they overlap, intersect, and influence each other in profound ways.</p>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="button button-primary" onclick="showSection('concept')">Learn More →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concept Section -->
+        <section id="concept" class="section">
+            <div class="card">
+                <h2>The Core Concept</h2>
+                <p>The Continuum connects all the pieces of someone's experience so we can see the whole picture. It recognizes that:</p>
+                
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Past Shapes Present</h4>
+                            <p>Previous experiences, placements, and patterns continue to influence today's behaviors and needs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Present Creates Future</h4>
+                            <p>Today's interventions, relationships, and decisions determine tomorrow's outcomes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Everything Connects</h4>
+                            <p>Documents trigger tasks, tasks create outcomes, outcomes influence future requirements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Key Innovation: Document Frame Gallery</h2>
+                <p>Like an art gallery with empty frames waiting for paintings, Document Frames show what documentation is needed before it arrives:</p>
+                
+                <div style="background: linear-gradient(135deg, rgba(94, 57, 137, 0.05) 0%, rgba(169, 5, 51, 0.05) 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                    <h4 style="color: var(--rh-primary-purple); margin-bottom: 1rem;">The Gallery Concept</h4>
+                    <ul style="margin-left: 2rem; line-height: 2;">
+                        <li><strong>Empty frames are visible reminders</strong> - You see what's missing at a glance</li>
+                        <li><strong>Frames define requirements</strong> - Each frame knows what document fits</li>
+                        <li><strong>Progress is visual</strong> - "7 of 12 frames filled"</li>
+                        <li><strong>Frames can be smart</strong> - Urgent ones become prominent, overdue ones alert</li>
+                        <li><strong>Workflows create galleries</strong> - A new placement might create 15 empty frames at once</li>
+                    </ul>
+                </div>
+                
+                <h3>Key Innovation: Things Exist Before They Happen</h3>
+                <p>In the Continuum, elements exist in multiple states:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                    <li><strong>Required:</strong> A document exists as a requirement before it's created</li>
+                    <li><strong>Scheduled:</strong> An appointment exists as a plan before it occurs</li>
+                    <li><strong>Active:</strong> Tasks are in progress</li>
+                    <li><strong>Complete:</strong> Finished with documented outcomes</li>
+                    <li><strong>Historical:</strong> Past events still influencing the present</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Five Dimensions Section -->
+        <section id="dimensions" class="section">
+            <div class="card">
+                <h2>The Five Dimensions of Every Continuum</h2>
+                <p>Every person's continuum has five interconnected dimensions that shape their complete experience:</p>
+                
+                <div class="dimensions-grid">
+                    <div class="dimension-card when" onclick="expandDimension('when')">
+                        <div class="dimension-icon">🕐</div>
+                        <h3>WHEN</h3>
+                        <p><strong>Temporal Dimension</strong></p>
+                        <p>Past, present, and future all matter simultaneously</p>
+                    </div>
+                    
+                    <div class="dimension-card who" onclick="expandDimension('who')">
+                        <div class="dimension-icon">👥</div>
+                        <h3>WHO</h3>
+                        <p><strong>Relational Dimension</strong></p>
+                        <p>Nobody's story stands alone - we all affect each other</p>
+                    </div>
+                    
+                    <div class="dimension-card what" onclick="expandDimension('what')">
+                        <div class="dimension-icon">📋</div>
+                        <h3>WHAT</h3>
+                        <p><strong>Functional Dimension</strong></p>
+                        <p>Events, documents, tasks, and milestones</p>
+                    </div>
+                    
+                    <div class="dimension-card where" onclick="expandDimension('where')">
+                        <div class="dimension-icon">📍</div>
+                        <h3>WHERE</h3>
+                        <p><strong>Contextual Dimension</strong></p>
+                        <p>Physical, emotional, and cultural spaces</p>
+                    </div>
+                    
+                    <div class="dimension-card why" onclick="expandDimension('why')">
+                        <div class="dimension-icon">🎯</div>
+                        <h3>WHY</h3>
+                        <p><strong>Outcome Dimension</strong></p>
+                        <p>The purpose and impact of everything</p>
+                    </div>
+                </div>
+                
+                <div id="dimension-detail" style="display: none;">
+                    <!-- Dimension details will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Connections Section -->
+        <section id="connections" class="section">
+            <div class="card">
+                <h2>How Continuums Connect</h2>
+                <p>Individual continuums don't exist in isolation. They overlap and influence each other at key intersection points:</p>
+                
+                <div class="svg-container" style="padding: 2rem 0; background: white; border-radius: 12px; margin: 2rem 0;">
+                    <svg viewBox="0 0 900 400" style="width: 100%; max-width: 900px; margin: 0 auto; display: block;">
+                        <!-- Define gradients -->
+                        <defs>
+                            <linearGradient id="childGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="parentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#A90533;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#A90533;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="workerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#5E3989;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#5E3989;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Column headers at top with more spacing -->
+                        <text x="350" y="30" text-anchor="middle" font-size="14" font-weight="600" fill="#2c3e50">Daily Care</text>
+                        <text x="550" y="30" text-anchor="middle" font-size="14" font-weight="600" fill="#2c3e50">Service Planning</text>
+                        <text x="750" y="30" text-anchor="middle" font-size="14" font-weight="600" fill="#2c3e50">School Meeting</text>
+                        
+                        <!-- Row labels on the left with more padding -->
+                        <text x="50" y="120" fill="#3B82F6" font-size="14" font-weight="600">Child</text>
+                        <text x="50" y="220" fill="#A90533" font-size="14" font-weight="600">Foster Parent</text>
+                        <text x="50" y="320" fill="#5E3989" font-size="14" font-weight="600">Caseworker</text>
+                        
+                        <!-- Horizontal continuum lines with better spacing -->
+                        <rect x="150" y="110" width="700" height="4" fill="url(#childGradient)"/>
+                        <rect x="150" y="210" width="700" height="4" fill="url(#parentGradient)"/>
+                        <rect x="150" y="310" width="700" height="4" fill="url(#workerGradient)"/>
+                        
+                        <!-- Vertical connection lines (behind circles) -->
+                        <line x1="350" y1="60" x2="350" y2="360" stroke="#F59E0B" stroke-width="2" opacity="0.2" stroke-dasharray="5,5"/>
+                        <line x1="550" y1="60" x2="550" y2="360" stroke="#F59E0B" stroke-width="2" opacity="0.2" stroke-dasharray="5,5"/>
+                        <line x1="750" y1="60" x2="750" y2="360" stroke="#F59E0B" stroke-width="2" opacity="0.2" stroke-dasharray="5,5"/>
+                        
+                        <!-- Daily Care intersection (Child + Foster Parent) -->
+                        <circle cx="350" cy="112" r="12" fill="#F59E0B" stroke="white" stroke-width="2"/>
+                        <circle cx="350" cy="212" r="12" fill="#F59E0B" stroke="white" stroke-width="2"/>
+                        <line x1="350" y1="124" x2="350" y2="200" stroke="#F59E0B" stroke-width="3" opacity="0.7"/>
+                        
+                        <!-- Service Planning intersection (all three) -->
+                        <circle cx="550" cy="112" r="12" fill="#F59E0B" stroke="white" stroke-width="2"/>
+                        <circle cx="550" cy="212" r="12" fill="#F59E0B" stroke="white" stroke-width="2"/>
+                        <circle cx="550" cy="312" r="12" fill="#F59E0B" stroke="white" stroke-width="2"/>
+                        <line x1="550" y1="124" x2="550" y2="200" stroke="#F59E0B" stroke-width="3" opacity="0.7"/>
+                        <line x1="550" y1="224" x2="550" y2="300" stroke="#F59E0B" stroke-width="3" opacity="0.7"/>
+                        
+                        <!-- School Meeting intersection (Child + Caseworker) -->
+                        <circle cx="750" cy="112" r="12" fill="#F59E0B" stroke="white" stroke-width="2"/>
+                        <circle cx="750" cy="312" r="12" fill="#F59E0B" stroke="white" stroke-width="2"/>
+                        <line x1="750" y1="124" x2="750" y2="300" stroke="#F59E0B" stroke-width="3" opacity="0.7"/>
+                    </svg>
+                </div>
+                
+                <div style="margin-top: 1rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(94, 57, 137, 0.05) 0%, rgba(169, 5, 51, 0.05) 100%); border-radius: 8px;">
+                    <p style="text-align: center; margin: 0; color: var(--rh-dark-gray);">
+                        <strong>Reading the Diagram:</strong> Horizontal lines represent individual continuums flowing through time. 
+                        Vertical connections show where multiple people's journeys must coordinate. 
+                        Orange circles mark specific intersection points where continuums influence each other.
+                    </p>
+                </div>
+                
+                <h3>The Ripple Effect</h3>
+                <p>When something happens in one continuum, it creates ripples that spread to others:</p>
+                
+                <div class="example-box">
+                    <h4>Example Ripple:</h4>
+                    <p>Child has a good day at school → Foster parent receives positive feedback → Foster parent feels encouraged → Home atmosphere improves → Child sleeps better → Child has another good day</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section id="examples" class="section">
+            <div class="card">
+                <h2>Real-Life Examples</h2>
+                
+                <h3>Example 1: The Medical Check-up</h3>
+                <div class="demo-flow">
+                    <div class="flow-step">Check-up Due</div>
+                    <span class="arrow">→</span>
+                    <div class="flow-step">Create Task</div>
+                    <span class="arrow">→</span>
+                    <div class="flow-step">Schedule Appt</div>
+                    <span class="arrow">→</span>
+                    <div class="flow-step">Attend Visit</div>
+                    <span class="arrow">→</span>
+                    <div class="flow-step">Get Report</div>
+                    <span class="arrow">→</span>
+                    <div class="flow-step">Update Plan</div>
+                </div>
+                
+                <h3>Example 2: The Document Frame Gallery</h3>
+                <p>When a new placement begins, we create a "gallery" of empty frames for all required documents:</p>
+                
+                <div class="gallery-grid">
+                    <div class="document-frame frame-empty">
+                        <div style="color: #999; font-size: 2rem;">📄</div>
+                        <div style="font-weight: bold; color: #666;">Medical Records</div>
+                        <div style="font-size: 0.9rem; color: #999;">Expected: 3 days</div>
+                    </div>
+                    <div class="document-frame frame-filled">
+                        <div style="color: #10B981; font-size: 2rem;">✓</div>
+                        <div style="font-weight: bold; color: #10B981;">Birth Certificate</div>
+                        <div style="font-size: 0.9rem; color: #059669;">Received</div>
+                    </div>
+                    <div class="document-frame frame-empty">
+                        <div style="color: #999; font-size: 2rem;">📄</div>
+                        <div style="font-weight: bold; color: #666;">School Records</div>
+                        <div style="font-size: 0.9rem; color: #999;">Expected: 5 days</div>
+                    </div>
+                    <div class="document-frame frame-urgent">
+                        <div style="color: #F59E0B; font-size: 2rem;">⚠️</div>
+                        <div style="font-weight: bold; color: #F59E0B;">Immunization</div>
+                        <div style="font-size: 0.9rem; color: #F59E0B;">Due tomorrow</div>
+                    </div>
+                    <div class="document-frame frame-filled">
+                        <div style="color: #10B981; font-size: 2rem;">✓</div>
+                        <div style="font-weight: bold; color: #10B981;">Court Order</div>
+                        <div style="font-size: 0.9rem; color: #059669;">Received</div>
+                    </div>
+                    <div class="document-frame frame-overdue">
+                        <div style="color: #DC2626; font-size: 2rem;">!</div>
+                        <div style="font-weight: bold; color: #DC2626;">IEP</div>
+                        <div style="font-size: 0.9rem; color: #DC2626;">Overdue</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33%;">
+                        2 of 6 frames filled
+                    </div>
+                </div>
+                
+                <p>The empty frames are their own reminders—you can see at a glance what's missing, what's urgent, and what's complete.</p>
+                
+                <h3>Example 3: The Expired Document</h3>
+                <p><strong>Old Way:</strong> Notice driver's license expired. Scramble to renew. Appointments missed.</p>
+                <p><strong>Continuum Way:</strong> System creates an empty Document Frame 3 months before expiration → Frame shows deadline approaching → Renewal scheduled → Frame fills when new license arrives → No disruption</p>
+            </div>
+        </section>
+
+        <!-- Interactive Demo Section -->
+        <section id="demo" class="section">
+            <div class="card">
+                <h2>Interactive Demo: Follow a Document Through the Continuum</h2>
+                <p>Click each stage to see how a simple document requirement flows through the Continuum:</p>
+                
+                <div class="demo-container">
+                    <div class="demo-stages">
+                        <div class="demo-step active" onclick="showDemoStage(1)">
+                            <strong>Stage 1:</strong><br>Requirement Identified
+                        </div>
+                        <div class="demo-step" onclick="showDemoStage(2)">
+                            <strong>Stage 2:</strong><br>Frame Created
+                        </div>
+                        <div class="demo-step" onclick="showDemoStage(3)">
+                            <strong>Stage 3:</strong><br>Task Generated
+                        </div>
+                        <div class="demo-step" onclick="showDemoStage(4)">
+                            <strong>Stage 4:</strong><br>Document Received
+                        </div>
+                        <div class="demo-step" onclick="showDemoStage(5)">
+                            <strong>Stage 5:</strong><br>Frame Filled
+                        </div>
+                        <div class="demo-step" onclick="showDemoStage(6)">
+                            <strong>Stage 6:</strong><br>Triggers Next Action
+                        </div>
+                    </div>
+                    
+                    <div id="demo-description" style="margin-top: 2rem; padding: 1.5rem; background: var(--rh-light-gray); border-radius: 8px;">
+                        <h3>Stage 1: Requirement Identified</h3>
+                        <p>The system identifies that a child needs an annual medical exam in 30 days. This requirement exists in the Continuum even before any action is taken.</p>
+                        <p><strong>Status:</strong> Required | <strong>Timeline:</strong> 30 days | <strong>Priority:</strong> High</p>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 2rem;">Your Continuum Impact</h3>
+                <p>Every action you take becomes part of someone's continuum:</p>
+                <ul style="margin-left: 2rem; line-height: 2;">
+                    <li>Every bedtime routine contributes to felt safety</li>
+                    <li>Each meal together builds connection</li>
+                    <li>Consistent responses create predictability</li>
+                    <li>Your observations guide treatment decisions</li>
+                    <li>Skills you teach become lifetime tools</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navigation functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+                showSection(sectionId);
+            });
+        });
+
+        function showSection(sectionId) {
+            // Update nav
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-section') === sectionId) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Update sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+
+            // Smooth scroll to top of content (below sticky nav)
+            const navHeight = document.querySelector('.nav').offsetHeight;
+            window.scrollTo({ 
+                top: 0, 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Dimension expansion - now appears inline
+        function expandDimension(dimension) {
+            const details = {
+                when: {
+                    title: 'WHEN - Temporal Dimension',
+                    content: `
+                        <p>Time in the Continuum isn't just "now" - it's layered:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                            <li><strong>Chronological Time:</strong> The actual sequence of events</li>
+                            <li><strong>Experiential Time:</strong> How time feels to the individual</li>
+                            <li><strong>Regulatory Time:</strong> Deadlines and compliance windows</li>
+                            <li><strong>Developmental Time:</strong> Age-appropriate milestones</li>
+                            <li><strong>Relational Time:</strong> The pace of building trust</li>
+                        </ul>
+                        <div class="example-box" style="margin-top: 1rem;">
+                            <h4>Example:</h4>
+                            <p>A child's past trauma (historical time) affects today's behavior (present time), which determines tomorrow's treatment plan (future time).</p>
+                        </div>
+                    `
+                },
+                who: {
+                    title: 'WHO - Relational Dimension',
+                    content: `
+                        <p>Relationships are the medium through which influence flows:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                            <li><strong>Direct Relationships:</strong> Child and foster parent daily interactions</li>
+                            <li><strong>Support Network:</strong> Treatment team, therapists, teachers</li>
+                            <li><strong>System Relationships:</strong> Courts, DFPS, medical providers</li>
+                            <li><strong>Future Connections:</strong> Preparing for permanency</li>
+                            <li><strong>Past Relationships:</strong> Previous placements still affecting behavior</li>
+                        </ul>
+                        <div class="example-box" style="margin-top: 1rem;">
+                            <h4>Example:</h4>
+                            <p>When a foster parent gets better training, the child does better. When the child does better, the foster parent feels more confident. This creates a positive cycle.</p>
+                        </div>
+                    `
+                },
+                what: {
+                    title: 'WHAT - Functional Dimension',
+                    content: `
+                        <p>The concrete elements that make up daily life:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                            <li><strong>Events:</strong> Appointments, visits, court dates, birthdays</li>
+                            <li><strong>Documents:</strong> Medical records, assessments, service plans</li>
+                            <li><strong>Document Frames:</strong> Empty placeholders waiting to be filled</li>
+                            <li><strong>Tasks:</strong> Daily care, homework help, therapy exercises</li>
+                            <li><strong>Milestones:</strong> Developmental achievements, goal completion</li>
+                        </ul>
+                        <div class="example-box" style="margin-top: 1rem;">
+                            <h4>Example:</h4>
+                            <p>A dental check-up (event) creates a Document Frame (placeholder), which gets filled with a report (document), which might require follow-up (task).</p>
+                        </div>
+                    `
+                },
+                where: {
+                    title: 'WHERE - Contextual Dimension',
+                    content: `
+                        <p>Context is more than just physical location:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                            <li><strong>Physical Spaces:</strong> Home, school, community, clinical settings</li>
+                            <li><strong>Emotional Environment:</strong> Feeling safe vs. stressed</li>
+                            <li><strong>Cultural Context:</strong> Family traditions, community connections</li>
+                            <li><strong>Regulatory Context:</strong> Rules and requirements governing actions</li>
+                            <li><strong>Developmental Context:</strong> Age-appropriate settings</li>
+                        </ul>
+                        <div class="example-box" style="margin-top: 1rem;">
+                            <h4>Example:</h4>
+                            <p>A child might be physically at school but emotionally still processing something from home. Both contexts matter for understanding behavior.</p>
+                        </div>
+                    `
+                },
+                why: {
+                    title: 'WHY - Outcome Dimension',
+                    content: `
+                        <p>Every element serves a purpose in shaping outcomes:</p>
+                        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                            <li><strong>Immediate Outcomes:</strong> Direct results of today's actions</li>
+                            <li><strong>Cumulative Outcomes:</strong> Results building over time</li>
+                            <li><strong>Prevented Outcomes:</strong> Problems that didn't happen</li>
+                            <li><strong>Emergent Outcomes:</strong> Unexpected positive results</li>
+                            <li><strong>Long-term Impact:</strong> Lifetime skills and relationships</li>
+                        </ul>
+                        <div class="example-box" style="margin-top: 1rem;">
+                            <h4>Example:</h4>
+                            <p>We don't just schedule therapy. We schedule it to help healing, track whether healing happens, and adjust based on outcomes.</p>
+                        </div>
+                    `
+                }
+            };
+
+            const detailCard = document.getElementById('dimension-detail');
+            const detail = details[dimension];
+            
+            // Show and populate the detail card
+            detailCard.innerHTML = `
+                <h2>${detail.title}</h2>
+                ${detail.content}
+                <div style="text-align: right; margin-top: 1rem;">
+                    <button class="button button-secondary" onclick="document.getElementById('dimension-detail').style.display='none'">Close</button>
+                </div>
+            `;
+            detailCard.style.display = 'block';
+            
+            // Smooth scroll to the detail card
+            setTimeout(() => {
+                detailCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                detailCard.classList.add('highlight');
+                setTimeout(() => detailCard.classList.remove('highlight'), 2000);
+            }, 100);
+        }
+
+        // Demo functionality
+        function showDemoStage(stage) {
+            const descriptions = {
+                1: `<h3>Stage 1: Requirement Identified</h3>
+                    <p>The system identifies that a child needs an annual medical exam in 30 days. This requirement exists in the Continuum even before any action is taken.</p>
+                    <p><strong>Status:</strong> Required | <strong>Timeline:</strong> 30 days | <strong>Priority:</strong> High</p>`,
+                2: `<h3>Stage 2: Document Frame Created</h3>
+                    <p>An empty Document Frame is created in the gallery. Like an empty picture frame on the wall, it shows exactly what's needed and when.</p>
+                    <p><strong>Frame Type:</strong> Medical Report | <strong>Expected By:</strong> 30 days | <strong>Source:</strong> Medical Provider</p>`,
+                3: `<h3>Stage 3: Task Generated</h3>
+                    <p>If the frame isn't filled naturally, it generates a task. The case manager and foster parent are notified to schedule the appointment.</p>
+                    <p><strong>Task:</strong> Schedule medical exam | <strong>Assigned to:</strong> Case Manager | <strong>Due:</strong> 25 days</p>`,
+                4: `<h3>Stage 4: Document Received</h3>
+                    <p>The medical exam occurs and the report is received. The document arrives and is ready to fill the waiting frame.</p>
+                    <p><strong>Document:</strong> Medical Report | <strong>Received From:</strong> Dr. Smith | <strong>Date:</strong> Today</p>`,
+                5: `<h3>Stage 5: Frame Filled</h3>
+                    <p>The Document Frame is filled with the medical report. The gallery shows progress, and this requirement is satisfied.</p>
+                    <p><strong>Gallery Status:</strong> 1 more frame filled | <strong>Compliance:</strong> Met | <strong>Next Due:</strong> 1 year</p>`,
+                6: `<h3>Stage 6: Triggers Next Action</h3>
+                    <p>The completed medical exam triggers follow-up actions: update service plan, schedule recommended specialist, set next year's reminder.</p>
+                    <p><strong>New Frames Created:</strong> 2 | <strong>Tasks Generated:</strong> 1 | <strong>Next Medical:</strong> Auto-scheduled for next year</p>`
+            };
+
+            // Update all demo steps
+            document.querySelectorAll('.demo-stages .demo-step').forEach((step, index) => {
+                step.classList.remove('active');
+                if (index + 1 === stage) {
+                    step.classList.add('active');
+                }
+            });
+
+            // Update description with animation
+            const descBox = document.getElementById('demo-description');
+            descBox.style.opacity = '0';
+            setTimeout(() => {
+                descBox.innerHTML = descriptions[stage];
+                descBox.style.opacity = '1';
+            }, 300);
+        }
+
+        // Initialize
+        showDemoStage(1);
+    </script>
+</body>
+</html>

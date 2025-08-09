@@ -1,0 +1,176 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    The Continuum: Conceptual Framework
+  </text>
+  
+  <!-- Central Concept: Individual Continuum -->
+  <g id="central-continuum">
+    <!-- Main flow line -->
+    <path d="M 100 400 Q 300 350 600 400 T 1100 400" stroke="#3498db" stroke-width="3" fill="none" stroke-dasharray="5,5" opacity="0.5"/>
+    
+    <!-- Past section -->
+    <rect x="50" y="350" width="200" height="100" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="10"/>
+    <text x="150" y="380" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">PAST</text>
+    <text x="150" y="400" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Historical Events</text>
+    <text x="150" y="415" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Prior Placements</text>
+    <text x="150" y="430" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Accumulated Patterns</text>
+    
+    <!-- Present section -->
+    <rect x="475" y="350" width="250" height="100" fill="#e8f8f5" stroke="#27ae60" stroke-width="3" rx="10"/>
+    <text x="600" y="380" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">PRESENT</text>
+    <text x="600" y="400" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Active Requirements</text>
+    <text x="600" y="415" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Document Frames Waiting</text>
+    <text x="600" y="430" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Ongoing Interactions</text>
+    
+    <!-- Future section -->
+    <rect x="950" y="350" width="200" height="100" fill="#fef5e7" stroke="#f39c12" stroke-width="2" rx="10"/>
+    <text x="1050" y="380" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">FUTURE</text>
+    <text x="1050" y="400" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Upcoming Requirements</text>
+    <text x="1050" y="415" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Projected Trajectory</text>
+    <text x="1050" y="430" font-family="Arial" font-size="11" text-anchor="middle" fill="#5d6d7e">Potential Outcomes</text>
+  </g>
+  
+  <!-- Five Dimensions (arranged around the central continuum) -->
+  
+  <!-- Temporal Dimension -->
+  <g id="temporal-dimension">
+    <circle cx="150" cy="200" r="60" fill="#3498db" opacity="0.3"/>
+    <text x="150" y="195" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">TEMPORAL</text>
+    <text x="150" y="210" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">(When)</text>
+    <line x1="150" y1="260" x2="150" y2="350" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Relational Dimension -->
+  <g id="relational-dimension">
+    <circle cx="400" cy="200" r="60" fill="#e74c3c" opacity="0.3"/>
+    <text x="400" y="195" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">RELATIONAL</text>
+    <text x="400" y="210" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">(Who)</text>
+    <line x1="400" y1="260" x2="475" y2="350" stroke="#e74c3c" stroke-width="2" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Functional Dimension -->
+  <g id="functional-dimension">
+    <circle cx="600" cy="150" r="60" fill="#27ae60" opacity="0.3"/>
+    <text x="600" y="145" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">FUNCTIONAL</text>
+    <text x="600" y="160" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">(What)</text>
+    <line x1="600" y1="210" x2="600" y2="350" stroke="#27ae60" stroke-width="2" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Contextual Dimension -->
+  <g id="contextual-dimension">
+    <circle cx="800" cy="200" r="60" fill="#9b59b6" opacity="0.3"/>
+    <text x="800" y="195" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">CONTEXTUAL</text>
+    <text x="800" y="210" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">(Where)</text>
+    <line x1="800" y1="260" x2="725" y2="350" stroke="#9b59b6" stroke-width="2" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Outcome Dimension -->
+  <g id="outcome-dimension">
+    <circle cx="1050" cy="200" r="60" fill="#f39c12" opacity="0.3"/>
+    <text x="1050" y="195" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">OUTCOME</text>
+    <text x="1050" y="210" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">(Why)</text>
+    <line x1="1050" y1="260" x2="1050" y2="350" stroke="#f39c12" stroke-width="2" stroke-dasharray="3,3"/>
+  </g>
+  
+  <!-- Document Frame Gallery Visualization -->
+  <g id="document-gallery">
+    <text x="600" y="530" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2c3e50">Document Frame Gallery</text>
+    
+    <!-- Gallery frames with better spacing -->
+    <rect x="320" y="550" width="80" height="100" fill="white" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5" rx="5"/>
+    <text x="360" y="600" font-family="Arial" font-size="10" text-anchor="middle" fill="#999">Medical</text>
+    <text x="360" y="615" font-family="Arial" font-size="9" text-anchor="middle" fill="#999">Empty</text>
+    
+    <rect x="420" y="550" width="80" height="100" fill="#e8f8f5" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="460" y="600" font-family="Arial" font-size="10" text-anchor="middle" fill="#27ae60">Birth Cert</text>
+    <text x="460" y="615" font-family="Arial" font-size="9" text-anchor="middle" fill="#27ae60">✓ Filled</text>
+    
+    <rect x="520" y="550" width="80" height="100" fill="white" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,5" rx="5"/>
+    <text x="560" y="600" font-family="Arial" font-size="10" text-anchor="middle" fill="#f39c12">School</text>
+    <text x="560" y="615" font-family="Arial" font-size="9" text-anchor="middle" fill="#f39c12">Urgent</text>
+    
+    <rect x="620" y="550" width="80" height="100" fill="white" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5" rx="5"/>
+    <text x="660" y="600" font-family="Arial" font-size="10" text-anchor="middle" fill="#e74c3c">IEP</text>
+    <text x="660" y="615" font-family="Arial" font-size="9" text-anchor="middle" fill="#e74c3c">Overdue</text>
+    
+    <rect x="720" y="550" width="80" height="100" fill="#e8f8f5" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="760" y="600" font-family="Arial" font-size="10" text-anchor="middle" fill="#27ae60">Court</text>
+    <text x="760" y="615" font-family="Arial" font-size="9" text-anchor="middle" fill="#27ae60">✓ Filled</text>
+    
+    <text x="560" y="670" font-family="Arial" font-size="11" text-anchor="middle" fill="#2c3e50">Progress: 2 of 5 frames filled</text>
+  </g>
+  
+  <!-- Intersecting Continuums - moved down to avoid overlap -->
+  <g id="intersections">
+    <!-- Other person's continuum -->
+    <path d="M 100 720 Q 300 670 600 720 T 1100 720" stroke="#e74c3c" stroke-width="2" fill="none" opacity="0.4"/>
+    <text x="100" y="740" font-family="Arial" font-size="11" fill="#e74c3c">Foster Parent Continuum</text>
+    
+    <!-- Another continuum -->
+    <path d="M 100 800 Q 300 750 600 800 T 1100 800" stroke="#9b59b6" stroke-width="2" fill="none" opacity="0.4"/>
+    <text x="100" y="820" font-family="Arial" font-size="11" fill="#9b59b6">Case Worker Continuum</text>
+    
+    <!-- Intersection points adjusted -->
+    <circle cx="560" cy="400" r="8" fill="#34495e" opacity="0.5"/>
+    <circle cx="560" cy="720" r="8" fill="#e74c3c" opacity="0.7"/>
+    <circle cx="560" cy="800" r="8" fill="#9b59b6" opacity="0.7"/>
+    
+    <!-- Connection lines showing influence -->
+    <line x1="560" y1="408" x2="560" y2="550" stroke="#34495e" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <line x1="560" y1="670" x2="560" y2="712" stroke="#34495e" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <line x1="560" y1="728" x2="560" y2="792" stroke="#34495e" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    
+    <text x="580" y="760" font-family="Arial" font-size="10" fill="#2c3e50">Influence Zone</text>
+  </g>
+  
+  <!-- Key Concepts Labels -->
+  <g id="key-concepts">
+    <!-- Document Frame -->
+    <rect x="50" y="840" width="200" height="50" fill="white" stroke="#34495e" stroke-width="1" rx="5"/>
+    <text x="150" y="860" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Document Frame</text>
+    <text x="150" y="875" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Empty placeholder waiting</text>
+    <text x="150" y="888" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">to be filled</text>
+    
+    <!-- Trigger-Response Chain -->
+    <rect x="300" y="840" width="200" height="50" fill="white" stroke="#34495e" stroke-width="1" rx="5"/>
+    <text x="400" y="860" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Trigger-Response</text>
+    <text x="400" y="875" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Causal chains connect</text>
+    <text x="400" y="888" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">all elements</text>
+    
+    <!-- Influence Field -->
+    <rect x="550" y="840" width="200" height="50" fill="white" stroke="#34495e" stroke-width="1" rx="5"/>
+    <text x="650" y="860" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">Influence Field</text>
+    <text x="650" y="875" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Each continuum affects</text>
+    <text x="650" y="888" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">others nearby</text>
+    
+    <!-- State-Transition -->
+    <rect x="800" y="840" width="200" height="50" fill="white" stroke="#34495e" stroke-width="1" rx="5"/>
+    <text x="900" y="860" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">State-Transition</text>
+    <text x="900" y="875" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">Elements move through</text>
+    <text x="900" y="888" font-family="Arial" font-size="10" text-anchor="middle" fill="#5d6d7e">multiple states</text>
+  </g>
+  
+  <!-- Arrows showing flow and influence -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" opacity="0.6"/>
+    </marker>
+  </defs>
+  
+  <!-- Flow arrows -->
+  <path d="M 250 400 L 475 400" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6"/>
+  <path d="M 725 400 L 950 400" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6"/>
+  
+  <!-- Influence ripples - moved to the side to avoid overlap -->
+  <g id="ripples" transform="translate(150, 0)">
+    <text x="0" y="510" font-family="Arial" font-size="11" text-anchor="middle" fill="#2c3e50">Ripple Effect</text>
+    <circle cx="0" cy="560" r="25" fill="none" stroke="#3498db" stroke-width="1" opacity="0.4"/>
+    <circle cx="0" cy="560" r="40" fill="none" stroke="#3498db" stroke-width="1" opacity="0.3"/>
+    <circle cx="0" cy="560" r="55" fill="none" stroke="#3498db" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="560" r="8" fill="#3498db" opacity="0.8"/>
+  </g>
+</svg>
