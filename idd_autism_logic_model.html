@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T3C IDD/Autism Spectrum Disorder Support Services Logic Model</title>
+    <style>
+        @page {
+            size: landscape;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h1 {
+            color: #2d3748;
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #718096;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .mission-box, .vision-box {
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+        }
+        
+        .mission-box h2, .vision-box h2 {
+            color: #4c51bf;
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .mission-box p, .vision-box p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .service-objective {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 5px solid #f59e0b;
+        }
+        
+        .service-objective h2 {
+            color: #92400e;
+            font-size: 18px;
+            margin: 0 0 10px 0;
+        }
+        
+        .service-objective p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .treatment-model {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border: 2px solid #f59e0b;
+        }
+        
+        .treatment-model h2 {
+            color: #92400e;
+            text-align: center;
+            font-size: 22px;
+            margin: 0 0 20px 0;
+        }
+        
+        .treatment-model p {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .tbri-principles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .principle {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .principle h3 {
+            color: #c05621;
+            font-size: 16px;
+            margin: 0 0 8px 0;
+        }
+        
+        .principle ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .basic-tier {
+            color: #4a5568;
+            font-style: italic;
+        }
+        
+        .idd-specific {
+            background: #dbeafe;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border-left: 3px solid #3b82f6;
+            margin: 2px 0;
+            font-weight: 600;
+        }
+        
+        .logic-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .logic-column {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid;
+        }
+        
+        .inputs { border-top-color: #9f7aea; }
+        .activities { border-top-color: #4299e1; }
+        .outputs { border-top-color: #48bb78; }
+        .outcomes { border-top-color: #ed8936; }
+        
+        .logic-column h3 {
+            font-size: 18px;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logic-column p {
+            font-size: 12px;
+            color: #718096;
+            margin: -10px 0 10px 0;
+        }
+        
+        .inputs h3 { color: #9f7aea; }
+        .activities h3 { color: #4299e1; }
+        .outputs h3 { color: #48bb78; }
+        .outcomes h3 { color: #ed8936; }
+        
+        .logic-column ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+        
+        .logic-column li {
+            margin-bottom: 8px;
+        }
+        
+        .tier-label {
+            display: inline-block;
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-left: 5px;
+            color: #718096;
+        }
+        
+        .cqi-process {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+        
+        .cqi-process h2 {
+            text-align: center;
+            font-size: 22px;
+            margin: 0 0 20px 0;
+        }
+        
+        .cqi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .cqi-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .cqi-item h4 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #fef3c7;
+        }
+        
+        .cqi-item ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .arrow-down {
+            text-align: center;
+            font-size: 24px;
+            color: #cbd5e0;
+            margin: 10px 0;
+        }
+        
+        .time-horizons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .time-period {
+            text-align: center;
+            padding: 8px;
+            background: #f7fafc;
+            border-radius: 5px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .time-period strong {
+            display: block;
+            color: #2d3748;
+            margin-bottom: 3px;
+            font-size: 14px;
+        }
+        
+        .package-note {
+            background: #dbeafe;
+            border: 2px solid #3b82f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .package-note h3 {
+            color: #1e3a8a;
+            margin: 0 0 5px 0;
+            font-size: 18px;
+        }
+        
+        .package-note p {
+            color: #1e40af;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>T3C IDD/Autism Spectrum Disorder Support Services Logic Model</h1>
+            <div class="subtitle">Service Package Specific Logic Model per T3C Blueprint Requirements</div>
+            <div class="subtitle">Compliant with T3C Blueprint (April 2025), TAC 749, and RCC Contract Requirements</div>
+        </div>
+        
+        <div class="package-note">
+            <h3>Intellectual or Developmental Disability (IDD)/Autism Spectrum Disorder Support Services Package</h3>
+            <p>This Logic Model is specifically for children with IDD and/or Autism Spectrum Disorder requiring routine clinical intervention and structure.<br>
+            Incorporates T3C Basic Foster Family Home Support Services as foundational Tier 1 with enhanced developmental and behavioral supports.</p>
+        </div>
+        
+        <div class="mission-vision">
+            <div class="mission-box">
+                <h2>Mission</h2>
+                <p>To serve children with intellectual or developmental disabilities and autism spectrum disorders by providing specialized therapeutic support within stable family environments, promoting development, independence, and improved life skills through evidence-based interventions.</p>
+            </div>
+            <div class="vision-box">
+                <h2>Vision</h2>
+                <p>To see children with IDD/Autism achieve maximum independence and quality of life through individualized supports, enabling successful integration into their communities and achievement of their fullest potential.</p>
+            </div>
+        </div>
+        
+        <div class="service-objective">
+            <h2>IDD/Autism Support Service Objective</h2>
+            <p>To provide specialized trauma-informed foster care for children with DSM-5 diagnoses or pending diagnoses of Intellectual or Developmental Disability and/or Autism Spectrum Disorder, delivering routine clinical intervention, structure, and therapeutic services to support daily activities while promoting development, independence, and permanency.</p>
+        </div>
+        
+        <div class="treatment-model">
+            <h2>Evidence-Informed Treatment Model: Trust-Based Relational Intervention® (TBRI®)</h2>
+            <p>Enhanced with specific programming for IDD/Autism Spectrum Disorder needs (T3C Blueprint p.125)</p>
+            <div class="tbri-principles">
+                <div class="principle">
+                    <h3>Connecting Principles</h3>
+                    <ul>
+                        <li class="basic-tier">Building felt safety</li>
+                        <li class="basic-tier">Providing felt safety</li>
+                        <li class="basic-tier">Supporting attachment</li>
+                        <li class="idd-specific">Structured social engagement</li>
+                        <li class="idd-specific">Predictable interaction patterns</li>
+                    </ul>
+                </div>
+                <div class="principle">
+                    <h3>Empowering Principles</h3>
+                    <ul>
+                        <li class="basic-tier">Meeting physical needs</li>
+                        <li class="basic-tier">Supporting self-regulation</li>
+                        <li class="basic-tier">Predictable routines</li>
+                        <li class="idd-specific">Sensory accommodation strategies</li>
+                        <li class="idd-specific">Visual supports & schedules</li>
+                    </ul>
+                </div>
+                <div class="principle">
+                    <h3>Correcting Principles</h3>
+                    <ul>
+                        <li class="basic-tier">Proactive strategies</li>
+                        <li class="basic-tier">IDEAL Response®</li>
+                        <li class="basic-tier">Teaching self-regulation</li>
+                        <li class="idd-specific">Positive behavior supports</li>
+                        <li class="idd-specific">Communication interventions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="logic-flow">
+            <div class="logic-column inputs">
+                <h3>INPUTS</h3>
+                <p style="font-size: 12px; color: #718096; margin: -10px 0 10px 0;">Tier 1 (Basic) + IDD/Autism Enhancements</p>
+                <ul>
+                    <li>Licensed CPA Administrator <span class="tier-label">BASIC</span></li>
+                    <li>Program Director <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">Treatment Director (Special Ed/IDD expertise)</li>
+                    <li>Case Managers - Enhanced ratio 1:15 <span class="tier-label">IDD</span></li>
+                    <li class="idd-specific">Licensed Therapists specializing in IDD/Autism (1:12)</li>
+                    <li class="idd-specific">Behavioral Support Specialists (1:15)</li>
+                    <li class="idd-specific">Registered Nurse (24/7 availability)</li>
+                    <li class="idd-specific">Crisis Management Staff (1:25)</li>
+                    <li class="idd-specific">Aftercare Case Managers (1:25)</li>
+                    <li>Verified foster homes (35-hour training) <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">IDD/Autism-specialized foster training</li>
+                    <li>TBRI® trained staff <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">24/7 RN consultation capability</li>
+                    <li>IT systems (Radius) <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">Enhanced data for developmental tracking</li>
+                    <li>STAR Health coordination <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">HHSC IDD Services coordination</li>
+                </ul>
+            </div>
+            
+            <div class="logic-column activities">
+                <h3>ACTIVITIES</h3>
+                <p style="font-size: 12px; color: #718096; margin: -10px 0 10px 0;">Tier 1 (Basic) + IDD/Autism Interventions</p>
+                <ul>
+                    <li>TBRI® implementation <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">Individual therapy (IDD/Autism-specialized)</li>
+                    <li class="idd-specific">Family therapy with disability focus</li>
+                    <li class="idd-specific">Developmental skills training</li>
+                    <li class="idd-specific">Communication/speech therapy</li>
+                    <li class="idd-specific">Occupational therapy coordination</li>
+                    <li class="idd-specific">Behavioral intervention implementation</li>
+                    <li class="idd-specific">Life skills development programs</li>
+                    <li class="idd-specific">RN care plan oversight</li>
+                    <li>CANS 3.0 - Every 90 days <span class="tier-label">IDD</span></li>
+                    <li>Service Planning - 90-day reviews <span class="tier-label">IDD</span></li>
+                    <li>Family engagement <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">Special education advocacy</li>
+                    <li>STAR Health coordination <span class="tier-label">BASIC</span></li>
+                    <li class="idd-specific">HHSC IDD Services navigation</li>
+                    <li class="idd-specific">Medical equipment management</li>
+                    <li>Normalcy activities (developmentally appropriate) <span class="tier-label">IDD</span></li>
+                    <li class="idd-specific">Aftercare transition planning</li>
+                </ul>
+            </div>
+            
+            <div class="logic-column outputs">
+                <h3>OUTPUTS</h3>
+                <p style="font-size: 12px; color: #718096; margin: -10px 0 10px 0;">IDD/Autism-Specific Measurables</p>
+                <ul>
+                    <li>Number of IDD/Autism children served</li>
+                    <li>Service Plans completed within 90 days (100%)</li>
+                    <li>CANS 3.0 completed every 90 days (100%)</li>
+                    <li class="idd-specific">Specialized therapy sessions delivered</li>
+                    <li class="idd-specific">Therapy attendance rate (target ≥85%)</li>
+                    <li class="idd-specific">Developmental assessments completed</li>
+                    <li class="idd-specific">Life skills goals achieved</li>
+                    <li class="idd-specific">Communication improvements documented</li>
+                    <li class="idd-specific">Behavioral interventions implemented</li>
+                    <li class="idd-specific">RN consultations provided</li>
+                    <li class="idd-specific">Medical care plans updated</li>
+                    <li class="idd-specific">Special education plans coordinated</li>
+                    <li>Foster parent IDD/Autism training hours</li>
+                    <li class="idd-specific">Service denials notified (3-day compliance)</li>
+                    <li class="idd-specific">Program Director confirmations (15-day)</li>
+                    <li class="idd-specific">Treatment Director reviews documented</li>
+                    <li class="idd-specific">Aftercare services initiated</li>
+                    <li class="idd-specific">HHSC IDD services accessed</li>
+                    <li class="idd-specific">Adaptive equipment provided</li>
+                </ul>
+            </div>
+            
+            <div class="logic-column outcomes">
+                <h3>OUTCOMES</h3>
+                <p style="font-size: 12px; color: #718096; margin: -10px 0 10px 0;">IDD/Autism-Specific Results</p>
+                <div class="time-horizons">
+                    <div class="time-period">
+                        <strong>SHORT-TERM (90 days)</strong>
+                        Behavioral stabilization<br>
+                        Routine establishment<br>
+                        Communication gains<br>
+                        Safety awareness
+                    </div>
+                    <div class="time-period">
+                        <strong>INTERMEDIATE (6 months)</strong>
+                        Developmental progress<br>
+                        Life skills improvement<br>
+                        Social engagement gains<br>
+                        Educational advancement
+                    </div>
+                    <div class="time-period">
+                        <strong>LONG-TERM (12+ months)</strong>
+                        Maximum independence<br>
+                        Community integration<br>
+                        Sustained progress<br>
+                        Successful transitions
+                    </div>
+                </div>
+                <ul style="margin-top: 15px;">
+                    <li class="idd-specific">Developmental milestone achievements</li>
+                    <li class="idd-specific">Adaptive behavior improvements (≥15%)</li>
+                    <li class="idd-specific">Communication skill gains documented</li>
+                    <li class="idd-specific">Self-care skill development</li>
+                    <li class="idd-specific">Educational goal attainment (≥70%)</li>
+                    <li class="idd-specific">Reduced behavioral incidents (≥30%)</li>
+                    <li class="idd-specific">Increased independence in daily activities</li>
+                    <li>Placement stability (IDD-adjusted targets)</li>
+                    <li>RCC permanency targets (IDD cohort)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="arrow-down">⬇</div>
+        
+        <div class="cqi-process">
+            <h2>IDD/Autism Support Services CQI Process (TAC §749.665)</h2>
+            <div class="cqi-grid">
+                <div class="cqi-item">
+                    <h4>IDD-Specific Data Collection</h4>
+                    <ul>
+                        <li>Weekly therapy progress tracking</li>
+                        <li>Monthly developmental assessments</li>
+                        <li>90-day CANS trend analysis</li>
+                        <li>Life skills achievement monitoring</li>
+                        <li>Communication progress documentation</li>
+                        <li>Educational goal tracking</li>
+                        <li>Medical/nursing intervention logs</li>
+                        <li>Adaptive equipment utilization</li>
+                    </ul>
+                </div>
+                <div class="cqi-item">
+                    <h4>IDD Program Review</h4>
+                    <ul>
+                        <li>90-day Service Plan reviews</li>
+                        <li>Treatment Director quarterly analysis</li>
+                        <li>RN care plan evaluations</li>
+                        <li>Continued stay criteria assessment</li>
+                        <li>TBRI® adaptation for IDD/Autism</li>
+                        <li>Special education coordination review</li>
+                        <li>HHSC IDD services effectiveness</li>
+                        <li>Aftercare transition readiness</li>
+                    </ul>
+                </div>
+                <div class="cqi-item">
+                    <h4>IDD Implementation Adjustments</h4>
+                    <ul>
+                        <li>Therapeutic approach modifications</li>
+                        <li>Behavioral support refinements</li>
+                        <li>Communication strategy updates</li>
+                        <li>Life skills curriculum adjustments</li>
+                        <li>Medical care plan revisions</li>
+                        <li>Educational advocacy improvements</li>
+                        <li>Foster parent training enhancements</li>
+                        <li>Annual Logic Model updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
