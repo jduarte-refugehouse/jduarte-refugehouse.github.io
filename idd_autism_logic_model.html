@@ -14,17 +14,34 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           background: linear-gradient(135deg, #A90533 0%, #5E3989 100%);
             min-height: 100vh;
         }
         
         .container {
             background: white;
             border-radius: 15px;
-            padding: 30px;
+            padding: 0;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             max-width: 1400px;
             margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .logo-banner {
+            background: #5E3989;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #A90533;
+        }
+        
+        .logo-banner img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .content-wrapper {
+            padding: 30px;
         }
         
         .header {
@@ -216,7 +233,7 @@
         }
         
         .cqi-process {
-            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            background: linear-gradient(135deg, #A90533 0%, #5E3989 100%);
             color: white;
             padding: 25px;
             border-radius: 10px;
@@ -314,18 +331,22 @@
             }
             .container {
                 box-shadow: none;
-                padding: 20px;
+                padding: 0;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>T3C IDD/Autism Spectrum Disorder Support Services Logic Model</h1>
-            <div class="subtitle">Service Package Specific Logic Model per T3C Blueprint Requirements</div>
-            <div class="subtitle">Compliant with T3C Blueprint (April 2025), TAC 749, and RCC Contract Requirements</div>
+        <div class="logo-banner">
+            <img src="https://github.com/jduarte-refugehouse/jduarte-refugehouse.github.io/blob/ca195301d9c07731d3eca63818516dd540d1e472/web-logo-with-name-dark-background.png?raw=true" alt="Refuge House Logo">
         </div>
+        <div class="content-wrapper">
+            <div class="header">
+                <h1>T3C IDD/Autism Spectrum Disorder Support Services Logic Model</h1>
+                <div class="subtitle">Service Package Specific Logic Model per T3C Blueprint Requirements</div>
+                <div class="subtitle">Compliant with T3C Blueprint (April 2025), TAC 749, and RCC Contract Requirements</div>
+            </div>
         
         <div class="package-note">
             <h3>Intellectual or Developmental Disability (IDD)/Autism Spectrum Disorder Support Services Package</h3>
@@ -547,6 +568,7 @@
                     </ul>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </body>
