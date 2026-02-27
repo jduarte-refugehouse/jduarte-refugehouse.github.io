@@ -45,30 +45,15 @@
             padding: 0 20px;
         }
         
-        /* Modern Header */
+        /* Header */
         .header {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, var(--dark-purple) 100%);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--dark-purple) 100%);
             color: white;
             padding: 0.6rem 0;
             margin-bottom: 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,0 1000,60 0,100"/></svg>');
-            background-size: cover;
         }
         
         .header-content {
-            position: relative;
-            z-index: 1;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -80,10 +65,7 @@
             font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             font-weight: 700;
             margin-bottom: 0.1rem;
-            background: linear-gradient(45deg, white, #f1f5f9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
         }
         
         .header p {
@@ -134,7 +116,6 @@
         .nav-tab:hover {
             background: var(--light-purple);
             color: var(--primary-purple);
-            transform: translateY(-1px);
         }
         
         .nav-tab.active {
@@ -180,30 +161,23 @@
         }
         
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         /* Modern Cards */
         .card {
             background: white;
-            border-radius: 16px;
+            border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: var(--shadow-md);
             border: 1px solid var(--neutral-200);
-            transition: all 0.3s ease;
+            transition: box-shadow 0.2s ease;
         }
-        
+
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         
         .card h2 {
@@ -255,7 +229,7 @@
         /* Modern Table Styles */
         .table-container {
             background: white;
-            border-radius: 16px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
             border: 1px solid var(--neutral-200);
@@ -357,9 +331,9 @@
             align-items: center;
             flex-wrap: nowrap;
             gap: 0.4rem 0.9rem;
-            padding: 0.4rem 1rem;
-            background: white;
-            border-radius: 0;
+            padding: 0.5rem 1rem;
+            background: #f8fafc;
+            border-radius: 10px 10px 0 0;
             border-bottom: 1px solid var(--neutral-200);
             margin-bottom: 0;
             font-size: 0.78rem;
@@ -427,8 +401,6 @@
         .training-item:hover {
             background: var(--light-purple);
             border-left-color: var(--accent-orange);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
         }
         
         .training-item h4 {
@@ -578,7 +550,7 @@
         <div class="header">
             <div class="header-content">
                 <div>
-                    <h1>🎯 Comprehensive T3C Training Guide</h1>
+                    <h1>Comprehensive T3C Training Guide</h1>
                     <p>Foster Parent & Staff Training Matrix - 2026</p>
                 </div>
                 <img src="https://jduarte-refugehouse.github.io/web-logo-with-name-dark-background.png" alt="Refuge House Logo">
@@ -587,72 +559,69 @@
         
         <div class="nav-container">
             <div class="nav-tabs">
-                <button class="nav-tab active" onclick="showSection('overview')">📊 Overview</button>
-                <button class="nav-tab" onclick="showSection('regulatory-matrix')">📋 Full Training Matrix</button>
-                <button class="nav-tab" onclick="showSection('foster-parent')">👨‍👩‍👧‍👦 Foster Parent</button>
-                <button class="nav-tab" onclick="showSection('staff-training')">👩‍💼 Staff Training</button>
+                <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+                <button class="nav-tab" onclick="showSection('regulatory-matrix')">Training Matrix</button>
+                <button class="nav-tab" onclick="showSection('foster-parent')">Foster Parent</button>
+                <button class="nav-tab" onclick="showSection('staff-training')">Staff Training</button>
                 <div class="nav-separator"></div>
-                <button class="nav-tab" onclick="showSection('t3c-basic')">🏠 T3C Basic <span class="badge badge-entry">Entry</span></button>
-                <button class="nav-tab" onclick="showSection('service-packages')">📦 Service Packages</button>
+                <button class="nav-tab" onclick="showSection('t3c-basic')">T3C Basic <span class="badge badge-entry">Entry</span></button>
                 <div class="nav-separator"></div>
-                <button class="nav-tab" onclick="showSection('curriculum')">📚 Curriculum Guide</button>
-                <button class="nav-tab" onclick="showSection('compliance')">✅ Compliance</button>
+                <button class="nav-tab" onclick="showSection('substance-use')">Substance Use</button>
+                <button class="nav-tab" onclick="showSection('mental-behavioral')">Mental &amp; Behavioral</button>
+                <button class="nav-tab" onclick="showSection('sexual-aggression')">Sexual Aggression</button>
+                <button class="nav-tab" onclick="showSection('complex-medical')">Complex Medical</button>
+                <button class="nav-tab" onclick="showSection('idd-autism')">IDD/Autism</button>
+                <button class="nav-tab" onclick="showSection('treatment-foster')">Treatment Foster Care</button>
+                <div class="nav-separator"></div>
+                <button class="nav-tab" onclick="showSection('kinship')">Kinship</button>
+                <button class="nav-tab" onclick="showSection('transition')">Transition</button>
+                <button class="nav-tab" onclick="showSection('pregnant-parenting')">Pregnant &amp; Parenting</button>
+                <div class="nav-separator"></div>
+                <button class="nav-tab" onclick="showSection('curriculum')">Curriculum Guide</button>
+                <button class="nav-tab" onclick="showSection('compliance')">Compliance</button>
             </div>
         </div>
 
-        <div class="legend">
-                <h3>Legend:</h3>
-                <div class="legend-grid">
-                    <div class="legend-item"><div class="legend-color tac-749"></div><span>TAC §749</span></div>
-                    <div class="legend-item"><div class="legend-color t3c-blueprint"></div><span>T3C Blueprint</span></div>
-                    <div class="legend-item"><div class="legend-color dfps-online"></div><span>DFPS Online</span></div>
-                    <div class="legend-item"><div class="legend-color rcc-contract"></div><span>RCC Contract</span></div>
-                    <div class="legend-item"><div class="legend-color agency-policy"></div><span>Agency Policy</span></div>
-                    <div class="legend-item"><div class="legend-color both-staff-fp"></div><span>Both Staff &amp; FP</span></div>
-                    <div class="legend-item"><div class="legend-color staff-only"></div><span>Staff Only</span></div>
-                </div>
-            </div>
-
         <div class="disclaimer">
-            <strong>📌 Post-Transition Status:</strong> T3C Basic Foster Family Home is now the entry-level service for all new foster homes. This guide reflects current implementation with integrated staff training requirements.
+            <strong>Note:</strong> T3C Basic Foster Family Home is now the entry-level service for all new foster homes. Training requirements are based on current T3C Blueprint guidelines and may be adjusted as further updates are provided. All hour requirements shown represent minimum training hours.
         </div>
         
         <!-- Overview Section -->
         <div id="overview" class="content-section active">
             <div class="card">
-                <h2>🎯 Training Program Overview</h2>
+                <h2>Training Program Overview</h2>
                 <div class="alert alert-success">
                     <strong>Modern Training Ecosystem:</strong> Refuge House maintains a comprehensive, integrated training program serving both foster parents and staff with shared T3C foundations.
                 </div>
                 
                 <div class="training-grid">
                     <div class="training-item">
-                        <h4>👨‍👩‍👧‍👦 Foster Parent Training</h4>
+                        <h4>Foster Parent Training</h4>
                         <p><span class="hours">~45 hours</span> pre-service</p>
                         <p><span class="hours">30 hours</span> annual</p>
                         <p>T3C Basic included for all new families</p>
                     </div>
                     <div class="training-item">
-                        <h4>👩‍💼 Staff Training</h4>
+                        <h4>Staff Training</h4>
                         <p><span class="hours">37+ hours</span> staff-specific</p>
                         <p><span class="hours">Shared modules</span> with foster parents</p>
                         <p>Position-based learning tracks</p>
                     </div>
                     <div class="training-item">
-                        <h4>🤝 Shared Training</h4>
+                        <h4>Shared Training</h4>
                         <p><span class="hours">20+ hours</span> shared content</p>
                         <p>T3C foundations, TBRI, regulatory compliance</p>
                         <p>Consistent messaging across organization</p>
                     </div>
                     <div class="training-item">
-                        <h4>📋 Compliance Status</h4>
+                        <h4>Compliance Status</h4>
                         <p><span class="hours">6 regulatory sources</span></p>
                         <p>TAC §749, T3C Blueprint, DFPS, RCC Contract</p>
                         <p>Full compliance maintained</p>
                     </div>
                 </div>
                 
-                <h3>🎯 Key Achievements</h3>
+                <h3>Key Achievements</h3>
                 <div class="alert alert-info">
                     <strong>Training Integration:</strong> Excellent alignment between staff and foster parent training creates consistency, cost efficiency, and shared T3C language across the organization.
                 </div>
@@ -661,6 +630,18 @@
         
         <!-- Regulatory Matrix Section -->
         <div id="regulatory-matrix" class="content-section">
+            <div class="legend">
+                <h3>Legend:</h3>
+                <div class="legend-grid">
+                    <div class="legend-item"><div class="legend-color tac-749"></div><span>TAC &sect;749</span></div>
+                    <div class="legend-item"><div class="legend-color t3c-blueprint"></div><span>T3C Blueprint</span></div>
+                    <div class="legend-item"><div class="legend-color dfps-online"></div><span>DFPS Online</span></div>
+                    <div class="legend-item"><div class="legend-color rcc-contract"></div><span>RCC Contract</span></div>
+                    <div class="legend-item"><div class="legend-color agency-policy"></div><span>Agency Policy</span></div>
+                    <div class="legend-item"><div class="legend-color both-staff-fp"></div><span>Both Staff &amp; FP</span></div>
+                    <div class="legend-item"><div class="legend-color staff-only"></div><span>Staff Only</span></div>
+                </div>
+            </div>
             <div class="table-container">
                 <table>
                     <thead>
@@ -683,7 +664,7 @@
                         <!-- SECTION 1: PRE-SERVICE FOUNDATION         -->
                         <!-- ══════════════════════════════════════════ -->
                         <tr class="section-header">
-                            <td colspan="10">🎓 PRE-SERVICE FOUNDATION — Required before first placement</td>
+                            <td colspan="10">PRE-SERVICE FOUNDATION — Required before first placement</td>
                         </tr>
 
                         <tr>
@@ -755,7 +736,7 @@
                         <!-- SECTION 2: DFPS ONLINE REQUIRED           -->
                         <!-- ══════════════════════════════════════════ -->
                         <tr class="section-header">
-                            <td colspan="10">🌐 DFPS ONLINE TRAINING — State-mandated external courses</td>
+                            <td colspan="10">DFPS ONLINE TRAINING — State-mandated external courses</td>
                         </tr>
 
                         <tr>
@@ -853,7 +834,7 @@
                         <!-- SECTION 3: TRAINING LIBRARY               -->
                         <!-- ══════════════════════════════════════════ -->
                         <tr class="section-header">
-                            <td colspan="10">📚 TRAINING LIBRARY — Count toward pre-service OR annual hours (both Staff &amp; Foster Parents)</td>
+                            <td colspan="10">TRAINING LIBRARY — Count toward pre-service OR annual hours (both Staff &amp; Foster Parents)</td>
                         </tr>
 
                         <tr>
@@ -1172,7 +1153,7 @@
                         <!-- SECTION 4: ANNUAL RENEWAL REQUIRED        -->
                         <!-- ══════════════════════════════════════════ -->
                         <tr class="section-header">
-                            <td colspan="10">🔄 ANNUAL / RENEWAL REQUIRED — Recurring certifications</td>
+                            <td colspan="10">ANNUAL / RENEWAL REQUIRED — Recurring certifications</td>
                         </tr>
 
                         <tr>
@@ -1205,7 +1186,7 @@
                         <!-- SECTION 5: T3C CONVERSION TRAINING        -->
                         <!-- ══════════════════════════════════════════ -->
                         <tr class="section-header">
-                            <td colspan="10">⭐ T3C CONVERSION TRAINING — Current foster parents &amp; staff transitioning to T3C (16-hour series)</td>
+                            <td colspan="10">T3C CONVERSION TRAINING — Current foster parents &amp; staff transitioning to T3C (16-hour series)</td>
                         </tr>
 
                         <tr>
@@ -1290,7 +1271,7 @@
                         <!-- SECTION 6: STAFF ONLY                     -->
                         <!-- ══════════════════════════════════════════ -->
                         <tr class="section-header">
-                            <td colspan="10">👩‍💼 STAFF-ONLY TRAINING — Required for Refuge House employees</td>
+                            <td colspan="10">STAFF-ONLY TRAINING — Required for Refuge House employees</td>
                         </tr>
 
                         <tr>
@@ -1375,7 +1356,7 @@
                         <!-- SECTION 7: FOSTER PARENT SPECIFIC         -->
                         <!-- ══════════════════════════════════════════ -->
                         <tr class="section-header">
-                            <td colspan="10">👨‍👩‍👧‍👦 FOSTER PARENT SPECIFIC — Requirements unique to foster home licensing</td>
+                            <td colspan="10">FOSTER PARENT SPECIFIC — Requirements unique to foster home licensing</td>
                         </tr>
 
                         <tr>
@@ -1409,7 +1390,7 @@
             </div>
 
             <div class="card" style="margin-top:1.5rem; background: #f8fafc; border-left: 4px solid var(--accent-blue); padding: 1rem 1.5rem;">
-                <strong>📊 Matrix Summary:</strong> 
+                <strong>Matrix Summary:</strong> 
                 38 unique training courses from your Radius training library &bull;
                 7 DFPS online required courses &bull;
                 6 T3C conversion modules (16 hours total) &bull;
@@ -1422,7 +1403,7 @@
 
         <div id="foster-parent" class="content-section">
             <div class="card">
-                <h2>👨‍👩‍👧‍👦 Foster Parent Training Requirements</h2>
+                <h2>Foster Parent Training Requirements</h2>
                 
                 <h3>Pre-Service Training (~45 Hours Total)</h3>
                 <div class="training-grid">
@@ -1475,27 +1456,27 @@
         <!-- Staff Training Section -->
         <div id="staff-training" class="content-section">
             <div class="card">
-                <h2>👩‍💼 Staff Training Program</h2>
+                <h2>Staff Training Program</h2>
                 
                 <h3>New Employee Training Tracks</h3>
                 <div class="training-grid">
                     <div class="training-item">
-                        <h4>🎯 Universal Track (All Staff)</h4>
+                        <h4>Universal Track (All Staff)</h4>
                         <p class="hours">15 hours</p>
                         <p>Staff Orientation + Legal + System Training</p>
                     </div>
                     <div class="training-item">
-                        <h4>📋 Case Management Track</h4>
+                        <h4>Case Management Track</h4>
                         <p class="hours">22+ hours</p>
                         <p>Universal + Case Management 101-105 + Service Planning</p>
                     </div>
                     <div class="training-item">
-                        <h4>🏥 Clinical Track</h4>
+                        <h4>Clinical Track</h4>
                         <p class="hours">21+ hours</p>
                         <p>Universal + Clinical modules + Psychiatric training</p>
                     </div>
                     <div class="training-item">
-                        <h4>🤝 Shared Training</h4>
+                        <h4>Shared Training</h4>
                         <p class="hours">20+ hours</p>
                         <p>Same T3C foundation as foster parents</p>
                     </div>
@@ -1510,7 +1491,7 @@
         <!-- T3C Basic Section -->
         <div id="t3c-basic" class="content-section">
             <div class="card">
-                <h2>🏠 T3C Basic Foster Family Home (Entry Level)</h2>
+                <h2>T3C Basic Foster Family Home (Entry Level)</h2>
                 <div class="alert alert-success">
                     <strong>Entry Level Service:</strong> All new foster homes automatically receive T3C Basic credentialing through pre-service training.
                 </div>
@@ -1552,48 +1533,558 @@
         </div>
         
         <!-- Service Packages Section -->
-        <div id="service-packages" class="content-section">
+        <!-- Substance Use Section -->
+        <div id="substance-use" class="content-section">
             <div class="card">
-                <h2>📦 Service Package Training Requirements</h2>
-                
+                <div class="service-package-header">
+                    <h3>Substance Use Support Services</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-info">
+                    For youth with substance use disorders requiring routine clinical intervention and skilled caregiver support
+                </div>
+
+                <h3>Additional Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Substance Abuse Awareness</h4>
+                    <p class="hours">4 hours minimum</p>
+                    <ul>
+                        <li>Understanding addiction as a disease</li>
+                        <li>Stages of change and recovery</li>
+                        <li>Supporting youth in recovery</li>
+                        <li>Relapse prevention strategies</li>
+                        <li>Working with treatment teams</li>
+                    </ul>
+                </div>
+
+                <h3>Key Service Components</h3>
                 <div class="training-grid">
                     <div class="training-item">
-                        <h4>🧠 Mental & Behavioral Health</h4>
-                        <p class="hours">6 hours</p>
-                        <p><span class="badge badge-active">Active</span></p>
-                        <p>Mental health awareness, crisis intervention, therapeutic team coordination</p>
+                        <h4>Treatment Coordination</h4>
+                        <p>Working with substance abuse counselors</p>
+                        <p>Supporting treatment compliance</p>
                     </div>
                     <div class="training-item">
-                        <h4>🌟 IDD/Autism Spectrum</h4>
-                        <p class="hours">6 hours</p>
-                        <p><span class="badge badge-active">Active</span></p>
-                        <p>Communication strategies, sensory processing, behavioral supports</p>
+                        <h4>Environmental Safety</h4>
+                        <p>Medication security</p>
+                        <p>Trigger identification and management</p>
                     </div>
                     <div class="training-item">
-                        <h4>💊 Substance Use Support</h4>
-                        <p class="hours">4 hours</p>
-                        <p>Recovery support, relapse prevention, substance-free environment</p>
-                    </div>
-                    <div class="training-item">
-                        <h4>📋 STASS (Assessment)</h4>
-                        <p class="hours">4 hours</p>
-                        <p>Assessment coordination, observation, transition management</p>
-                    </div>
-                    <div class="training-item">
-                        <h4>🏥 Treatment Foster Care</h4>
-                        <p class="hours">20 hours</p>
-                        <p>High-acuity behaviors, intensive plans, crisis intervention</p>
-                    </div>
-                    <div class="training-item">
-                        <h4>👨‍👩‍👧‍👦 Add-On Services</h4>
-                        <p class="hours">2 hours each</p>
-                        <p><span class="badge badge-active">Active</span></p>
-                        <p>Kinship, Transition, Pregnant & Parenting support</p>
+                        <h4>Crisis Response</h4>
+                        <p>24/7 case manager availability</p>
+                        <p>Relapse response protocols</p>
                     </div>
                 </div>
-                
+
+                <h3>Annual Requirements to Maintain Credentialing</h3>
+                <div class="alert alert-info">
+                    <strong>Annual Training:</strong> Substance use topics must be integrated into the standard 30-hour annual training requirement
+                </div>
+                <div class="training-item">
+                    <h4>Annual Maintenance Requirements</h4>
+                    <p class="hours">No additional hours beyond standard 30-hour annual requirement</p>
+                    <ul>
+                        <li>Substance abuse trends and updates</li>
+                        <li>New treatment approaches</li>
+                        <li>Relapse prevention refresher</li>
+                        <li>TBRI application for substance use</li>
+                        <li>Documentation of continued competency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mental & Behavioral Section -->
+        <div id="mental-behavioral" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>Mental &amp; Behavioral Health Support Services</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-info">
+                    For children with DSM-5 diagnoses requiring routine clinical intervention for emotional, conduct, or behavioral disorders
+                </div>
+
+                <h3>Additional Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Mental Health Support</h4>
+                    <p class="hours">4 hours minimum</p>
+                    <ul>
+                        <li>Understanding mental health conditions</li>
+                        <li>De-escalation techniques</li>
+                        <li>Crisis intervention strategies</li>
+                        <li>Medication management support</li>
+                        <li>Therapeutic parenting approaches</li>
+                    </ul>
+                </div>
+
+                <h3>Key Service Components</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Clinical Support</h4>
+                        <p>Regular therapy coordination</p>
+                        <p>Psychiatric appointment support</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Behavioral Management</h4>
+                        <p>TBRI implementation for behaviors</p>
+                        <p>Positive behavior support plans</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Assessment Schedule</h4>
+                        <p>CANS 3.0 every 90 days</p>
+                        <p>Data-driven service adjustments</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements to Maintain Credentialing</h3>
+                <div class="alert alert-info">
+                    <strong>Annual Training:</strong> Mental health topics must be integrated into the standard 30-hour annual training requirement
+                </div>
+                <div class="training-item">
+                    <h4>Annual Maintenance Requirements</h4>
+                    <p class="hours">No additional hours beyond standard 30-hour annual requirement</p>
+                    <ul>
+                        <li>Mental health best practices updates</li>
+                        <li>Crisis intervention refresher</li>
+                        <li>Psychotropic medication updates (2 hours required annually)</li>
+                        <li>TBRI application for mental health</li>
+                        <li>De-escalation technique practice</li>
+                        <li>Documentation of continued competency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sexual Aggression Section -->
+        <div id="sexual-aggression" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>Sexual Aggression/Sex Offender Support Services</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
                 <div class="alert alert-warning">
-                    <strong>Annual Requirements:</strong> Only Treatment Foster Care requires additional annual hours (8 hrs). All others integrate into standard 30-hour requirement.
+                    For youth with sexually aggressive behaviors or adjudication requiring specialized supervision and treatment
+                </div>
+
+                <h3>Additional Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Sexual Behavior Management</h4>
+                    <p class="hours">6 hours minimum</p>
+                    <ul>
+                        <li>Understanding sexual behavior problems</li>
+                        <li>Safety planning and supervision</li>
+                        <li>Environmental modifications</li>
+                        <li>Working with specialized therapists</li>
+                        <li>Managing disclosures and incidents</li>
+                        <li>Supporting healthy development</li>
+                    </ul>
+                </div>
+
+                <h3>Critical Safety Requirements</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Supervision Protocols</h4>
+                        <p>Line-of-sight supervision requirements</p>
+                        <p>Bedroom and bathroom policies</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Environmental Safety</h4>
+                        <p>Technology restrictions</p>
+                        <p>Visitor protocols</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Treatment Team</h4>
+                        <p>Licensed Sex Offender Treatment Provider</p>
+                        <p>On-call consultation available</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements to Maintain Credentialing</h3>
+                <div class="alert alert-warning">
+                    <strong>Annual Training:</strong> Sexual behavior management requires specific annual updates due to safety risks
+                </div>
+                <div class="training-item">
+                    <h4>Annual Maintenance Requirements</h4>
+                    <p class="hours">2-3 hours annually recommended (within 30-hour requirement)</p>
+                    <ul>
+                        <li>Safety protocol review and updates</li>
+                        <li>Supervision strategy refresher</li>
+                        <li>Managing disclosures training</li>
+                        <li>Legal update on reporting requirements</li>
+                        <li>TBRI application for sexual behaviors</li>
+                        <li>Annual safety plan review</li>
+                        <li>Documentation of continued competency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complex Medical Section -->
+        <div id="complex-medical" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>Complex Medical Needs/Medically Fragile Support Services</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-info">
+                    For children requiring constant monitoring, skilled nursing, or medical technology support
+                </div>
+
+                <h3>Additional Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Medical Procedures Training</h4>
+                    <p class="hours">8 hours minimum</p>
+                    <ul>
+                        <li>Specific medical procedures for the child</li>
+                        <li>Medical equipment operation</li>
+                        <li>Emergency medical protocols</li>
+                        <li>Medication administration (complex)</li>
+                        <li>Infection control procedures</li>
+                        <li>Documentation requirements</li>
+                    </ul>
+                </div>
+
+                <h3>Support Requirements</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Nursing Support</h4>
+                        <p>RN available 24/7</p>
+                        <p>Training and consultation</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Medical Coordination</h4>
+                        <p>Multiple specialist appointments</p>
+                        <p>Therapy services coordination</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Equipment Management</h4>
+                        <p>Medical device maintenance</p>
+                        <p>Supply ordering and storage</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements to Maintain Credentialing</h3>
+                <div class="alert alert-warning">
+                    <strong>Annual Training:</strong> Medical procedures require annual competency verification
+                </div>
+                <div class="training-item">
+                    <h4>Annual Maintenance Requirements</h4>
+                    <p class="hours">4-6 hours annually recommended (within 30-hour requirement)</p>
+                    <ul>
+                        <li>CPR/First Aid recertification (required)</li>
+                        <li>Medical procedure competency checks</li>
+                        <li>Equipment operation refresher</li>
+                        <li>Infection control updates</li>
+                        <li>Emergency protocol review</li>
+                        <li>Documentation requirements update</li>
+                        <li>Child-specific medical training as needed</li>
+                    </ul>
+                    <p><strong>Note:</strong> RN must verify competency annually for specific procedures</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- IDD/Autism Section -->
+        <div id="idd-autism" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>IDD/Autism Spectrum Support Services</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-info">
+                    For children with intellectual/developmental disabilities or autism spectrum disorders
+                </div>
+
+                <h3>Additional Training Requirements</h3>
+                <div class="training-item">
+                    <h4>IDD/Autism Support Training</h4>
+                    <p class="hours">6 hours minimum</p>
+                    <ul>
+                        <li>Understanding IDD and autism</li>
+                        <li>Communication strategies</li>
+                        <li>Sensory needs and modifications</li>
+                        <li>Behavioral support techniques</li>
+                        <li>Daily living skills support</li>
+                        <li>Educational advocacy</li>
+                    </ul>
+                </div>
+
+                <h3>Support Strategies</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Communication Support</h4>
+                        <p>Alternative communication methods</p>
+                        <p>Visual supports and schedules</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Sensory Accommodations</h4>
+                        <p>Environmental modifications</p>
+                        <p>Sensory diet implementation</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Skill Development</h4>
+                        <p>Life skills training</p>
+                        <p>Social skills support</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements to Maintain Credentialing</h3>
+                <div class="alert alert-info">
+                    <strong>Annual Training:</strong> Service package topics must be integrated into the standard 30-hour annual training requirement
+                </div>
+                <div class="training-item">
+                    <h4>Annual Maintenance Requirements</h4>
+                    <p class="hours">No additional hours beyond standard 30-hour annual requirement</p>
+                    <ul>
+                        <li>IDD/Autism topics integrated into annual training</li>
+                        <li>Updates on communication strategies</li>
+                        <li>Sensory processing refreshers</li>
+                        <li>TBRI application for IDD/Autism</li>
+                        <li>Documentation of continued competency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Treatment Foster Care Section -->
+        <div id="treatment-foster" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>Treatment Foster Care</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-warning">
+                    Highest level of foster care requiring intensive therapeutic parenting
+                </div>
+
+                <h3>Additional Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Treatment Foster Care Training</h4>
+                    <p class="hours">20 hours additional</p>
+                    <ul>
+                        <li>Advanced therapeutic parenting</li>
+                        <li>Treatment planning participation</li>
+                        <li>Clinical team collaboration</li>
+                        <li>Advanced behavior management</li>
+                        <li>Documentation for treatment</li>
+                        <li>Crisis intervention skills</li>
+                    </ul>
+                </div>
+
+                <h3>Enhanced Requirements</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Clinical Integration</h4>
+                        <p>Weekly team meetings</p>
+                        <p>Treatment plan implementation</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Documentation</h4>
+                        <p>Daily behavioral logs</p>
+                        <p>Incident reporting</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Support Level</h4>
+                        <p>24/7 clinical backup</p>
+                        <p>Enhanced respite services</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements to Maintain Credentialing</h3>
+                <div class="alert alert-warning">
+                    <strong>Annual Training:</strong> Treatment Foster Care requires the most intensive annual training
+                </div>
+                <div class="training-item">
+                    <h4>Annual Maintenance Requirements</h4>
+                    <p class="hours">8-10 hours annually recommended (within 30-hour requirement)</p>
+                    <ul>
+                        <li>Advanced therapeutic parenting refresher</li>
+                        <li>Treatment model updates and practice</li>
+                        <li>Clinical documentation training</li>
+                        <li>Crisis intervention recertification</li>
+                        <li>TBRI advanced application</li>
+                        <li>Team collaboration strategies</li>
+                        <li>Self-care and secondary trauma</li>
+                        <li>Evidence-based practice updates</li>
+                    </ul>
+                    <p><strong>Note:</strong> May require additional specialized training based on population served</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kinship Support Section -->
+        <div id="kinship" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>Kinship Caregiver Support Services (Add-On)</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-info">
+                    <strong>Add-On Service:</strong> Additional support for kinship families caring for related children
+                </div>
+
+                <h3>Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Kinship Care Dynamics</h4>
+                    <p class="hours">2 hours (integrated into existing training)</p>
+                    <ul>
+                        <li>Understanding family dynamics in kinship care</li>
+                        <li>Navigating dual relationships (relative and caregiver)</li>
+                        <li>Managing family boundaries</li>
+                        <li>Supporting child's identity and family connections</li>
+                        <li>Legal considerations for kinship families</li>
+                    </ul>
+                </div>
+
+                <h3>Key Support Components</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Family Dynamics</h4>
+                        <p>Managing complex family relationships</p>
+                        <p>Boundary setting strategies</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Support Services</h4>
+                        <p>Kinship navigator assistance</p>
+                        <p>Peer support groups</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Legal Support</h4>
+                        <p>Understanding kinship rights</p>
+                        <p>Permanency options education</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements</h3>
+                <div class="alert alert-info">
+                    <strong>Annual Training:</strong> Kinship topics integrated into standard 30-hour requirement
+                </div>
+                <div class="training-item">
+                    <h4>Ongoing Support</h4>
+                    <p>No additional training hours required</p>
+                    <p>Topics covered through case management and peer support</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transition Support Section -->
+        <div id="transition" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>Transition Support Services (Add-On)</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-info">
+                    <strong>Add-On Service:</strong> Enhanced support for youth ages 14+ preparing for adulthood
+                </div>
+
+                <h3>Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Youth Transition Skills</h4>
+                    <p class="hours">2 hours (integrated into existing training)</p>
+                    <ul>
+                        <li>Supporting independence development</li>
+                        <li>Life skills coaching strategies</li>
+                        <li>Education and career planning</li>
+                        <li>Financial literacy basics</li>
+                        <li>Housing and community resources</li>
+                        <li>Healthy relationship development</li>
+                    </ul>
+                </div>
+
+                <h3>Key Program Components</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Life Skills Development</h4>
+                        <p>Cooking, budgeting, transportation</p>
+                        <p>Self-care and health management</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Education &amp; Career</h4>
+                        <p>College preparation support</p>
+                        <p>Job readiness training</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Permanency Planning</h4>
+                        <p>Extended foster care options</p>
+                        <p>Adult support networks</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements</h3>
+                <div class="alert alert-info">
+                    <strong>Annual Training:</strong> Transition topics integrated into standard 30-hour requirement
+                </div>
+                <div class="training-item">
+                    <h4>Ongoing Development</h4>
+                    <p>Updates on youth resources and programs</p>
+                    <p>Collaboration with Preparation for Adult Living (PAL)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pregnant & Parenting Section -->
+        <div id="pregnant-parenting" class="content-section">
+            <div class="card">
+                <div class="service-package-header">
+                    <h3>Pregnant &amp; Parenting Youth Support (Add-On)</h3>
+                </div>
+
+                <h3>Service Package Overview</h3>
+                <div class="alert alert-info">
+                    <strong>Add-On Service:</strong> Support for pregnant youth and young parents in care
+                </div>
+
+                <h3>Training Requirements</h3>
+                <div class="training-item">
+                    <h4>Parenting Youth Support</h4>
+                    <p class="hours">2 hours (integrated into existing training)</p>
+                    <ul>
+                        <li>Supporting dual role as youth and parent</li>
+                        <li>Infant care basics and safety</li>
+                        <li>Attachment and bonding support</li>
+                        <li>Co-parenting with young parents</li>
+                        <li>Educational continuity for young parents</li>
+                        <li>Accessing community resources</li>
+                    </ul>
+                </div>
+
+                <h3>Support Components</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Parenting Education</h4>
+                        <p>Age-appropriate parenting skills</p>
+                        <p>Child development knowledge</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Dual Support</h4>
+                        <p>Meeting needs of parent and baby</p>
+                        <p>Educational support continuation</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Resource Connection</h4>
+                        <p>WIC, childcare, healthcare</p>
+                        <p>Parenting support groups</p>
+                    </div>
+                </div>
+
+                <h3>Annual Requirements</h3>
+                <div class="alert alert-info">
+                    <strong>Annual Training:</strong> Topics integrated into standard 30-hour requirement
+                </div>
+                <div class="training-item">
+                    <h4>Ongoing Support</h4>
+                    <p>Updates on resources for young parents</p>
+                    <p>Collaboration with community programs</p>
                 </div>
             </div>
         </div>
@@ -1601,13 +2092,13 @@
         <!-- Curriculum Section -->
         <div id="curriculum" class="content-section">
             <div class="card">
-                <h2>📚 Curriculum Guide & Content Details</h2>
+                <h2>Curriculum Guide & Content Details</h2>
                 <p style="color:var(--neutral-600); margin-bottom:1.5rem;">Complete course descriptions for all 38 training courses in the Refuge House training library, plus the 6-module T3C Conversion series. Click any course header to expand details.</p>
 
-                <input type="text" class="search-box" placeholder="🔍 Search by course name, topic, or keyword..." onkeyup="searchCurriculum()" id="curriculumSearch">
+                <input type="text" class="search-box" placeholder="Search by course name, topic, or keyword..." onkeyup="searchCurriculum()" id="curriculumSearch">
 
                 <!-- ─── GROUP: PRE-SERVICE FOUNDATION ─── -->
-                <div class="curriculum-group-header">🎓 Pre-Service Foundation</div>
+                <div class="curriculum-group-header">Pre-Service Foundation</div>
                 <div id="curriculum-list">
 
                     <div class="curriculum-item">
@@ -1646,7 +2137,7 @@
                 </div><!-- end curriculum-list -->
 
                 <!-- ─── GROUP: ANNUAL RENEWAL ─── -->
-                <div class="curriculum-group-header">🔄 Annual Renewal Required</div>
+                <div class="curriculum-group-header">Annual Renewal Required</div>
                 <div id="curriculum-list-annual">
 
                     <div class="curriculum-item">
@@ -1669,7 +2160,7 @@
                 </div>
 
                 <!-- ─── GROUP: DFPS ONLINE ─── -->
-                <div class="curriculum-group-header">🌐 DFPS Online Training — State-Mandated External Courses</div>
+                <div class="curriculum-group-header">DFPS Online Training — State-Mandated External Courses</div>
                 <div id="curriculum-list-dfps">
 
                     <div class="curriculum-item">
@@ -1738,7 +2229,7 @@
                 </div>
 
                 <!-- ─── GROUP: TRAINING LIBRARY ─── -->
-                <div class="curriculum-group-header">📖 Training Library — Counts Toward Pre-Service OR Annual Hours</div>
+                <div class="curriculum-group-header">Training Library — Counts Toward Pre-Service OR Annual Hours</div>
                 <div id="curriculum-list-library">
 
                     <div class="curriculum-item">
@@ -1922,7 +2413,7 @@
                 </div>
 
                 <!-- ─── GROUP: STAFF ONLY ─── -->
-                <div class="curriculum-group-header">👩‍💼 Staff-Only Training</div>
+                <div class="curriculum-group-header">Staff-Only Training</div>
                 <div id="curriculum-list-staff">
 
                     <div class="curriculum-item">
@@ -1970,7 +2461,7 @@
                 </div>
 
                 <!-- ─── GROUP: T3C CONVERSION MODULES ─── -->
-                <div class="curriculum-group-header">⭐ T3C Conversion Training — 16-Hour Series for Current Foster Parents &amp; Staff</div>
+                <div class="curriculum-group-header">T3C Conversion Training — 16-Hour Series for Current Foster Parents &amp; Staff</div>
                 <div id="curriculum-list-t3c">
 
                     <div class="curriculum-item">
@@ -2041,55 +2532,55 @@
 
         <div id="compliance" class="content-section">
             <div class="card">
-                <h2>✅ Compliance Summary & Status</h2>
+                <h2>Compliance Summary & Status</h2>
                 
                 <div class="alert alert-success">
                     <strong>Full Compliance Achieved:</strong> Refuge House meets or exceeds all regulatory requirements across 6 different regulatory sources.
                 </div>
                 
-                <h3>🎯 Regulatory Compliance Status</h3>
+                <h3>Regulatory Compliance Status</h3>
                 <div class="training-grid">
                     <div class="training-item">
-                        <h4>✅ TAC §749 Minimum Standards</h4>
+                        <h4>TAC §749 Minimum Standards</h4>
                         <p>All pre-service, annual, and specialized requirements met</p>
                         <p><strong>Status:</strong> Full compliance</p>
                     </div>
                     <div class="training-item">
-                        <h4>✅ T3C Blueprint</h4>
+                        <h4>T3C Blueprint</h4>
                         <p>Basic credentialing active, service packages available</p>
                         <p><strong>Status:</strong> Phase I implemented</p>
                     </div>
                     <div class="training-item">
-                        <h4>✅ DFPS Online Training</h4>
+                        <h4>DFPS Online Training</h4>
                         <p>All required online modules covered</p>
                         <p><strong>Status:</strong> Current and compliant</p>
                     </div>
                     <div class="training-item">
-                        <h4>✅ RCC Contract</h4>
+                        <h4>RCC Contract</h4>
                         <p>Regional contract requirements met</p>
                         <p><strong>Status:</strong> Contract compliant</p>
                     </div>
                 </div>
                 
-                <h3>📊 Training Efficiency Metrics</h3>
+                <h3>Training Efficiency Metrics</h3>
                 <div class="training-grid">
                     <div class="training-item">
-                        <h4>🤝 Shared Training</h4>
+                        <h4>Shared Training</h4>
                         <p class="hours">65% of total content</p>
                         <p>Cost-efficient delivery model</p>
                     </div>
                     <div class="training-item">
-                        <h4>📚 Curriculum Integration</h4>
+                        <h4>Curriculum Integration</h4>
                         <p class="hours">20+ shared modules</p>
                         <p>Consistent T3C messaging</p>
                     </div>
                     <div class="training-item">
-                        <h4>⚡ Delivery Methods</h4>
+                        <h4>Delivery Methods</h4>
                         <p class="hours">Multiple formats</p>
                         <p>In-person, online, hybrid options</p>
                     </div>
                     <div class="training-item">
-                        <h4>📈 Compliance Rate</h4>
+                        <h4>Compliance Rate</h4>
                         <p class="hours">100%</p>
                         <p>All regulatory requirements met</p>
                     </div>
