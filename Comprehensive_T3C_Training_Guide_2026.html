@@ -101,7 +101,7 @@
         .nav-container {
             background: white;
             border-radius: 0;
-            padding: 0.4rem 0.75rem 0;
+            padding: 0.3rem 0.75rem;
             margin-bottom: 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.12);
             border-bottom: 1px solid var(--neutral-200);
@@ -270,9 +270,12 @@
         
         thead {
             background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+        }
+        thead th {
             position: sticky;
-            top: 90px;
+            top: 44px;
             z-index: 50;
+            background: inherit;
         }
         
         th {
@@ -352,14 +355,15 @@
         .legend {
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem 1rem;
-            padding: 0.6rem 1rem;
+            flex-wrap: nowrap;
+            gap: 0.4rem 0.9rem;
+            padding: 0.4rem 1rem;
             background: white;
-            border-radius: 10px;
-            border: 1px solid var(--neutral-200);
-            margin-bottom: 1rem;
-            font-size: 0.8rem;
+            border-radius: 0;
+            border-bottom: 1px solid var(--neutral-200);
+            margin-bottom: 0;
+            font-size: 0.78rem;
+            overflow-x: auto;
         }
 
         .legend h3 {
@@ -465,9 +469,9 @@
         }
         
         .section-header td {
-            padding: 1.25rem 0.75rem;
+            padding: 0.75rem 0.75rem;
             border-top: 3px solid var(--primary-purple);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         /* Service Package Headers */
@@ -594,8 +598,9 @@
                 <button class="nav-tab" onclick="showSection('curriculum')">📚 Curriculum Guide</button>
                 <button class="nav-tab" onclick="showSection('compliance')">✅ Compliance</button>
             </div>
-            <!-- Legend inside sticky bar -->
-            <div class="legend" style="border:none; border-top:1px solid var(--neutral-200); border-radius:0; margin:0; padding:0.35rem 0.25rem;">
+        </div>
+
+        <div class="legend">
                 <h3>Legend:</h3>
                 <div class="legend-grid">
                     <div class="legend-item"><div class="legend-color tac-749"></div><span>TAC §749</span></div>
@@ -607,8 +612,7 @@
                     <div class="legend-item"><div class="legend-color staff-only"></div><span>Staff Only</span></div>
                 </div>
             </div>
-        </div>
-        
+
         <div class="disclaimer">
             <strong>📌 Post-Transition Status:</strong> T3C Basic Foster Family Home is now the entry-level service for all new foster homes. This guide reflects current implementation with integrated staff training requirements.
         </div>
