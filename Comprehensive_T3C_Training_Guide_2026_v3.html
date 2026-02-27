@@ -49,8 +49,8 @@
         .header {
             background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, var(--dark-purple) 100%);
             color: white;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
+            padding: 0.6rem 0;
+            margin-bottom: 0;
             position: relative;
             overflow: hidden;
         }
@@ -77,9 +77,9 @@
         }
         
         .header h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.1rem;
             background: linear-gradient(45deg, white, #f1f5f9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -87,24 +87,27 @@
         }
         
         .header p {
-            font-size: 1.25rem;
-            opacity: 0.9;
+            font-size: 0.8rem;
+            opacity: 0.85;
             font-weight: 300;
         }
         
         .header img {
-            height: 80px;
+            height: 40px;
             filter: brightness(1.1);
         }
         
         /* Modern Navigation */
         .nav-container {
             background: white;
-            border-radius: 16px;
-            padding: 0.75rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--neutral-200);
+            border-radius: 0;
+            padding: 0.4rem 0.75rem 0;
+            margin-bottom: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            border-bottom: 1px solid var(--neutral-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .nav-tabs {
@@ -267,6 +270,9 @@
         
         thead {
             background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            position: sticky;
+            top: 90px;
+            z-index: 50;
         }
         
         th {
@@ -344,46 +350,45 @@
         
         /* Legend */
         .legend {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            padding: 0.6rem 1rem;
             background: white;
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-md);
+            border-radius: 10px;
             border: 1px solid var(--neutral-200);
-        }
-        
-        .legend h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary-purple);
             margin-bottom: 1rem;
+            font-size: 0.8rem;
         }
-        
+
+        .legend h3 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--neutral-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 0.25rem;
+            white-space: nowrap;
+        }
+
         .legend-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
+            display: contents;
         }
-        
+
         .legend-item {
             display: flex;
             align-items: center;
-            padding: 0.75rem;
-            border-radius: 10px;
-            background: var(--neutral-100);
-            transition: all 0.3s ease;
+            gap: 0.35rem;
+            white-space: nowrap;
         }
-        
-        .legend-item:hover {
-            background: var(--light-purple);
-            transform: translateY(-1px);
-        }
-        
+
+        .legend-item:hover { opacity: 0.8; }
+
         .legend-color {
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
-            margin-right: 0.75rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
             flex-shrink: 0;
         }
         
@@ -484,13 +489,15 @@
         
         /* Disclaimer */
         .disclaimer {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border: 2px solid var(--accent-orange);
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin: 2rem 0;
+            background: #fffbeb;
+            border-left: 3px solid var(--accent-orange);
+            border-radius: 0;
+            padding: 0.4rem 1rem;
+            margin: 0;
             font-style: italic;
             font-weight: 500;
+            font-size: 0.8rem;
+            border-top: 1px solid #fde68a;
         }
         
         /* Responsive Design */
@@ -587,6 +594,19 @@
                 <button class="nav-tab" onclick="showSection('curriculum')">📚 Curriculum Guide</button>
                 <button class="nav-tab" onclick="showSection('compliance')">✅ Compliance</button>
             </div>
+            <!-- Legend inside sticky bar -->
+            <div class="legend" style="border:none; border-top:1px solid var(--neutral-200); border-radius:0; margin:0; padding:0.35rem 0.25rem;">
+                <h3>Legend:</h3>
+                <div class="legend-grid">
+                    <div class="legend-item"><div class="legend-color tac-749"></div><span>TAC §749</span></div>
+                    <div class="legend-item"><div class="legend-color t3c-blueprint"></div><span>T3C Blueprint</span></div>
+                    <div class="legend-item"><div class="legend-color dfps-online"></div><span>DFPS Online</span></div>
+                    <div class="legend-item"><div class="legend-color rcc-contract"></div><span>RCC Contract</span></div>
+                    <div class="legend-item"><div class="legend-color agency-policy"></div><span>Agency Policy</span></div>
+                    <div class="legend-item"><div class="legend-color both-staff-fp"></div><span>Both Staff &amp; FP</span></div>
+                    <div class="legend-item"><div class="legend-color staff-only"></div><span>Staff Only</span></div>
+                </div>
+            </div>
         </div>
         
         <div class="disclaimer">
@@ -637,40 +657,6 @@
         
         <!-- Regulatory Matrix Section -->
         <div id="regulatory-matrix" class="content-section">
-            <div class="legend">
-                <h3>📋 Regulatory Source Legend</h3>
-                <div class="legend-grid">
-                    <div class="legend-item">
-                        <div class="legend-color tac-749"></div>
-                        <strong>TAC §749 Minimum Standards</strong> - Texas law, cannot be waived
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color t3c-blueprint"></div>
-                        <strong>T3C Blueprint</strong> - Required for T3C credentialing
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color dfps-online"></div>
-                        <strong>DFPS Online Training</strong> - State-mandated online courses
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color rcc-contract"></div>
-                        <strong>RCC Contract</strong> - Regional contracting requirements
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color agency-policy"></div>
-                        <strong>Agency Policy</strong> - Refuge House internal requirements
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color both-staff-fp"></div>
-                        <strong>Both Staff &amp; Foster Parents</strong> - Shared training requirements
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color staff-only"></div>
-                        <strong>Staff Only</strong> - Staff-specific requirements
-                    </div>
-                </div>
-            </div>
-
             <div class="table-container">
                 <table>
                     <thead>
