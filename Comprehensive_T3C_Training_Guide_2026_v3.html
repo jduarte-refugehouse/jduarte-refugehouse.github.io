@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refuge House Comprehensive T3C Training Guide 2026</title>
+    <style>
+        :root {
+            --primary-purple: #5E3989;
+            --secondary-purple: #7B4BA5;
+            --accent-red: #A90533;
+            --accent-orange: #F59E0B;
+            --accent-green: #10B981;
+            --accent-blue: #3B82F6;
+            --dark-purple: #3C2556;
+            --light-purple: #F3E9FA;
+            --neutral-100: #f8fafc;
+            --neutral-200: #e2e8f0;
+            --neutral-300: #cbd5e1;
+            --neutral-600: #475569;
+            --neutral-800: #1e293b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--neutral-800);
+            background: linear-gradient(135deg, var(--neutral-100) 0%, #fefefe 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Modern Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, var(--dark-purple) 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,0 1000,60 0,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, white, #f1f5f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .header img {
+            height: 80px;
+            filter: brightness(1.1);
+        }
+        
+        /* Modern Navigation */
+        .nav-container {
+            background: white;
+            border-radius: 16px;
+            padding: 0.75rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--neutral-200);
+        }
+        
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .nav-tab {
+            position: relative;
+            padding: 0.75rem 1.25rem;
+            border: none;
+            background: transparent;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--neutral-600);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            min-width: fit-content;
+        }
+        
+        .nav-tab:hover {
+            background: var(--light-purple);
+            color: var(--primary-purple);
+            transform: translateY(-1px);
+        }
+        
+        .nav-tab.active {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-separator {
+            width: 1px;
+            background: var(--neutral-300);
+            margin: 0.5rem 0;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            margin-left: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+        
+        .badge-active {
+            background: var(--accent-green);
+            color: white;
+        }
+        
+        .badge-entry {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Modern Cards */
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-200);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .card h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-purple);
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        /* Alert Components */
+        .alert {
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .alert-success {
+            background: #f0fdf4;
+            border-left-color: var(--accent-green);
+            color: #166534;
+        }
+        
+        .alert-info {
+            background: #eff6ff;
+            border-left-color: var(--accent-blue);
+            color: #1e40af;
+        }
+        
+        .alert-warning {
+            background: #fffbeb;
+            border-left-color: var(--accent-orange);
+            color: #92400e;
+        }
+        
+        /* Modern Table Styles */
+        .table-container {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-200);
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+        }
+        
+        th {
+            color: white;
+            padding: 1rem 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Audience column header highlight */
+        th:nth-child(3) {
+            background-color: rgba(255,255,255,0.15);
+            border-right: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        td {
+            padding: 0.875rem 0.75rem;
+            border-bottom: 1px solid var(--neutral-200);
+            border-right: 1px solid var(--neutral-200);
+            vertical-align: top;
+        }
+        
+        /* Light background for audience column */
+        td:nth-child(3) {
+            background-color: #f8fafc;
+            border-right: 2px solid var(--neutral-200);
+            font-size: 0.8rem;
+            color: var(--neutral-600);
+        }
+        
+        tr:hover {
+            background: var(--neutral-100);
+        }
+        
+        tr:hover td:nth-child(3) {
+            background-color: #f1f5f9;
+        }
+        
+        .training-name {
+            font-weight: 600;
+            color: var(--primary-purple);
+            min-width: 200px;
+        }
+        
+        /* Regulatory Source Indicators */
+        .source-indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 2px;
+            position: relative;
+        }
+        
+        .source-indicator::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .tac-749 { background: linear-gradient(135deg, #dc2626, #991b1b); }
+        .t3c-blueprint { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); }
+        .dfps-online { background: linear-gradient(135deg, var(--accent-blue), #1e40af); }
+        .rcc-contract { background: linear-gradient(135deg, var(--accent-orange), #d97706); }
+        .agency-policy { background: linear-gradient(135deg, var(--accent-green), #059669); }
+        .staff-only { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .both-staff-fp { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        
+        /* Legend */
+        .legend {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-200);
+        }
+        
+        .legend h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            border-radius: 10px;
+            background: var(--neutral-100);
+            transition: all 0.3s ease;
+        }
+        
+        .legend-item:hover {
+            background: var(--light-purple);
+            transform: translateY(-1px);
+        }
+        
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        
+        /* Curriculum Group Headers */
+        .curriculum-group-header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            color: white;
+            padding: 0.85rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 1.75rem 0 0.75rem 0;
+            letter-spacing: 0.02em;
+        }
+
+        /* Training Grid */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .training-item {
+            background: var(--neutral-100);
+            border-left: 4px solid var(--accent-red);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .training-item:hover {
+            background: var(--light-purple);
+            border-left-color: var(--accent-orange);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .training-item h4 {
+            margin: 0 0 0.75rem 0;
+            color: var(--primary-purple);
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        
+        .hours {
+            font-weight: 700;
+            color: var(--accent-red);
+            font-size: 1.125rem;
+        }
+        
+        /* Search */
+        .search-box {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--neutral-300);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(94, 57, 137, 0.1);
+        }
+        
+        /* Section Headers */
+        .section-header {
+            background: linear-gradient(135deg, var(--light-purple), #faf5ff);
+            font-weight: 700;
+            color: var(--primary-purple);
+        }
+        
+        .section-header td {
+            padding: 1.25rem 0.75rem;
+            border-top: 3px solid var(--primary-purple);
+            font-size: 1rem;
+        }
+        
+        /* Service Package Headers */
+        .service-package-header {
+            background: linear-gradient(135deg, var(--accent-orange), #d97706);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-package-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        /* Disclaimer */
+        .disclaimer {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .table-container {
+                overflow-x: auto;
+            }
+            
+            table {
+                min-width: 800px;
+            }
+        }
+        
+        /* Curriculum specific styles */
+        .curriculum-item {
+            background: white;
+            border: 2px solid var(--neutral-200);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .curriculum-item:hover {
+            border-color: var(--primary-purple);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .curriculum-item h4 {
+            color: var(--primary-purple);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        .audience-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .staff-tag {
+            background: var(--secondary-purple);
+        }
+        
+        .both-tag {
+            background: var(--accent-orange);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div>
+                    <h1>🎯 Comprehensive T3C Training Guide</h1>
+                    <p>Foster Parent & Staff Training Matrix - 2026</p>
+                </div>
+                <img src="https://jduarte-refugehouse.github.io/web-logo-with-name-dark-background.png" alt="Refuge House Logo">
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showSection('overview')">📊 Overview</button>
+                <button class="nav-tab" onclick="showSection('regulatory-matrix')">📋 Full Training Matrix</button>
+                <button class="nav-tab" onclick="showSection('foster-parent')">👨‍👩‍👧‍👦 Foster Parent</button>
+                <button class="nav-tab" onclick="showSection('staff-training')">👩‍💼 Staff Training</button>
+                <div class="nav-separator"></div>
+                <button class="nav-tab" onclick="showSection('t3c-basic')">🏠 T3C Basic <span class="badge badge-entry">Entry</span></button>
+                <button class="nav-tab" onclick="showSection('service-packages')">📦 Service Packages</button>
+                <div class="nav-separator"></div>
+                <button class="nav-tab" onclick="showSection('curriculum')">📚 Curriculum Guide</button>
+                <button class="nav-tab" onclick="showSection('compliance')">✅ Compliance</button>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <strong>📌 Post-Transition Status:</strong> T3C Basic Foster Family Home is now the entry-level service for all new foster homes. This guide reflects current implementation with integrated staff training requirements.
+        </div>
+        
+        <!-- Overview Section -->
+        <div id="overview" class="content-section active">
+            <div class="card">
+                <h2>🎯 Training Program Overview</h2>
+                <div class="alert alert-success">
+                    <strong>Modern Training Ecosystem:</strong> Refuge House maintains a comprehensive, integrated training program serving both foster parents and staff with shared T3C foundations.
+                </div>
+                
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>👨‍👩‍👧‍👦 Foster Parent Training</h4>
+                        <p><span class="hours">~45 hours</span> pre-service</p>
+                        <p><span class="hours">30 hours</span> annual</p>
+                        <p>T3C Basic included for all new families</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>👩‍💼 Staff Training</h4>
+                        <p><span class="hours">37+ hours</span> staff-specific</p>
+                        <p><span class="hours">Shared modules</span> with foster parents</p>
+                        <p>Position-based learning tracks</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>🤝 Shared Training</h4>
+                        <p><span class="hours">20+ hours</span> shared content</p>
+                        <p>T3C foundations, TBRI, regulatory compliance</p>
+                        <p>Consistent messaging across organization</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>📋 Compliance Status</h4>
+                        <p><span class="hours">6 regulatory sources</span></p>
+                        <p>TAC §749, T3C Blueprint, DFPS, RCC Contract</p>
+                        <p>Full compliance maintained</p>
+                    </div>
+                </div>
+                
+                <h3>🎯 Key Achievements</h3>
+                <div class="alert alert-info">
+                    <strong>Training Integration:</strong> Excellent alignment between staff and foster parent training creates consistency, cost efficiency, and shared T3C language across the organization.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Regulatory Matrix Section -->
+        <div id="regulatory-matrix" class="content-section">
+            <div class="legend">
+                <h3>📋 Regulatory Source Legend</h3>
+                <div class="legend-grid">
+                    <div class="legend-item">
+                        <div class="legend-color tac-749"></div>
+                        <strong>TAC §749 Minimum Standards</strong> - Texas law, cannot be waived
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color t3c-blueprint"></div>
+                        <strong>T3C Blueprint</strong> - Required for T3C credentialing
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color dfps-online"></div>
+                        <strong>DFPS Online Training</strong> - State-mandated online courses
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color rcc-contract"></div>
+                        <strong>RCC Contract</strong> - Regional contracting requirements
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color agency-policy"></div>
+                        <strong>Agency Policy</strong> - Refuge House internal requirements
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color both-staff-fp"></div>
+                        <strong>Both Staff &amp; Foster Parents</strong> - Shared training requirements
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color staff-only"></div>
+                        <strong>Staff Only</strong> - Staff-specific requirements
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width:220px">Training Name</th>
+                            <th>Hours</th>
+                            <th>Audience</th>
+                            <th>TAC §749</th>
+                            <th>T3C</th>
+                            <th>DFPS</th>
+                            <th>RCC</th>
+                            <th>Agency</th>
+                            <th>Frequency</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- ══════════════════════════════════════════ -->
+                        <!-- SECTION 1: PRE-SERVICE FOUNDATION         -->
+                        <!-- ══════════════════════════════════════════ -->
+                        <tr class="section-header">
+                            <td colspan="10">🎓 PRE-SERVICE FOUNDATION — Required before first placement</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Orientation</td>
+                            <td>4</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>New hire / new foster</td>
+                            <td>Mission, vision, org structure, services, policy overview</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">PRIDE Training</td>
+                            <td>12</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Pre-service</td>
+                            <td>Core foster care competencies; counts toward 35-hr pre-service requirement</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">SAMA — Safe Physical Management</td>
+                            <td>16</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service</td>
+                            <td>Assisting process, containment, object retrieval, special situations</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">RH Trauma Informed Care — TBRI</td>
+                            <td>8</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Pre-service</td>
+                            <td>Neurochemistry of fear, empowered to connect, ACEs, trust-based parenting</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">T3C Orientation &amp; Vision</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service / Conversion</td>
+                            <td>T3C transformation, four pillars, what changes vs. what stays</td>
+                        </tr>
+
+                        <!-- ══════════════════════════════════════════ -->
+                        <!-- SECTION 2: DFPS ONLINE REQUIRED           -->
+                        <!-- ══════════════════════════════════════════ -->
+                        <tr class="section-header">
+                            <td colspan="10">🌐 DFPS ONLINE TRAINING — State-mandated external courses</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">DFPS Reporting Suspected Abuse or Neglect</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator dfps-online"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Mandatory reporter obligations; DFPS online portal</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">DFPS Medical Consent Training for Caregivers</td>
+                            <td>2.5</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator dfps-online"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Medical decision-making authority for children in care</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">DFPS Need for Normalcy Training</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator dfps-online"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Prudent parent standards; age-appropriate activities</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">DFPS Psychotropic Medication for Children in Foster Care</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator dfps-online"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Medication oversight, consent, monitoring requirements</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">DFPS Runaway Prevention</td>
+                            <td>1</td>
+                            <td>Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator dfps-online"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Prevention strategies, reporting procedures for runaway youth</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">DFPS Reporting Sexual Abuse Training</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator dfps-online"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Recognition, reporting obligations, caregiver responsibilities</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">DFPS Trauma-Informed Care</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td><div class="source-indicator dfps-online"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Complements RH TBRI; DFPS trauma framework overview</td>
+                        </tr>
+
+                        <!-- ══════════════════════════════════════════ -->
+                        <!-- SECTION 3: TRAINING LIBRARY               -->
+                        <!-- ══════════════════════════════════════════ -->
+                        <tr class="section-header">
+                            <td colspan="10">📚 TRAINING LIBRARY — Count toward pre-service OR annual hours (both Staff &amp; Foster Parents)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Abusive Head and Brain Trauma</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Shaken baby, SIDS, TBI, level of functioning, therapy types</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Active Shooter Training</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Warning signs, reporting, hide/survive protocol, Homeland Security guidance</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Attachment Disorders</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Dependent/co-dependent patterns, RAD, relationship-building strategies</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Boundaries and Relationships</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Professional lines, confidentiality, self-awareness, personal space</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">The Brain and Trauma</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Neuroscience of trauma, brain development, cognitive abilities, healing</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">RH Communicable Diseases &amp; Blood Borne Pathogens</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Outbreaks, reporting, protection, contamination protocols</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Contract and Minimum Standards</td>
+                            <td>3</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Full RCCL standards, contract terms, compliance requirements</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">CPR / First Aid</td>
+                            <td>Varies</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Every 2 years</td>
+                            <td>Current certification required at all times; Red Cross or equivalent</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">RH Cultural Diversity</td>
+                            <td>3</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Transracial fostering, holidays, customs, cultural competency</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Cybersecurity</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Information security principles, threat identification, best practices</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Developmental Milestones &amp; Head and Brain Development</td>
+                            <td>4</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Birth–17 milestones; physical, emotional, social, intellectual; red flag alerts</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Disaster Plan &amp; Emergency Response</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>RH disaster plan, phone chain, emergency contacts, response protocols</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Fostering and Working with LGBTQ+ Youth</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Sexual orientation, coming-out process, bias, risk factors, identity stages</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">HIPAA</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Privacy, security, risk management; PHI handling</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Human Trafficking</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Every 2 years</td>
+                            <td>Myths, signs, online safety, parenting the survivor, how to report</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">RH Normalcy</td>
+                            <td>4</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Prudent parenting, age-appropriate activities, reasonable and prudent standard</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Paperwork and Due Dates</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>All agency paperwork and due dates for foster care and adoptions</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">RH Psychotropic Medications</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Dispensing responsibilities, log protocol, types/uses/side effects</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">School Dynamics</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Educational surrogate, ARDs, 504s, portfolio, state testing, tutoring</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Serious Incident / Abuse &amp; Neglect Prevention</td>
+                            <td>3</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>DFPS/RCCL rules, runaways, deaths, weather, communicable diseases, reporting</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Shaken Baby / SIDS</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Colic management, SBS signs/symptoms, SIDS prevention, smoking impact</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Suicide Prevention</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Risk screening, policy/placement, postvention, safety planning</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Transportation</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Seatbelts, child safety seats, Texas law, distracted driving, hyperthermia</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">TX Health Steps Training</td>
+                            <td>1</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Pre-service or Annual</td>
+                            <td>Age-based health requirements, services, and scheduling information</td>
+                        </tr>
+
+                        <!-- ══════════════════════════════════════════ -->
+                        <!-- SECTION 4: ANNUAL RENEWAL REQUIRED        -->
+                        <!-- ══════════════════════════════════════════ -->
+                        <tr class="section-header">
+                            <td colspan="10">🔄 ANNUAL / RENEWAL REQUIRED — Recurring certifications</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">SAMA Refresher</td>
+                            <td>8</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Annual</td>
+                            <td>Counts toward 30-hr annual requirement; annual SAMA certification renewal</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">RH Trauma Informed Care — TBRI Refresher</td>
+                            <td>4</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual</td>
+                            <td>Annual overview of TBRI principles; ACEs, secondary traumatic stress</td>
+                        </tr>
+
+                        <!-- ══════════════════════════════════════════ -->
+                        <!-- SECTION 5: T3C CONVERSION TRAINING        -->
+                        <!-- ══════════════════════════════════════════ -->
+                        <tr class="section-header">
+                            <td colspan="10">⭐ T3C CONVERSION TRAINING — Current foster parents &amp; staff transitioning to T3C (16-hour series)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Module 1 — T3C Orientation &amp; Vision</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>One-time (conversion)</td>
+                            <td>Four pillars, system transformation, what changes vs. what stays same</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Module 2 — TBRI® as T3C's Evidence-Informed Model</td>
+                            <td>4</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>One-time (conversion)</td>
+                            <td>TBRI in T3C context; test-out option if prior TBRI certified (reduces to 14 hrs)</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Module 3 — Universal Human Trafficking Prevention</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>One-time / Every 2 yrs</td>
+                            <td>Recognition, vulnerability patterns, recruitment tactics, age-appropriate prevention</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Module 4 — T3C Service Planning &amp; Documentation</td>
+                            <td>4</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>One-time (conversion)</td>
+                            <td>Needs-based vs. behavior-based documentation; CANS 3.0 foundation; 30-day plan requirement</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Module 5 — Enhanced Family Connections</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>One-time (conversion)</td>
+                            <td>Family engagement expectations, co-parenting strategies, sibling and parent contact rights</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Module 6 — Add-On Services Integration Overview</td>
+                            <td>2</td>
+                            <td>Both Staff &amp; Foster Parents</td>
+                            <td></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>One-time (conversion)</td>
+                            <td>Kinship Caregiver Support, Transition Support (14–22), Pregnant &amp; Parenting Youth</td>
+                        </tr>
+
+                        <!-- ══════════════════════════════════════════ -->
+                        <!-- SECTION 6: STAFF ONLY                     -->
+                        <!-- ══════════════════════════════════════════ -->
+                        <tr class="section-header">
+                            <td colspan="10">👩‍💼 STAFF-ONLY TRAINING — Required for Refuge House employees</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Staff Orientation 101.1–101.3</td>
+                            <td>3</td>
+                            <td>Staff Only</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>New employee</td>
+                            <td>Mission, vision, philosophy, HR policies, organizational structure</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Legal 101.1–101.4 (HIPAA, Privacy, CyberSecurity, Documentation)</td>
+                            <td>6</td>
+                            <td>Staff Only</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>New employee</td>
+                            <td>HIPAA, privacy, documentation guidelines, cybersecurity, safety</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Case Management 101–105</td>
+                            <td>15</td>
+                            <td>Staff Only</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Position-specific</td>
+                            <td>Caseloads, families, scheduling, visit requirements, CPS/SSCC coordination</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Service Plan Training</td>
+                            <td>4</td>
+                            <td>Staff Only</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td><div class="source-indicator t3c-blueprint"></div></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Position-specific</td>
+                            <td>Developing, documenting, and reviewing service plans per T3C requirements</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Psychiatric &amp; Medications Training</td>
+                            <td>2</td>
+                            <td>Staff Only</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td></td>
+                            <td>Position-specific</td>
+                            <td>Med logs, medication appointments, Radius forms, CM/foster parent responsibilities</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">40 Hours Supervision (New Staff)</td>
+                            <td>40</td>
+                            <td>Staff Only</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>New employee</td>
+                            <td>Direct supervision with experienced staff before independent caseload</td>
+                        </tr>
+
+                        <!-- ══════════════════════════════════════════ -->
+                        <!-- SECTION 7: FOSTER PARENT SPECIFIC         -->
+                        <!-- ══════════════════════════════════════════ -->
+                        <tr class="section-header">
+                            <td colspan="10">👨‍👩‍👧‍👦 FOSTER PARENT SPECIFIC — Requirements unique to foster home licensing</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">40 Hours Supervision (New Foster Parents)</td>
+                            <td>40</td>
+                            <td>Foster Parents</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="source-indicator rcc-contract"></div></td>
+                            <td><div class="source-indicator agency-policy"></div></td>
+                            <td>Pre-service</td>
+                            <td>Required for new foster parents without prior foster care experience</td>
+                        </tr>
+
+                        <tr>
+                            <td class="training-name">Water Safety</td>
+                            <td>1</td>
+                            <td>Foster Parents</td>
+                            <td><div class="source-indicator tac-749"></div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Annual (if applicable)</td>
+                            <td>Required for homes with pools, water features, or regular water activities</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="margin-top:1.5rem; background: #f8fafc; border-left: 4px solid var(--accent-blue); padding: 1rem 1.5rem;">
+                <strong>📊 Matrix Summary:</strong> 
+                38 unique training courses from your Radius training library &bull;
+                7 DFPS online required courses &bull;
+                6 T3C conversion modules (16 hours total) &bull;
+                Annual minimum: 30 hours for foster parents &bull;
+                Pre-service minimum: 35 hours (TAC §749.863)
+            </div>
+        </div>
+
+        <!-- Foster Parent Section -->
+
+        <div id="foster-parent" class="content-section">
+            <div class="card">
+                <h2>👨‍👩‍👧‍👦 Foster Parent Training Requirements</h2>
+                
+                <h3>Pre-Service Training (~45 Hours Total)</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>Agency Orientation</h4>
+                        <p class="hours">2 hours</p>
+                        <p>T3C overview, policies (not counted toward 35-hr minimum)</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>PRIDE Training</h4>
+                        <p class="hours">12 hours</p>
+                        <p>Core foster parenting competencies</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>T3C Basic Requirements</h4>
+                        <p class="hours">16 hours</p>
+                        <p>Service planning, family connections, TBRI integration</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>SAMA + Additional</h4>
+                        <p class="hours">16+ hours</p>
+                        <p>Behavioral management, CPR/First Aid, medications, etc.</p>
+                    </div>
+                </div>
+                
+                <h3>Annual Training (30 Hours)</h3>
+                <div class="alert alert-info">
+                    All content integrated into 30-hour requirement except standalone renewals
+                </div>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>SAMA Refresher</h4>
+                        <p class="hours">8 hours</p>
+                        <p>Within 30-hour requirement</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>TBRI Refresher</h4>
+                        <p class="hours">4-6 hours</p>
+                        <p>Within 30-hour requirement</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Regulatory Topics</h4>
+                        <p class="hours">16-18 hours</p>
+                        <p>Cultural diversity, abuse reporting, medications, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Staff Training Section -->
+        <div id="staff-training" class="content-section">
+            <div class="card">
+                <h2>👩‍💼 Staff Training Program</h2>
+                
+                <h3>New Employee Training Tracks</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>🎯 Universal Track (All Staff)</h4>
+                        <p class="hours">15 hours</p>
+                        <p>Staff Orientation + Legal + System Training</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>📋 Case Management Track</h4>
+                        <p class="hours">22+ hours</p>
+                        <p>Universal + Case Management 101-105 + Service Planning</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>🏥 Clinical Track</h4>
+                        <p class="hours">21+ hours</p>
+                        <p>Universal + Clinical modules + Psychiatric training</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>🤝 Shared Training</h4>
+                        <p class="hours">20+ hours</p>
+                        <p>Same T3C foundation as foster parents</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <strong>Training Efficiency:</strong> Staff receive same T3C foundation as foster parents, creating consistent organizational culture and shared language.
+                </div>
+            </div>
+        </div>
+        
+        <!-- T3C Basic Section -->
+        <div id="t3c-basic" class="content-section">
+            <div class="card">
+                <h2>🏠 T3C Basic Foster Family Home (Entry Level)</h2>
+                <div class="alert alert-success">
+                    <strong>Entry Level Service:</strong> All new foster homes automatically receive T3C Basic credentialing through pre-service training.
+                </div>
+                
+                <h3>Integrated T3C Basic Components</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>T3C Orientation & Vision</h4>
+                        <p class="hours">2 hours</p>
+                        <p>Understanding T3C transformation and benefits</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>TBRI as Evidence-Informed Model</h4>
+                        <p class="hours">4 hours</p>
+                        <p>Advanced TBRI application in T3C context</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Service Planning & Documentation</h4>
+                        <p class="hours">4 hours</p>
+                        <p>Foster parent role in 30-day service planning</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Enhanced Family Connections</h4>
+                        <p class="hours">2 hours</p>
+                        <p>Family engagement expectations and strategies</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Human Trafficking Prevention</h4>
+                        <p class="hours">2 hours</p>
+                        <p>Universal T3C requirement (2-year validity)</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>Add-On Services Overview</h4>
+                        <p class="hours">2 hours</p>
+                        <p>Kinship, Transition, Pregnant & Parenting support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Service Packages Section -->
+        <div id="service-packages" class="content-section">
+            <div class="card">
+                <h2>📦 Service Package Training Requirements</h2>
+                
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>🧠 Mental & Behavioral Health</h4>
+                        <p class="hours">6 hours</p>
+                        <p><span class="badge badge-active">Active</span></p>
+                        <p>Mental health awareness, crisis intervention, therapeutic team coordination</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>🌟 IDD/Autism Spectrum</h4>
+                        <p class="hours">6 hours</p>
+                        <p><span class="badge badge-active">Active</span></p>
+                        <p>Communication strategies, sensory processing, behavioral supports</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>💊 Substance Use Support</h4>
+                        <p class="hours">4 hours</p>
+                        <p>Recovery support, relapse prevention, substance-free environment</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>📋 STASS (Assessment)</h4>
+                        <p class="hours">4 hours</p>
+                        <p>Assessment coordination, observation, transition management</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>🏥 Treatment Foster Care</h4>
+                        <p class="hours">20 hours</p>
+                        <p>High-acuity behaviors, intensive plans, crisis intervention</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>👨‍👩‍👧‍👦 Add-On Services</h4>
+                        <p class="hours">2 hours each</p>
+                        <p><span class="badge badge-active">Active</span></p>
+                        <p>Kinship, Transition, Pregnant & Parenting support</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <strong>Annual Requirements:</strong> Only Treatment Foster Care requires additional annual hours (8 hrs). All others integrate into standard 30-hour requirement.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Curriculum Section -->
+        <div id="curriculum" class="content-section">
+            <div class="card">
+                <h2>📚 Curriculum Guide & Content Details</h2>
+                <p style="color:var(--neutral-600); margin-bottom:1.5rem;">Complete course descriptions for all 38 training courses in the Refuge House training library, plus the 6-module T3C Conversion series. Click any course header to expand details.</p>
+
+                <input type="text" class="search-box" placeholder="🔍 Search by course name, topic, or keyword..." onkeyup="searchCurriculum()" id="curriculumSearch">
+
+                <!-- ─── GROUP: PRE-SERVICE FOUNDATION ─── -->
+                <div class="curriculum-group-header">🎓 Pre-Service Foundation</div>
+                <div id="curriculum-list">
+
+                    <div class="curriculum-item">
+                        <h4>Orientation — 4 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#e0f2fe;color:#0369a1;">Pre-Service Only</span>
+                        <p><strong>Content:</strong> Introduction to Refuge House; philosophy, organizational structure, and policies; description of services and types of children served; type of business, leadership, mission, vision, motto, Board of Directors; organizational culture and goals; monitoring agencies; work groups; long and short-term goals; hours of operation; dress code; basic HR information; Religious Views; Compass Model; and Ezekiel 37.</p>
+                        <p><strong>Regulatory:</strong> RCC Contract &bull; Agency Policy</p>
+                        <p><strong>Notes:</strong> Does not count toward the 35-hour pre-service minimum.</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>PRIDE Training — 12 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#e0f2fe;color:#0369a1;">Pre-Service Only</span>
+                        <p><strong>Content:</strong> Constructive Guidance &amp; Discipline of Children; Developmental Stages of Children; SIDS; Developmental Milestones; Attachments; Fostering Children's Self Esteem; Positive Interaction with Children; Strategies &amp; Techniques for working with the population of children served; Supervision &amp; Safety Practices in the care of children; Cultural Competency &amp; Diversity; Different Roles of Caregivers; Measures to Prevent, Identify, Treat &amp; Report Suspected Occurrences of child abuse, neglect &amp; exploitation; Connecting with PRIDE; Teamwork towards permanency; attachments and losses; Strengthening family relationships; discipline; signs of sexual abuse; shaken baby; continuing family relationships; planning for change.</p>
+                        <p><strong>Regulatory:</strong> TAC §749.863 — counts toward the 35-hour pre-service requirement &bull; RCC Contract</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>SAMA — Safe Physical Management — 16 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#e0f2fe;color:#0369a1;">Pre-Service Only</span>
+                        <p><strong>Content:</strong> Assisting Process; Protection of Self &amp; Others; Containment; Object Retrieval &amp; Special Situations.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint — behavioral management certification requirement &bull; RCC Contract &bull; Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>RH Trauma Informed Care — TBRI — 8 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#e0f2fe;color:#0369a1;">Pre-Service Only</span>
+                        <p><strong>Content:</strong> Neurochemistry of Fear — Factors &amp; Solutions; Empowered to Connect &amp; Correcting Principles; Compassion Fatigue; Sensory Integration; Playful Interaction; Adverse Child Experiences (ACEs); Prevention &amp; Management of Secondary Traumatic Stress; Trust Based Parenting.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — evidence-informed treatment model &bull; RCC Contract</p>
+                    </div>
+
+                </div><!-- end curriculum-list -->
+
+                <!-- ─── GROUP: ANNUAL RENEWAL ─── -->
+                <div class="curriculum-group-header">🔄 Annual Renewal Required</div>
+                <div id="curriculum-list-annual">
+
+                    <div class="curriculum-item">
+                        <h4>SAMA Refresher — 8 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Assisting Process; Protection of Self &amp; Others; Object Retrieval &amp; Special Situations. Annual renewal of safe physical management certification.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint &bull; RCC Contract &bull; Agency Policy</p>
+                        <p><strong>Notes:</strong> Counts toward the 30-hour annual training requirement.</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>RH Trauma Informed Care — TBRI Refresher — 4 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Annual overview of Neurochemistry of Fear — Factors of Fear &amp; Solutions; Empowered to Connect &amp; Correcting Principles; Compassion Fatigue; Sensory Integration; Adverse Child Experiences; Prevention &amp; Management of Secondary Traumatic Stress &amp; Trust Based Parenting.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint — annual TBRI competency maintenance</p>
+                    </div>
+
+                </div>
+
+                <!-- ─── GROUP: DFPS ONLINE ─── -->
+                <div class="curriculum-group-header">🌐 DFPS Online Training — State-Mandated External Courses</div>
+                <div id="curriculum-list-dfps">
+
+                    <div class="curriculum-item">
+                        <h4>DFPS Reporting Suspected Abuse or Neglect of a Child — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Mandatory reporter obligations; definitions and thresholds for abuse and neglect; how to make a report to the Texas Abuse Hotline; documentation requirements; consequences of failure to report.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; DFPS Online Portal — state-mandated</p>
+                        <p><strong>Delivery:</strong> DFPS online training portal (external)</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>DFPS Medical Consent Training for Caregivers — 2.5 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Medical decision-making authority for children in foster care; types of medical consent; when caregiver consent is sufficient vs. when court authorization is needed; STAR Health plan overview; working with medical providers; documentation requirements.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; DFPS Online Portal — state-mandated</p>
+                        <p><strong>Delivery:</strong> DFPS online training portal (external)</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>DFPS Need for Normalcy Training — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Prudent parent standards; definition of normalcy for children in foster care; age-appropriate activities and unsupervised activities; applying the reasonable and prudent parent standard; benefits of normal childhood activities to well-being, mental health, and developmental growth; caregiver and child responsibilities when participating in activities.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; DFPS Online Portal — state-mandated</p>
+                        <p><strong>Delivery:</strong> DFPS online training portal (external)</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>DFPS Psychotropic Medication for Children in Texas Foster Care — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Overview of psychotropic medication use in foster care; consent requirements; caregiver monitoring responsibilities; working with prescribers; medication logs; what to report and to whom; child rights regarding medications.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; DFPS Online Portal — state-mandated</p>
+                        <p><strong>Delivery:</strong> DFPS online training portal (external)</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>DFPS Runaway Prevention — 1 Hour</h4>
+                        <span class="audience-tag foster-tag">Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Risk factors for runaway behavior in foster youth; prevention strategies; what to do if a child runs; reporting procedures and required notifications; CINS/FINS process; role of the caregiver in recovery and re-entry.</p>
+                        <p><strong>Regulatory:</strong> DFPS Online Portal — state-mandated</p>
+                        <p><strong>Delivery:</strong> DFPS online training portal (external)</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>DFPS Reporting Sexual Abuse Training — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> Recognizing signs of sexual abuse; grooming behaviors; mandatory reporting obligations specific to sexual abuse; how to respond to a child's disclosure; avoiding re-traumatization; documentation; coordination with DFPS and law enforcement.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; DFPS Online Portal — state-mandated</p>
+                        <p><strong>Delivery:</strong> DFPS online training portal (external)</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>DFPS Trauma-Informed Care — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual</span>
+                        <p><strong>Content:</strong> DFPS framework for trauma-informed care; how trauma affects child development and behavior; trauma-informed approaches in daily caregiving; alignment with TBRI principles; applying trauma awareness to placement decisions and transitions.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint &bull; DFPS Online Portal</p>
+                        <p><strong>Delivery:</strong> DFPS online training portal (external) &bull; Complements Refuge House TBRI curriculum.</p>
+                    </div>
+
+                </div>
+
+                <!-- ─── GROUP: TRAINING LIBRARY ─── -->
+                <div class="curriculum-group-header">📖 Training Library — Counts Toward Pre-Service OR Annual Hours</div>
+                <div id="curriculum-list-library">
+
+                    <div class="curriculum-item">
+                        <h4>Abusive Head and Brain Trauma — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Shaken Baby Syndrome; SIDS; Traumatic Brain Injuries and their effects and possible disabilities; Level of Functioning following TBI; Types of Therapy available for affected children.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Active Shooter Training — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Warning signs of potential active shooter situations; Reporting to Police; How to Hide; How to safely emerge when police arrive; Role play scenarios; Gunshot wounds — basic response; Homeland Security guidance; Pocket Guide reference.</p>
+                        <p><strong>Regulatory:</strong> Agency Policy — emergency preparedness requirement</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Attachment Disorders — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Dependent and Co-Dependent attachment patterns; Relationship building with children who have experienced early trauma; Reactive Attachment Disorder (RAD) — definition, symptoms, and caregiving strategies.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — aligned with TBRI framework</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Boundaries and Relationships — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> How to not overstep professional lines; Understanding and active listening rather than directing; Understanding the professional line in foster care relationships; Allowing space for children and families; Understanding you do not need to know everything; Being self-aware; Confidentiality obligations; Privacy and Personal Space Awareness.</p>
+                        <p><strong>Regulatory:</strong> Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>The Brain and Trauma — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Neuroscience of the Brain — basic structure and function; Brain Development across childhood and adolescence; Cognitive Abilities and how trauma disrupts them; Understanding Intellectual Delays related to trauma exposure; The Healing process — what research shows about brain recovery.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint — supports TBRI trauma-informed framework</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>RH Communicable Diseases &amp; Blood Borne Pathogens — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Safety protocols; Identifying and responding to Outbreaks; Reporting requirements; Protection measures; Contamination prevention and response.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Contract and Minimum Standards — 3 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Full review of the Entire RH/DFPS Contract; All RCCL (Residential Child Care Licensing) Standards applicable to foster family homes; compliance expectations; consequences of standards violations; monitoring process.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — RCCL minimum standards &bull; RCC Contract</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>CPR / First Aid — Hours Vary by Certification</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Adult, child, and infant CPR; AED use; choking response; wound care and bleeding control; burns and fractures; current certification required at all times. Certification typically valid 2 years.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — current certification required &bull; RCC Contract</p>
+                        <p><strong>Delivery:</strong> Red Cross or equivalent certified provider</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>RH Cultural Diversity — 3 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Information and ideas that assist with caring for foster and adoptive children in trans-racial and multi-racial families; Parenting across Racial and Cultural Lines; Transracial and Cross-Cultural Fostering; Holidays and Common Customs across cultures; understanding identity development for children placed transracially.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — cultural competency requirement</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Cybersecurity — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> The Principles of Information Security; Best Practices to safeguard information and information systems; Awareness of the meaning of information security — Threat, threat actor, risk, and attack; How to identify, respond to, and report on information security threats and suspicious activity.</p>
+                        <p><strong>Regulatory:</strong> Agency Policy — HIPAA and PHI protection requirements</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Developmental Milestones &amp; Head and Brain Development — 4 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Child Development from birth to 17 years of age; Physical/Motor Milestones; Emotional &amp; Social Milestones; Intellectual Milestones; Brain &amp; Head Development; Activities to stimulate growth &amp; development; Early Childhood Brain Development; Red Flag Alerts given along with activities to stimulate growth and development when delays are noted.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — developmental awareness requirement</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Disaster Plan &amp; Emergency Response — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Complete review of the RH Disaster Plan; Phone Chain procedures; Reporting protocols; Emergency contact information; Emergency response protocol for fire, severe weather, medical emergencies, and other disasters.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — emergency preparedness &bull; Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Fostering and Working with LGBTQ+ Youth — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Understanding Sexual Orientation and Gender Identity; Bias Discussion and self-reflection; Understanding the Coming Out Process; Risk Factors specific to LGBTQ+ youth in foster care; Stages of Developing a Sexual Orientation or Gender Identity; creating affirming and safe home environments.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — LGBTQ+ youth protections</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>HIPAA — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Professional Privacy obligations; Security requirements for protected health information (PHI); Risk Management — how to identify and mitigate privacy risks; Safety protocols for handling children's records and medical information.</p>
+                        <p><strong>Regulatory:</strong> RCC Contract &bull; Agency Policy — federal HIPAA compliance</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Human Trafficking — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#fce7f3;color:#9d174d;">Every 2 Years</span>
+                        <p><strong>Content:</strong> About Child Trafficking — definitions and scope; Common Myths and misconceptions; Know the Signs — behavioral and physical indicators; Online Safety — how traffickers use technology to recruit foster youth; Parenting the Child who has experienced trafficking — trauma-informed responses; How to Report Trafficking — Texas Hotline and DFPS.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — universal trafficking prevention requirement</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>RH Normalcy — 4 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Definition of Normalcy for children in foster care; Prudent judgment standard; Developmental states including cognitive, social, emotional, and physical development; Age-appropriate activities and Unsupervised childhood activities; Benefits of activities to a child's well-being, mental health, and social, emotional, and developmental growth; How to make and apply the Reasonable and Prudent standard; the child's and the caregiver's responsibilities when participating in childhood activities.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — Prudent Parent Standard &bull; Aligned with DFPS Normalcy Training</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Paperwork and Due Dates — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> All agency paperwork applicable to foster care and adoptions; Due dates and timelines for every required document; Who receives each document; Common errors and how to avoid them; What happens when paperwork is late.</p>
+                        <p><strong>Regulatory:</strong> RCC Contract &bull; Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>RH Psychotropic Medications — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Responsibility of the Person Dispensing Medications; Proper dispensing procedures; Questions to Ask Your Doctor/Pharmacist; Medication Log Protocol — how to complete correctly; Types of Medications used in foster care; Uses and Side Effects of common psychotropic medications; what requires immediate reporting.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>School Dynamics — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Educational surrogate information and caregiver role; Educational Portfolio — what it contains and who maintains it; Understanding when tutoring is required; ARDs (Admission, Review, and Dismissal meetings) — caregiver participation; 504 Plans — caregiver rights and responsibilities; State Testing — what foster parents need to know; Paperwork the agency needs from school.</p>
+                        <p><strong>Regulatory:</strong> RCC Contract — education advocacy requirements</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Serious Incident / Abuse &amp; Neglect Prevention — 3 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Refuge House, DFPS, and RCCL rules, policies, and standards surrounding serious incidents; Real examples and case studies; Abuse/Neglect Prevention strategies; Sexual Abuse — recognition and mandatory reporting; Neglect — definitions and indicators; Runaways — prevention and response; Deaths — protocol and reporting; Weather-Related emergencies; Communicable Disease outbreaks; Reporting Abuse of any and all kinds — who, when, and how.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; RCC Contract — serious incident reporting requirements</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Shaken Baby / SIDS — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Define Colic and identify three ways to soothe a fussy baby; Define Shaken Baby Syndrome; Identify signs and symptoms of Shaken Baby/Abusive Head Trauma; Factors that increase Sudden Infant Death Syndrome (SIDS) risk; Prevention of SIDS — safe sleep practices; How smoking and other substances affect babies; When and how to seek emergency help.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — infant safety requirements</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Suicide Prevention — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Core Concepts and definitions; Risk Profile for foster youth — elevated risk factors; Policy/Risk Mitigation (Proactive) — Suicide Risk Screening at Placement, Monthly Review, and Immediately when concerns arise; Responding to Risk (Reactive) — what to do and say; Results of Screening — how to interpret and act; Post-Hospitalization re-entry planning; Responsibility of caregiver vs. agency; Postvention — supporting the household after a loss; Addressing Suicide facts and figures; Foster and Adoptive Parent Stories; Therapeutic Treatments overview; Safety planning; Family awareness; Traumatic Events; Structure, Supervision, and Self-Expression as protective factors.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — mental health safety requirements</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Transportation — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Proper Use of Seatbelts; Texas State Law &amp; Risks of Improper Use; Child Safety Seats — Texas State Laws, Selection of Safety Seats, Installation of Safety Seats, Proper Use of Safety Seats; Safety In and Around Vehicles; Minimum Standards compliance; Vehicle Maintenance requirements; Distracted Driving — legal and safety implications; Hyperthermia prevention; Vehicle Back Overs; Seatbelt Entanglement; Power Windows; Trunk Equipment; School Bus Safety.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — transportation safety standards</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>TX Health Steps Training/Information — 1 Hour</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <p><strong>Content:</strong> Requirements by age — what screenings and checkups are due at each stage; Services available through Texas Health Steps; General information on accessing and scheduling appointments; Caregiver role in ensuring compliance with Health Steps schedule.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — STAR Health/health care oversight</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Water Safety — 1 Hour</h4>
+                        <span class="audience-tag foster-tag">Foster Parents</span>
+                        <span class="audience-tag" style="background:#fef3c7;color:#92400e;">Annual — if applicable</span>
+                        <p><strong>Content:</strong> Define Water Safety and its importance for foster children; Identify drowning risk factors; Identify the ABCs of Water Safety; Define S.W.I.M. — ways to keep children safe on vacation and at water activities; Drowning and near-drowning response; Risk factors specific to foster youth; Supervision standards; Preventing accidents and promoting safety.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 — required for homes with pools, water features, or regular water activities</p>
+                    </div>
+
+                </div>
+
+                <!-- ─── GROUP: STAFF ONLY ─── -->
+                <div class="curriculum-group-header">👩‍💼 Staff-Only Training</div>
+                <div id="curriculum-list-staff">
+
+                    <div class="curriculum-item">
+                        <h4>Staff Orientation 101.1–101.3 — 3 Hours</h4>
+                        <span class="audience-tag staff-tag">Staff Only</span>
+                        <p><strong>Content:</strong> Introduction to Refuge House mission, vision, and philosophy; Organizational structure and leadership; HR policies and procedures; Employee handbook review; Description of services and service population; Regulatory monitoring agencies and their roles.</p>
+                        <p><strong>Regulatory:</strong> Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Legal 101.1–101.4 — 6 Hours</h4>
+                        <span class="audience-tag staff-tag">Staff Only</span>
+                        <p><strong>Content:</strong> HIPAA — professional privacy, PHI handling, breach procedures; Documentation Guidelines — what to document, how to document, timelines; Safety protocols for staff; CyberSecurity Guidelines — information security, password management, device policies; Compliance requirements under RCC Contract and Agency Policy.</p>
+                        <p><strong>Regulatory:</strong> RCC Contract &bull; Agency Policy — legal compliance training for new staff</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Case Management 101–105 — 15 Hours</h4>
+                        <span class="audience-tag staff-tag">Staff Only</span>
+                        <p><strong>Content:</strong> Supplies and resources management; Caseloads — how they are assigned and managed; Families — building and maintaining relationships; Scheduling — visit requirements, court dates, appointments; Visit requirements — documentation, frequency, content; Communication with families and children; Working with CPS and SSCC (Single Source Continuum Contractor); Working with monitors and oversight entities.</p>
+                        <p><strong>Regulatory:</strong> RCC Contract &bull; Agency Policy</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Service Plan Training — 4 Hours</h4>
+                        <span class="audience-tag staff-tag">Staff Only</span>
+                        <p><strong>Content:</strong> Foundations of T3C service planning — needs-based vs. behavior-based; Developing the Service Plan within the 30-day requirement; Documentation practices and standards; Specialized service planning for complex needs; CANS 3.0 — how assessment drives the service plan; Application and Compliance Review — common errors and quality standards.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — service planning requirements &bull; RCC Contract</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Psychiatric &amp; Medications Training — 2 Hours</h4>
+                        <span class="audience-tag staff-tag">Staff Only</span>
+                        <p><strong>Content:</strong> Medication logs — how to review and audit; Medication appointment coordination and requirements; Radius forms for medication documentation; Conduct and Requirements for attending medical appointments; Paperwork requirements surrounding medications; Minimum Standards compliance for medication management; Contract terms related to medications; Foster parent responsibilities vs. Case Manager responsibilities.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; RCC Contract</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>40 Hours Supervision — New Staff — 40 Hours</h4>
+                        <span class="audience-tag staff-tag">Staff Only</span>
+                        <p><strong>Content:</strong> Direct supervision with experienced Refuge House staff before carrying an independent caseload; observation of case management activities, visits, service planning meetings, and documentation; structured feedback and competency assessment throughout the period.</p>
+                        <p><strong>Regulatory:</strong> RCC Contract &bull; Agency Policy</p>
+                    </div>
+
+                </div>
+
+                <!-- ─── GROUP: T3C CONVERSION MODULES ─── -->
+                <div class="curriculum-group-header">⭐ T3C Conversion Training — 16-Hour Series for Current Foster Parents &amp; Staff</div>
+                <div id="curriculum-list-t3c">
+
+                    <div class="curriculum-item">
+                        <h4>Module 1 — T3C Orientation &amp; Vision — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#ede9fe;color:#5b21b6;">T3C Conversion</span>
+                        <p><strong>Session 1.1 — T3C Transformation &amp; Benefits (1 hour):</strong> "The 2 AM Text" cold intro — the real placement scenario that drives the need for change; Current system challenges — statistics on placement instability, scattered information, and child outcomes; T3C overview and the four pillars of child-centered care; Service Packages overview — T3C Basic and add-on services; Introduction to CANS 3.0 as the needs-assessment foundation.</p>
+                        <p><strong>Session 1.2 — What Changes and What Stays the Same (1 hour):</strong> Financial improvements — rate increases under T3C; TBRI framework as the practice model and paradigm shift from behavior management to needs-based response; Digital transformation tools — LMS, documentation methods; Enhanced support team structure; Key differences summary; Closing call to action for foster family commitment.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint — required for T3C Basic credential</p>
+                        <p><strong>Session Structure:</strong> 15 min new content &bull; 30 min core delivery &bull; 15 min reflection &bull; 45 min application &bull; 10 min assessment &bull; 5 min resources</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Module 2 — TBRI® as T3C's Evidence-Informed Model — 4 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#ede9fe;color:#5b21b6;">T3C Conversion</span>
+                        <p><strong>Session 2.1 — TBRI Principles Refresher with T3C Application (2 hours):</strong> Review of TBRI's three sets of principles — Empowering, Connecting, and Correcting; Neurochemistry of fear and how it drives foster children's behavior; Connecting principles as the foundation — meeting felt safety, attachment, and belonging needs; How T3C operationalizes TBRI at the system level.</p>
+                        <p><strong>Session 2.2 — TBRI Implementation in Documentation and Daily Practice (2 hours):</strong> Correcting principles — proactive strategies and reactive strategies; How TBRI-informed language appears in service plans and daily documentation; Compassion fatigue — recognizing it and building resilience; Secondary traumatic stress prevention; Daily practice application scenarios.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint — evidence-informed treatment model requirement</p>
+                        <p><strong>Notes:</strong> Foster parents with current TBRI Practitioner certification may test out of Session 2.1, reducing total conversion hours to 14.</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Module 3 — Universal Human Trafficking Prevention — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#ede9fe;color:#5b21b6;">T3C Conversion</span>
+                        <span class="audience-tag" style="background:#fce7f3;color:#9d174d;">Every 2 Years</span>
+                        <p><strong>Content:</strong> Human Trafficking &amp; Smuggling — Definitions and Distinctions; Vulnerability Patterns &amp; Risk Factors specific to foster youth; Trafficking Networks — how they operate and recruit; Recruitment &amp; Grooming Tactics — what caregivers need to recognize; Age-Appropriate Prevention Strategies &amp; Protective Factors for youth in care; Responding to Disclosures — trauma-informed response; Reporting Procedures — Texas hotline, DFPS, law enforcement coordination.</p>
+                        <p><strong>Regulatory:</strong> TAC §749 &bull; T3C Blueprint — universal requirement for all T3C credentialed homes</p>
+                        <p><strong>Notes:</strong> Required unless completed within the past 2 years with documentation on file. DFPS curriculum used as base.</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Module 4 — T3C Service Planning &amp; Documentation — 4 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#ede9fe;color:#5b21b6;">T3C Conversion</span>
+                        <p><strong>Session 4.1 — Your Role in Service Planning (2 hours):</strong> You are Part of the Treatment Team — T3C positions foster parents as essential contributors, not just placements; What a Service Plan is — structure, purpose, and the 30-day initial requirement (TAC §749.1301); How your daily observations shape the plan — linking what you see to the child's CANS-assessed needs; Preparing for and actively participating in Service Planning meetings; How CANS 3.0 uses your input to identify needs and drive services; Outcome tracking — what you're observing and why it matters.</p>
+                        <p><strong>Session 4.2 — Documentation That Makes a Difference (2 hours):</strong> Needs-based vs. behavior-based documentation — the T3C paradigm shift; TBRI-informed language in daily logs; What to capture — triggers, successful strategies, wins and setbacks, patterns; What NOT to include — opinion, speculation, labeling language; How documentation connects to service plan reviews and CANS re-assessments; Practical documentation exercise — rewriting behavior-focused entries in needs-based language.</p>
+                        <p><strong>Regulatory:</strong> TAC §749.1301 — service planning timelines &bull; T3C Blueprint — documentation standards &bull; RCC Contract</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Module 5 — Enhanced Family Connections — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#ede9fe;color:#5b21b6;">T3C Conversion</span>
+                        <p><strong>Content:</strong> T3C &amp; Regulatory Framework for Family Engagement — why connection to birth family matters for permanency and child well-being; Children's Rights to Parent &amp; Sibling Contact — non-negotiable standards (TAC §749.2961 sibling connections; TAC §749.1301-1335); Family engagement expectations under T3C — frequency, quality, documentation; Supporting Birth Family Relationships — your role when visits are difficult, coaching strategies for children before and after visits; Co-Parenting Strategies — sharing information respectfully, navigating disagreements, positioning yourself as a partner not a competitor; Maintaining Connections and Prohibited Discipline — what is never acceptable in response to family contact behaviors; TBRI Strategies for the Caregiver's Role — preparing and processing visits using connecting principles; Admission and Service Planning linkage — family engagement as part of the plan from day one.</p>
+                        <p><strong>Regulatory:</strong> TAC §749.2961 &bull; TAC §749.1135 &bull; T3C Blueprint FC 1.01, FC 1.02 — family connections standards</p>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <h4>Module 6 — Add-On Services Integration Overview — 2 Hours</h4>
+                        <span class="audience-tag both-tag">Both Staff &amp; Foster Parents</span>
+                        <span class="audience-tag" style="background:#ede9fe;color:#5b21b6;">T3C Conversion</span>
+                        <p><strong>What Are Add-On Services:</strong> Every child receives a primary service package; some children also qualify for Add-On Services based on specific circumstances. Add-ons provide extra support — they don't replace the primary package.</p>
+                        <p><strong>Kinship Caregiver Support Services:</strong> Who qualifies — relatives and kin caring for children in foster care; 24/7 support and crisis access; Benefits navigation (financial assistance, legal guidance, community resources); Unique challenges of kinship placements — role confusion, family dynamics, child loyalty conflicts; Your role as a non-kinship home working alongside kinship families.</p>
+                        <p><strong>Transition Support Services — Youth Ages 14–22:</strong> Purpose — preparing youth for successful adulthood; PAL (Preparation for Adult Living) program integration; Life skills development — housing, employment, financial literacy, health care navigation; What the youth in your home is working toward; How you support transition planning in daily caregiving; Youth Empowerment through voice and choice.</p>
+                        <p><strong>Pregnant &amp; Parenting Youth Support Services:</strong> Who is served — youth in foster care who are pregnant or parenting; Your role as a mentor foster parent — dual-generation approach; Supporting the young parent while also nurturing their child; Parenting plan topics and how to model without undermining; Connecting to community resources — WIC, parenting classes, infant care.</p>
+                        <p><strong>Regulatory:</strong> T3C Blueprint pp. 149–161 — Add-On Service specifications &bull; TAC Chapter 749</p>
+                    </div>
+
+                </div><!-- end t3c curriculum list -->
+
+            </div><!-- end card -->
+        </div>
+
+
+        <!-- Compliance Section -->
+
+        <div id="compliance" class="content-section">
+            <div class="card">
+                <h2>✅ Compliance Summary & Status</h2>
+                
+                <div class="alert alert-success">
+                    <strong>Full Compliance Achieved:</strong> Refuge House meets or exceeds all regulatory requirements across 6 different regulatory sources.
+                </div>
+                
+                <h3>🎯 Regulatory Compliance Status</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>✅ TAC §749 Minimum Standards</h4>
+                        <p>All pre-service, annual, and specialized requirements met</p>
+                        <p><strong>Status:</strong> Full compliance</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>✅ T3C Blueprint</h4>
+                        <p>Basic credentialing active, service packages available</p>
+                        <p><strong>Status:</strong> Phase I implemented</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>✅ DFPS Online Training</h4>
+                        <p>All required online modules covered</p>
+                        <p><strong>Status:</strong> Current and compliant</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>✅ RCC Contract</h4>
+                        <p>Regional contract requirements met</p>
+                        <p><strong>Status:</strong> Contract compliant</p>
+                    </div>
+                </div>
+                
+                <h3>📊 Training Efficiency Metrics</h3>
+                <div class="training-grid">
+                    <div class="training-item">
+                        <h4>🤝 Shared Training</h4>
+                        <p class="hours">65% of total content</p>
+                        <p>Cost-efficient delivery model</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>📚 Curriculum Integration</h4>
+                        <p class="hours">20+ shared modules</p>
+                        <p>Consistent T3C messaging</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>⚡ Delivery Methods</h4>
+                        <p class="hours">Multiple formats</p>
+                        <p>In-person, online, hybrid options</p>
+                    </div>
+                    <div class="training-item">
+                        <h4>📈 Compliance Rate</h4>
+                        <p class="hours">100%</p>
+                        <p>All regulatory requirements met</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function searchCurriculum() {
+            const input = document.getElementById('curriculumSearch');
+            const filter = input.value.toUpperCase();
+            const items = document.querySelectorAll('.curriculum-item');
+            const groups = document.querySelectorAll('.curriculum-group-header');
+
+            items.forEach(item => {
+                const text = item.textContent || item.innerText;
+                item.style.display = text.toUpperCase().indexOf(filter) > -1 ? '' : 'none';
+            });
+
+            // Hide group headers if all their items are hidden
+            groups.forEach(header => {
+                let next = header.nextElementSibling;
+                let hasVisible = false;
+                while (next && !next.classList.contains('curriculum-group-header')) {
+                    next.querySelectorAll('.curriculum-item').forEach(item => {
+                        if (item.style.display !== 'none') hasVisible = true;
+                    });
+                    next = next.nextElementSibling;
+                }
+                header.style.display = hasVisible ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
